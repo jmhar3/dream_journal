@@ -14,6 +14,7 @@
     <header class="nav-expand">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-menu" aria-controls="nav-menu" aria-expanded="true" aria-label="Toggle navigation">☰</button>
       <button type="button" ><%= yield :menu_icon %></button>
+      <h1><%= yield :tracker_title %></h1>
     </header>
     <nav class="navbar-collapse collapse show" id="nav_menu" style="">
       <span>
@@ -29,9 +30,7 @@
           <li><%= link_to "Monthly", monthly_path %></li>
           <li><%= link_to "Friends", root_path %></li>
           <li>
-            <div>
-              <%= button_to 'Logout', logout_path, method: :delete, class: 'button' %>
-            </div>
+            <%= button_to 'Logout', logout_path, method: :delete, class: 'button' %>
           </li>
         <% else %>
           <li><%= link_to 'Sign In', sign_in_path, class: 'button' %></li>

@@ -58,12 +58,24 @@ ul {
     list-style-type: none;
 }
 
-li, .button {
-    font-size: 21px;
+h1 {
+    font-size: 30px;
+}
+
+li, .button, button {
+    font-size: 33px;
 }
 
 input {
     font-size: 18px;
+}
+
+button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-weight: 600;
+    color: var(--dark-colour);
 }
 
 hr.rounded {
@@ -94,15 +106,6 @@ input, .button {
     background-color: var(--mid-colour);
 }
 
-button {
-    cursor: pointer;
-    background: none;
-    border: none;
-    font-size: 24px;
-    font-weight: 600;
-    color: var(--dark-colour);
-}
-
 header {
     position: fixed;
     top: 0;
@@ -114,6 +117,14 @@ header {
 
 header button {
     float: left;
+}
+
+header h1 {
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 12px;
 }
 
 #nav_menu {
@@ -141,15 +152,19 @@ header button {
     width: 100%;
 }
 
+#nav_menu ul.button {
+    width: fit-content;
+}
+
 .close-menu {
     float: left;
-    padding-top: 24px;
-    padding-left: 24px;
-    padding-bottom: 12px;
+    padding-top: 3vw;
+    padding-left: 3vw;
+    padding-bottom: 1.2vw;
 }
 
 .show {
-    /* visibility: hidden; */
+    visibility: hidden;
 }
 
 /* FORMS */
