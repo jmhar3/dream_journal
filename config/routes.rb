@@ -10,4 +10,7 @@ Rails.application.routes.draw do
   resources :notes
   resources :self_cares
   resources :users
+
+  get 'sign_up', to: 'users#new'
+  get 'sign_in', to: 'sessions#new'
 end

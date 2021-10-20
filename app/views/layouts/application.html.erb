@@ -16,27 +16,25 @@
       <button type="button" ><%= yield :menu_icon %></button>
       <div class="navbar-collapse collapse show" id="nav_menu" style="">
         <ul>
-          <li>
-            <%= link_to "Dream Journal", root_path %>
-          </li>
-          <hr class="rounded">
-          <li>
-            <%= link_to "Daily", root_path %>
-          </li>
-          <li>
-            <%= link_to "Monthly", root_path %>
-          </li>
-          <li>
-            <%= link_to "Friends", root_path %>
-          </li>
-          <li>
-            <div>
-              <%= link_to "Sign Out", root_path %>
-            </div>
-          </li>
+          <% if Current.user %>
+            <li><%= link_to "Dream Journal", root_path %>
+            <hr class="rounded">
+            <li><%= link_to "Daily", root_path %>
+            <li><%= link_to "Monthly", root_path %>
+            <li><%= link_to "Friends", root_path %>
+            <li>
+              <div>
+                <%= link_to "Sign Out", root_path %>
+              </div>
+            </li>
+          <% else %>
+            <%= link_to 'Sign In', sign_in_path %>
+          <% end %>
         </ul>
       </div>
     </header>
+    <h4 class="notice"><%= notice %></h4>
+    <h4 class="alert"><%= alert %></h4>
     <%= yield %>
   </body>
 </html>
