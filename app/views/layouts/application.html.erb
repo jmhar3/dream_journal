@@ -11,6 +11,32 @@
   </head>
 
   <body>
+    <header class="nav-expand">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-menu" aria-controls="nav-menu" aria-expanded="true" aria-label="Toggle navigation">☰</button>
+      <button type="button" ><%= yield :menu_icon %></button>
+      <div class="navbar-collapse collapse show" id="nav_menu" style="">
+        <ul>
+          <li>
+            <%= link_to "Dream Journal", root_path %>
+          </li>
+          <hr class="rounded">
+          <li>
+            <%= link_to "Daily", root_path %>
+          </li>
+          <li>
+            <%= link_to "Monthly", root_path %>
+          </li>
+          <li>
+            <%= link_to "Friends", root_path %>
+          </li>
+          <li>
+            <div>
+              <%= link_to "Sign Out", root_path %>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </header>
     <%= yield %>
   </body>
 </html>

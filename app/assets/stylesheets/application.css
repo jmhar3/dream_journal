@@ -13,3 +13,89 @@
  *= require_tree .
  *= require_self
  */
+
+ @font-face {
+	font-family: 'SourceCodeBold';
+	src:font-url('SourceCodePro-Bold.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+:root {
+    --main-colour: rgb(221, 0, 18);
+    --mid-colour: rgb(255, 194, 207);
+    --light-mid-colour: rgb(255, 203, 214);
+    --light-colour: rgb(255, 227, 234);
+    --super-light-colour: rgb(255, 247, 249);
+    --dark-colour: rgb(20, 0, 0);
+    text-align: center;
+    padding: none;
+    margin: none;
+}
+
+html {
+    background-color: var(--light-colour);
+    margin-top: 60px;
+}
+
+h1, h2, h3, h4, h5, p, li, a, button {
+    font-family: 'SourceCodeBold', Geneva, Verdana, sans-serif;
+}
+
+a {
+    font-weight: 550;
+    text-decoration: none;
+    color: var(--main-colour)
+}
+
+li {
+    list-style-type: none;
+}
+
+hr.rounded {
+    border: 2.1px solid var(--main-colour);
+    background-color: var(--main-colour);
+    border-radius: 6px;
+}
+
+.button {
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-left: 12px;
+    padding-right: 12px;
+    background-color: var(--light-mid-colour);
+    border-radius: 12px;
+    -webkit-transition: background .6s, border-radius .6s;
+    transition: background .6s, border-radius .6s;
+}
+
+.button:hover {
+    border-radius: 50px;
+    background-color: var(--mid-colour);
+}
+
+button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--dark-colour);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 9px;
+    background-color: var(--super-light-colour);
+    width: 100%;
+}
+
+header button {
+    float: left;
+}
+
+.show {
+    display: none;
+}

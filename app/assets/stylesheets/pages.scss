@@ -1,3 +1,13 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.fade {
+  background: -webkit-linear-gradient(var(--dark-colour), var(--super-light-colour));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+span.full-height {
+    height: 100%;
+}
