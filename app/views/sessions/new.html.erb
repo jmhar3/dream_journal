@@ -1,11 +1,15 @@
 <h1>Sign In</h1>
 
 <%= form_with url: sign_in_path do |f| %>
-    <%= f.label 'username:'%><br>
-    <%= f.text_field :username, id: 'username' %>
+    <div>
+        <%= f.text_field :username, id: 'username', placeholder: "Username" %>
+    </div>
 
-    <%= f.label 'password:'%><br>
-    <%= f.password_field :password, id: 'password' %>
+    <div>
+        <%= f.password_field :password, id: 'password', placeholder: "Password" %>
+    </div>
     
-    <%= f.submit 'Log In' %>
+    <div>
+        <%= f.submit 'Log In', class: 'submit button' %>
+    </div>
 <% end %>

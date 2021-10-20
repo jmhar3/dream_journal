@@ -3,17 +3,23 @@
 <h1>Sign Up</h1>
 
 <%= form_with model: @user, url: sign_up_path do |f| %>
-    <%= f.label 'email' %><br>
-    <%= f.text_field :email %>
+    <div>
+        <%= f.text_field :username, placeholder: "Username" %>
+    </div>
 
-    <%= f.label 'username' %><br>
-    <%= f.text_field :username %>
+    <div>
+        <%= f.text_field :email, placeholder: "Email" %>
+    </div>
     
-    <%= f.label 'password' %><br>
-    <%= f.password_field :password %>
+    <div>
+        <%= f.password_field :password, placeholder: "Password" %>
+    </div>
 
-    <%= f.label 'password_confirmation' %><br>
-    <%= f.password_field :password_confirmation %>
+    <div>
+        <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+    </div>
     
-    <%= f.submit 'Sign Up' %>
+    <div>
+        <%= f.submit 'Sign Up', class: "submit button" %>
+    </div>
 <% end %>
