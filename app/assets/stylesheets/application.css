@@ -38,6 +38,10 @@ html {
     margin-top: 60px;
 }
 
+.red {
+    color: var(--main-colour);
+}
+
 h1, h2, h3, h4, h5, p, li, a, button {
     font-family: 'SourceCodeBold', Geneva, Verdana, sans-serif;
 }

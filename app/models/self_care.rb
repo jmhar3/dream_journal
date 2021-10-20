@@ -1,0 +1,2 @@
+class SelfCare < ApplicationRecord
+end
