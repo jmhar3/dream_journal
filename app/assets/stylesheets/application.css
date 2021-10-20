@@ -26,6 +26,7 @@
     --mid-colour: rgb(255, 194, 207);
     --light-mid-colour: rgb(255, 203, 214);
     --light-colour: rgb(255, 227, 234);
+    --super-light-mid: rgb(255, 240, 244);
     --super-light-colour: rgb(255, 247, 249);
     --dark-colour: rgb(20, 0, 0);
     text-align: center;
@@ -52,7 +53,8 @@ a {
     color: var(--main-colour)
 }
 
-li {
+ul {
+    padding: 0;
     list-style-type: none;
 }
 
@@ -64,6 +66,7 @@ hr.rounded {
     border: 2.1px solid var(--main-colour);
     background-color: var(--main-colour);
     border-radius: 6px;
+    width: 80%;
 }
 
 input, .button {
@@ -109,8 +112,40 @@ header button {
     float: left;
 }
 
+#nav_menu {
+    background: var(--super-light-colour);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 50vw;
+}
+
+#nav_menu ul {
+    clear: both;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    justify-content: center;
+}
+
+#nav_menu h2 {
+    margin: 0;
+}
+
+#nav_menu span {
+    width: 100%;
+}
+
+.close-menu {
+    float: left;
+    padding-top: 24px;
+    padding-left: 24px;
+    padding-bottom: 12px;
+}
+
 .show {
-    display: none;
+    visibility: hidden;
 }
 
 /* FORMS */
@@ -141,4 +176,5 @@ input:focus {
 
 input:hover {
     border-radius: 50px;
+    background-color: var(--super-light-mid);
 }

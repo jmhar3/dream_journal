@@ -14,25 +14,30 @@
     <header class="nav-expand">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-menu" aria-controls="nav-menu" aria-expanded="true" aria-label="Toggle navigation">☰</button>
       <button type="button" ><%= yield :menu_icon %></button>
-      <div class="navbar-collapse collapse show" id="nav_menu" style="">
-        <ul>
-          <% if Current.user %>
-            <li><%= link_to "Dream Journal", root_path %>
-            <hr class="rounded">
-            <li><%= link_to "Daily", root_path %>
-            <li><%= link_to "Monthly", root_path %>
-            <li><%= link_to "Friends", root_path %>
-            <li>
-              <div>
-                <%= link_to "Sign Out", root_path %>
-              </div>
-            </li>
-          <% else %>
-            <%= link_to 'Sign In', sign_in_path %>
-          <% end %>
-        </ul>
-      </div>
     </header>
+    <nav class="navbar-collapse collapse show" id="nav_menu" style="">
+      <span>
+        <button class="navbar-toggler close-menu" type="button">x</button>
+      </span>
+      <ul>
+        <li>
+          <h2><%= link_to "Dream Journal", root_path %></h2>
+        </li>
+        <hr class="rounded">
+        <% if Current.user %>
+          <li><%= link_to "Daily", root_path %></li>
+          <li><%= link_to "Monthly", root_path %></li>
+          <li><%= link_to "Friends", root_path %></li>
+          <li>
+            <div>
+              <%= link_to "Sign Out", root_path, class: 'button' %>
+            </div>
+          </li>
+        <% else %>
+          <li><%= link_to 'Sign In', sign_in_path, class: 'button' %></li>
+        <% end %>
+      </ul>
+    </nav>
     <h4 class="notice"><%= notice %></h4>
     <h4 class="alert"><%= alert %></h4>
     <%= yield %>
