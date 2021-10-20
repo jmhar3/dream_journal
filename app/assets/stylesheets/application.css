@@ -50,12 +50,16 @@ h1, h2, h3, h4, h5, p, li, a, button, div, .submit, ::placeholder {
 a {
     font-weight: 550;
     text-decoration: none;
-    color: var(--main-colour)
+    color: var(--dark-colour)
 }
 
 ul {
     padding: 0;
     list-style-type: none;
+}
+
+li, .button {
+    font-size: 21px;
 }
 
 input {
@@ -145,7 +149,7 @@ header button {
 }
 
 .show {
-    visibility: hidden;
+    /* visibility: hidden; */
 }
 
 /* FORMS */

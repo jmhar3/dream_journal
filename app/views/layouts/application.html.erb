@@ -24,13 +24,13 @@
           <h2><%= link_to "Dream Journal", root_path %></h2>
         </li>
         <hr class="rounded">
-        <% if Current.user %>
-          <li><%= link_to "Daily", root_path %></li>
-          <li><%= link_to "Monthly", root_path %></li>
+        <% if !Current.user %>
+          <li><%= link_to "Daily", daily_path %></li>
+          <li><%= link_to "Monthly", monthly_path %></li>
           <li><%= link_to "Friends", root_path %></li>
           <li>
             <div>
-              <%= link_to "Sign Out", root_path, class: 'button' %>
+              <%= button_to 'Logout', logout_path, method: :delete, class: 'button' %>
             </div>
           </li>
         <% else %>
