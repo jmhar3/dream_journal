@@ -1,1 +1,13 @@
-<% menu_icon "+" %>
+<% menu_icon "Dream Journal" %>
+
+<div class="column">
+    <h2>Account Info</h2>
+    <h4>Username: <%= @user.username %></h4>
+    <h4>Email: <%= @user.email %></h4>
+    <%= link_to "Change Password", edit_password_path, class: "button" %>
+</div>
+<div class="column">
+    <h2>Friends</h2>
+</div>
+<div class="column">
+</div>
