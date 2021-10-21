@@ -13,9 +13,6 @@ class UsersController < ApplicationController
         end
     end
 
-    def add_friend
-    end
-
     private
 
     def user_params

@@ -1,0 +1,13 @@
+<% menu_icon "Dream Journal" %>
+
+<h1 class="red">Add a Friend</h1>
+
+<%= form_with model: @invitation, url: add_friend_path do |f| %>
+    <div>
+        <%= f.text_field :username, placeholder: "Username" %>
+    </div>
+    
+    <div>
+        <%= f.submit 'Add Friend', class: "submit button" %>
+    </div>
+<% end %>

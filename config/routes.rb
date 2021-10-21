@@ -1,20 +1,19 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root "pages#home"
-  get "daily", to: "pages#daily"
-  get "monthly", to: "pages#monthly"
-  get "account", to: "pages#account"
-  get "add_friend", to: "users#add_friend"
 
-  resources :pages
   resources :finances
   resources :goals
   resources :gratitudes
   resources :meals
   resources :notes
   resources :self_cares
-  resources :users
 
+  get "daily", to: "pages#daily"
+  get "monthly", to: "pages#monthly"
+  get "account", to: "pages#account"
+  get "add_friend", to: "invitations#new"
+  post "add_friend", to: "invitations#create"
   get 'sign_up', to: 'users#new'
   post 'sign_up', to: 'users#create'
   get 'sign_in', to: 'sessions#new'
