@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root "pages#home"
   get "daily", to: "pages#daily"
   get "monthly", to: "pages#monthly"
+  get "account", to: "pages#account"
 
   resources :pages
   resources :finances

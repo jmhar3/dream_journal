@@ -1,6 +1,6 @@
 class User < ApplicationRecord
     has_secure_password
-    validates :username, presence: true, uniqueness: true
+    validates :username, presence: true, uniqueness: true, length: { minimum: 6}
     validates :email, presence: true, uniqueness: true, format: { with: /\A[^@\s]+@[^@\s]+\z/, message: 'Invalid email' }
 
     has_many :finances

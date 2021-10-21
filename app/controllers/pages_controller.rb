@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+    skip_before_action :require_login, only: [:home]
+
     def home
     end
 
@@ -6,5 +8,8 @@ class PagesController < ApplicationController
     end
 
     def monthly
+    end
+
+    def account
     end
 end

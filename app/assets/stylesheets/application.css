@@ -70,8 +70,11 @@ input {
     font-size: 18px;
 }
 
-button {
+a, .button, button {
     cursor: pointer;
+}
+
+button {
     background: none;
     border: none;
     font-weight: 600;
@@ -164,7 +167,7 @@ nav ul.button {
 }
 
 .show {
-    visibility: hidden;
+    /* visibility: hidden; */
 }
 
 /* FORMS */
