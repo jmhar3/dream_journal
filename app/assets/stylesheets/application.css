@@ -208,3 +208,18 @@ input:hover {
     border-radius: 50px;
     background-color: var(--super-light-mid);
 }
+
+/* COLUMN STRUCTURE */
+
+.column {
+    float: left;
+    width: 33.33%;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+    }
+  }
