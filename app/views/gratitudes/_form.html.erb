@@ -1,5 +1,15 @@
 <% menu_icon "+" %>
 
+<% if !@gratitude.errors.empty? %>
+  <div>
+    <ul>
+      <% @gratitude.errors.full_messages.each do |error| %>
+        <li> <%= error %>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <div class="container mid">
     <h2>I'm grateful for</h2>
     <hr class="rounded">

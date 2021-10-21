@@ -6,7 +6,17 @@
     <h2>Goals</h2>
 </div>
 <div class="column">
-    <h2>I'm Grateful For</h2>
+    <div class="container mid">
+        <h2>I'm Grateful For</h2>
+        <% if @gratitudes != nil %>
+            <ul>
+                <% @gratitudes.each do |gratitude| %>
+                    <li><%= gratitude.name %></li>
+                <% end %>
+            </ul>
+        <% end %>
+        <%= link_to "Add Gratitude", new_gratitude_path, class: "button light" %>
+    </div>
     <h2>Self Care</h2>
     <h2>Finances</h2>
 </div>

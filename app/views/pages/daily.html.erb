@@ -6,7 +6,14 @@
     <h2>Todays Goals</h2>
 </div>
 <div class="column">
-    <h2>I'm Grateful For</h2>
+    <div class="container mid">
+        <h2>I'm Grateful For</h2>
+        <% if @gratitude != nil %>
+            <h4><%= @gratitude.name %></h4>
+        <% else %>
+            <%= link_to "Add Gratitude", new_gratitude_path, class: "button light" %>
+        <% end %>
+    </div>
     <h2>Drink Water</h2>
     <h2>Notes</h2>
 </div>
