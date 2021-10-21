@@ -216,10 +216,15 @@ input:hover {
     width: 33.33%;
 }
 
+.split-column {
+    float: left;
+    width: 50%;
+}
+
 /* MOBILE RESPONSIVENESS */
 
 @media screen and (max-width: 600px) {
-    .column {
+    .column, .split-column {
       width: 100%;
     }
-  }
+}

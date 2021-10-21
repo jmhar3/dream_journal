@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "daily", to: "pages#daily"
   get "monthly", to: "pages#monthly"
   get "account", to: "pages#account"
+  get "add_friend", to: "users#add_friend"
 
   resources :pages
   resources :finances
