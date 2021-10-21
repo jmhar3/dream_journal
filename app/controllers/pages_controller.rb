@@ -5,7 +5,7 @@ class PagesController < ApplicationController
     end
 
     def daily
-        @gratitude = Gratitude.find_by(created_at: Date.current).first
+        # @gratitude = Gratitude.find_by(created_at: Date.current).first
     end
 
     def monthly

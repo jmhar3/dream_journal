@@ -42,6 +42,8 @@ html {
 body {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .red {
@@ -60,7 +62,13 @@ body {
     background-color: var(--mid-colour)
 }
 
-h1, h2, h3, h4, h5, p, li, a, button, div, .submit, ::placeholder {
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 6.9px;
+}
+
+h1, h2, h3, h4, h5, p, li, a, button, div, .submit, ::placeholder, select {
     font-family: 'SourceCodeBold', Geneva, Verdana, sans-serif;
 }
 
@@ -79,12 +87,11 @@ h1 {
     font-size: 21px;
 }
 
-li, .button, button {
+li, .button, button, select, input, , textarea,
+input::-webkit-datetime-edit-day-field,
+input::-webkit-datetime-edit-month-field,
+input::-webkit-datetime-edit-year-field {
     font-size: 21px;
-}
-
-input {
-    font-size: 18px;
 }
 
 a, .button, button {
@@ -105,7 +112,7 @@ hr.rounded {
     width: 100%;
 }
 
-input, .button {
+input, .button, select, button, textarea {
     border-radius: 12px;
     -webkit-transition: background .6s, border-radius .6s;
     transition: background .6s, border-radius .6s;
@@ -203,7 +210,7 @@ form {
     gap: 12px;
 }
 
-input {
+input, select, textarea {
     background: var(--super-light-colour);
     font-weight: 550;
     border: none;
@@ -216,15 +223,45 @@ input {
     color: var(--mid-colour);
 }
 
-input:focus {
+input:focus, select:focus, textarea:focus {
     color: var(--main-colour);
     outline: none;
+    border-radius: 50px;
 }
 
-input:hover {
+input:hover, select:hover, textarea:hover {
     border-radius: 50px;
     background-color: var(--super-light-mid);
 }
+
+textarea {
+    width: 270px;
+    height: 120px;
+}
+
+textarea:focus, textarea:hover  {
+    border-radius: 18px;
+}
+
+input::-webkit-datetime-edit-day-field:focus,
+input::-webkit-datetime-edit-month-field:focus,
+input::-webkit-datetime-edit-year-field:focus {
+    background-color: var(--dark-colour);
+    border-radius: 9px;
+    color: var(--super-light-colour);
+    outline: none;
+}
+
+select {
+    margin-right: 18px;
+    cursor: pointer;
+}
+
+.select-container {
+    width: 60%;
+    position: relative;
+}
+
 .container {
     border-radius: 30px;
     width: fit-content;
@@ -238,6 +275,10 @@ input:hover {
 .container hr {
     margin-top: 18px;
     margin-bottom: 18px;
+}
+
+.right {
+    float: right;
 }
 
 /* COLUMN STRUCTURE */

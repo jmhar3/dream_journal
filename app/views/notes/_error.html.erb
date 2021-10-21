@@ -1,0 +1,9 @@
+<% if !@note.errors.empty? %>
+  <div>
+    <ul>
+      <% @note.errors.full_messages.each do |error| %>
+        <li> <%= error %>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

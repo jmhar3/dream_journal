@@ -1,0 +1,11 @@
+<%= form_for @note do |f| %>
+  <div>
+    <%= f.text_area :content, placeholder: "Content" %>
+  </div>
+        
+  <div>
+    <%= f.date_field :date %>
+
+    <%= f.submit 'Save', class: "submit button light" %>
+  </div>
+<% end %>

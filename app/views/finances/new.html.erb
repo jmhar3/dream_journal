@@ -1,0 +1,31 @@
+<% menu_icon "+" %>
+
+<% if !@finance.errors.empty? %>
+  <div>
+    <ul>
+      <% @finance.errors.full_messages.each do |error| %>
+        <li> <%= error %>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="container mid">
+    <h2>New Record</h2>
+    <hr class="rounded">
+    <%= form_for @finance do |f| %>
+    <div class="row">
+        <div>
+            <%= f.select :type, options_for_status, {}, prompt: 'Select One' %>
+        </div>
+        <div class="row red">
+            <h2>$</h2><%= f.text_field :amount, placeholder: "0", class: "amount"%>
+        </div>
+    </div>
+  <div>
+    <%= f.date_field :date %>
+
+    <%= f.submit 'Save', class: "submit button light" %>
+  </div>
+<% end %>
+</div>

@@ -9,7 +9,9 @@
     <div class="container mid">
         <h2>I'm Grateful For</h2>
         <% if @gratitude != nil %>
-            <h4><%= @gratitude.name %></h4>
+            <div>
+                <%= link_to @gratitude.name, edit_gratitude_path %>
+            </div>
         <% else %>
             <%= link_to "Add Gratitude", new_gratitude_path, class: "button light" %>
         <% end %>
