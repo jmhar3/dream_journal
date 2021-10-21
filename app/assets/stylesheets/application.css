@@ -167,7 +167,15 @@ nav ul.button {
 }
 
 .show {
-    /* visibility: hidden; */
+    visibility: hidden;
+}
+
+.corner-button {
+    font-size: 18px;
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    background-color: none;
 }
 
 /* FORMS */
