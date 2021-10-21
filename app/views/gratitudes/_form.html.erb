@@ -1,0 +1,16 @@
+<% menu_icon "+" %>
+
+<div class="container mid">
+    <h2>I'm grateful for</h2>
+    <hr class="rounded">
+
+    <%= form_for @gratitude do |f| %>
+        <div>
+            <%= f.text_field :name %>
+        </div>
+        
+        <div>
+            <%= f.submit 'Save', class: "submit button light" %>
+        </div>
+    <% end %>
+</div>

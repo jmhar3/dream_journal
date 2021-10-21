@@ -39,8 +39,25 @@ html {
     margin-top: 60px;
 }
 
+body {
+    display: flex;
+    justify-content: center;
+}
+
 .red {
     color: var(--main-colour);
+}
+
+.light.button {
+    background-color: var(--super-light-colour)
+}
+
+.light.button:hover {
+    background-color: var(--super-light-mid)
+}
+
+.mid {
+    background-color: var(--mid-colour)
 }
 
 h1, h2, h3, h4, h5, p, li, a, button, div, .submit, ::placeholder {
@@ -85,7 +102,7 @@ hr.rounded {
     border: 2.1px solid var(--main-colour);
     background-color: var(--main-colour);
     border-radius: 6px;
-    width: 80%;
+    width: 100%;
 }
 
 input, .button {
@@ -101,13 +118,16 @@ input, .button {
     padding-right: 12px;
     background-color: var(--light-mid-colour);
     border-radius: 12px;
-    color: var(--main-colour)
+    color: var(--main-colour);
+    width: fit-content;
 }
 
 .button:hover {
     border-radius: 50px;
     background-color: var(--mid-colour);
 }
+
+/* HEADER */
 
 header {
     position: fixed;
@@ -136,7 +156,9 @@ nav {
     top: 0;
     left: 0;
     height: 100vh;
-    width: 50vw;
+    width: 30%;
+    padding-left: 21px;
+    padding-right: 21px;
 }
 
 nav ul {
@@ -155,15 +177,10 @@ nav span {
     width: 100%;
 }
 
-nav ul.button {
-    width: fit-content;
-}
-
 .close-menu {
     float: left;
-    padding-top: 3vw;
-    padding-left: 3vw;
-    padding-bottom: 1.2vw;
+    padding-top: 18px;
+    padding-bottom: 9px;
 }
 
 .show {
@@ -207,6 +224,20 @@ input:focus {
 input:hover {
     border-radius: 50px;
     background-color: var(--super-light-mid);
+}
+.container {
+    border-radius: 30px;
+    width: fit-content;
+    padding: 21px;
+}
+
+.container h2 {
+    margin: 0;
+}
+
+.container hr {
+    margin-top: 18px;
+    margin-bottom: 18px;
 }
 
 /* COLUMN STRUCTURE */
