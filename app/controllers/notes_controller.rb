@@ -1,4 +1,8 @@
 class NotesController < ApplicationController
+    def show
+        @note = Note.find(params[:id])
+    end
+
     def new
         @note = Note.new(date: Date.today)
     end

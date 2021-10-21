@@ -66,6 +66,7 @@ body {
     display: flex;
     flex-direction: row;
     gap: 6.9px;
+    width: 100%;
 }
 
 h1, h2, h3, h4, h5, p, li, a, button, div, .submit, ::placeholder, select {
@@ -105,7 +106,7 @@ button {
     color: var(--dark-colour);
 }
 
-hr.rounded {
+hr {
     border: 2.1px solid var(--main-colour);
     background-color: var(--main-colour);
     border-radius: 6px;
