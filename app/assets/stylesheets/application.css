@@ -59,11 +59,11 @@ ul {
 }
 
 h1 {
-    font-size: 30px;
+    font-size: 21px;
 }
 
 li, .button, button {
-    font-size: 33px;
+    font-size: 21px;
 }
 
 input {
@@ -127,7 +127,7 @@ header h1 {
     top: 12px;
 }
 
-#nav_menu {
+nav {
     background: var(--super-light-colour);
     position: fixed;
     top: 0;
@@ -136,7 +136,7 @@ header h1 {
     width: 50vw;
 }
 
-#nav_menu ul {
+nav ul {
     clear: both;
     display: flex;
     flex-direction: column;
@@ -144,15 +144,15 @@ header h1 {
     justify-content: center;
 }
 
-#nav_menu h2 {
+nav h2 {
     margin: 0;
 }
 
-#nav_menu span {
+nav span {
     width: 100%;
 }
 
-#nav_menu ul.button {
+nav ul.button {
     width: fit-content;
 }
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_20_072508) do
+ActiveRecord::Schema.define(version: 2021_10_21_001230) do
 
   create_table "finances", force: :cascade do |t|
     t.integer "amount"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2021_10_20_072508) do
     t.date "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
   end
 
   create_table "foods", force: :cascade do |t|
@@ -25,6 +26,7 @@ ActiveRecord::Schema.define(version: 2021_10_20_072508) do
     t.integer "meal_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
     t.index ["meal_id"], name: "index_foods_on_meal_id"
   end
 
@@ -35,12 +37,14 @@ ActiveRecord::Schema.define(version: 2021_10_20_072508) do
     t.date "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
   end
 
   create_table "gratitudes", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
   end
 
   create_table "meals", force: :cascade do |t|
@@ -48,6 +52,7 @@ ActiveRecord::Schema.define(version: 2021_10_20_072508) do
     t.date "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
   end
 
   create_table "notes", force: :cascade do |t|
@@ -55,6 +60,7 @@ ActiveRecord::Schema.define(version: 2021_10_20_072508) do
     t.date "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
   end
 
   create_table "self_cares", force: :cascade do |t|
@@ -64,6 +70,7 @@ ActiveRecord::Schema.define(version: 2021_10_20_072508) do
     t.integer "completed"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
