@@ -234,6 +234,7 @@ input:focus, select:focus, textarea:focus {
     color: var(--main-colour);
     outline: none;
     border-radius: 50px;
+    background-color: var(--super-light-mid);
 }
 
 input:hover, select:hover, textarea:hover {

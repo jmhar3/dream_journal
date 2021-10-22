@@ -5,13 +5,21 @@
     <div class="column">
         <h2>Top Priorities</h2>
         <h2>Todays Goals</h2>
+        <div class="container mid">
+            <% @goals.each do |goal| %>
+                <div>
+                    <%= link_to goal.name, edit_goal_path(goal) %>
+                </div>
+            <% end unless @goals.blank? %>
+            <%= link_to "Add Goal", new_goal_path, class: "button light" %>
+        </div>
     </div>
     <div class="column">
         <div class="container mid">
             <h2>I'm Grateful For</h2>
             <% if @gratitude != nil %>
                 <div>
-                    <%= link_to @gratitude.name, edit_gratitude_path %>
+                    <%= link_to @gratitude.name, edit_gratitude_path(@gratitude) %>
                 </div>
             <% else %>
                 <%= link_to "Add Gratitude", new_gratitude_path, class: "button light" %>

@@ -5,11 +5,12 @@ class PagesController < ApplicationController
     end
 
     def daily
-        # @gratitude = Gratitude.find_by(created_at: Date.current).first
+        @goals = Goal.find_by(date: Date.current)
+        @gratitude = Gratitude.find_by(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day)
     end
 
     def monthly
-        @gratitudes = Gratitude.find_by(created_at: Date.current)
+        @gratitudes = Gratitude.find_by(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day)
     end
 
     def account
