@@ -19,13 +19,14 @@ class GratitudesController < ApplicationController
     def update
         @gratitude = Gratitude.find(gratitude_params[:id])
         @gratitude.update(gratitude_params)
-        
+
         redirect_to daily_path
     end
 
     private
 
     def gratitude_params
-        params.require(:gratitude).permit(:name)
+        params.require(:gratitude).permit(:user_id, :name)
+        .with_defaults(user_id: session[:user_id])
     end
 end

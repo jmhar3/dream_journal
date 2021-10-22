@@ -31,7 +31,7 @@ class GoalsController < ApplicationController
 
     def goal_params
         params.require(:goal)
-        .permit(:content, :date)
-        .with_defaults(date: Date.today)
+        .permit(:user_id, :content, :date)
+        .with_defaults(user_id: session[:user_id])
     end
 end

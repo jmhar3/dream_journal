@@ -31,7 +31,7 @@ class NotesController < ApplicationController
 
     def note_params
         params.require(:note)
-        .permit(:content, :date)
-        .with_defaults(date: Date.today)
+        .permit(:user_id, :content, :date)
+        .with_defaults(user_id: session[:user_id])
     end
 end

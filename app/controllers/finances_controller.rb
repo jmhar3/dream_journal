@@ -16,7 +16,7 @@ class FinancesController < ApplicationController
 
     def finance_params
         params.require(:finance)
-        .permit(:type, :amount, :date)
-        .with_defaults(date: Date.today)
+        .permit(:user_id, :type, :amount, :date)
+        .with_defaults(user_id: session[:user_id])
     end
 end
