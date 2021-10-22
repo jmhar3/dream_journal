@@ -1,0 +1,34 @@
+<% menu_icon "+" %>
+
+<% if !@self_care.errors.empty? %>
+  <div>
+    <ul>
+      <% @self_care.errors.full_messages.each do |error| %>
+        <li> <%= error %>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="container mid">
+    <h2>Self Care</h2>
+    <hr>
+
+    <%= form_for @self_care do |f| %>
+        <div class="row">
+            <h2>I'm going to</h2>
+            <%= f.text_field :label, placeholder: "Drink Water" %>
+        </div>
+
+        <div class="row">
+          <%= f.number_field :goal, in: 3.0..12.0, step: 1.0, placeholder: "8" %>
+          <h2>times every</h2>
+          <%= f.select :frequency, frequency_options, {}, prompt: 'Day' %>
+        </div>
+        
+        <div class="row">
+            <%= f.submit 'Save', class: "submit button light" %>
+            <%= link_to 'Delete', self_cares_path(@self_care), method: :delete, class: 'button light'  %>
+        </div>
+    <% end %>
+</div>
