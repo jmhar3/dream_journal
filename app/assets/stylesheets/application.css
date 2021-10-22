@@ -67,7 +67,7 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 6.9px;
+    gap: 12px;
     width: 100%;
 }
 
@@ -90,7 +90,7 @@ h1 {
     font-size: 21px;
 }
 
-li, .button, button, select, input, textarea, label
+li, .button, button, select, input, textarea, label, ::placeholder,
 input::-webkit-datetime-edit-day-field,
 input::-webkit-datetime-edit-month-field,
 input::-webkit-datetime-edit-year-field{
@@ -217,17 +217,19 @@ form {
     gap: 12px;
 }
 
-input, select, textarea, input {
+input, select, textarea {
     background: var(--super-light-colour);
     font-weight: 550;
     border: none;
     padding: 9px;
     border-radius: 9px;
-    color: var(--main-colour)
+    color: var(--main-colour);
+    text-align: center;
 }
 
 ::placeholder {
     color: var(--mid-colour);
+    text-align: center;
 }
 
 input:focus, select:focus, textarea:focus {
@@ -283,6 +285,10 @@ select {
 .container hr {
     margin-top: 18px;
     margin-bottom: 18px;
+}
+
+form h2 {
+    color: var(--main-colour);
 }
 
 .right {

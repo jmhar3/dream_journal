@@ -1,0 +1,9 @@
+<% if !@self_care.errors.empty? %>
+  <div>
+    <ul>
+      <% @self_care.errors.full_messages.each do |error| %>
+        <li> <%= error %>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
