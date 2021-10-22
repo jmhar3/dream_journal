@@ -1,0 +1,17 @@
+<% menu_icon "+" %>
+
+<%= render 'error' %>
+
+<div class="container mid">
+    <div class="row">
+        <h2><%= @goal.goal %></h2>
+        <%= link_to '✏', edit_goal_path %>
+        <%= link_to '❌', goal_path(@goal), method: :delete %>
+    </div>
+    <hr>
+    <p><%= @goal.more_info %></p>
+    <div class="row">
+        <p><%= @goal.date %></p>
+        <p><%= "High Priority" if @goal.priority == true %></p>
+    </div>
+</div>

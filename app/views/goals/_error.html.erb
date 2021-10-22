@@ -1,0 +1,9 @@
+<% if !@goal.errors.empty? %>
+  <div>
+    <ul>
+      <% @goal.errors.full_messages.each do |error| %>
+        <li> <%= error %>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

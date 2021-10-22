@@ -1,0 +1,21 @@
+<%= form_for @goal do |f| %>
+  <div>
+    <%= f.text_field :goal, placeholder: "Goal" %>
+
+    
+    <%= f.date_field :date %>
+  </div>
+
+  <div>
+    <%= f.text_area :more_info, placeholder: "More Info" %>
+  </div>
+        
+  <div class="row">
+    <label class="checkmark-container">High Priority
+      <%= f.check_box :priority %>
+      <span class="checkmark"></span>
+    </label>
+
+    <%= f.submit 'Save', class: "submit button light" %>
+  </div>
+<% end %>

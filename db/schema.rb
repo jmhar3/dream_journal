@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_21_032434) do
+ActiveRecord::Schema.define(version: 2021_10_21_235007) do
 
   create_table "finances", force: :cascade do |t|
     t.integer "amount"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2021_10_21_032434) do
   create_table "goals", force: :cascade do |t|
     t.string "goal"
     t.string "more_info"
-    t.integer "priority"
+    t.boolean "priority"
     t.date "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

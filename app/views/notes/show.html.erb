@@ -6,7 +6,7 @@
     <div class="row">
         <h2>Note</h2>
         <%= link_to '✏', edit_note_path %>
-        <%= link_to '❌', note_path, method: :delete %>
+        <%= link_to '❌', note_path(@note), method: :delete %>
     </div>
     <hr>
     <p><%= @note.content %></p>

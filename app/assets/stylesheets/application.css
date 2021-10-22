@@ -65,11 +65,13 @@ body {
 .row {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     gap: 6.9px;
     width: 100%;
 }
 
-h1, h2, h3, h4, h5, p, li, a, button, div, .submit, ::placeholder, select {
+h1, h2, h3, h4, h5, p, li, a, button, div, .submit, ::placeholder, select, label {
     font-family: 'SourceCodeBold', Geneva, Verdana, sans-serif;
 }
 
@@ -88,10 +90,10 @@ h1 {
     font-size: 21px;
 }
 
-li, .button, button, select, input, , textarea,
+li, .button, button, select, input, textarea, label
 input::-webkit-datetime-edit-day-field,
 input::-webkit-datetime-edit-month-field,
-input::-webkit-datetime-edit-year-field {
+input::-webkit-datetime-edit-year-field{
     font-size: 21px;
 }
 
@@ -115,8 +117,11 @@ hr {
 
 input, .button, select, button, textarea {
     border-radius: 12px;
-    -webkit-transition: background .6s, border-radius .6s;
-    transition: background .6s, border-radius .6s;
+}
+
+input, .button, select, button, textarea, .checkmark, .checkmark-container {
+    -webkit-transition: color .6s,background .6s, border-radius .6s;
+    transition: color .6s,background .6s, border-radius .6s;
 }
 
 .button {
@@ -133,6 +138,7 @@ input, .button, select, button, textarea {
 .button:hover {
     border-radius: 50px;
     background-color: var(--mid-colour);
+    color: var(--dark-colour);
 }
 
 /* HEADER */
@@ -211,7 +217,7 @@ form {
     gap: 12px;
 }
 
-input, select, textarea {
+input, select, textarea, input {
     background: var(--super-light-colour);
     font-weight: 550;
     border: none;
@@ -236,7 +242,7 @@ input:hover, select:hover, textarea:hover {
 }
 
 textarea {
-    width: 270px;
+    width: 96%;
     height: 120px;
 }
 
