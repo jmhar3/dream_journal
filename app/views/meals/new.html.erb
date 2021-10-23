@@ -15,8 +15,10 @@
   <hr class="rounded">
   <%= form_for @meal do |f| %>
     <div class="row">
-      <%= f.text_field :food_id, placeholder: "Food" %>
-      <%= f.select :type, meal_type_options, {}, prompt: 'Select One' %>
+      <%= f.fields_for :foods do |ff| %>
+        <%= ff.text_field :name, placeholder: "Food", class: "food-list" %>
+      <% end %>
+      <%= f.select :meal, meal_type_options, {}, prompt: 'Select One' %>
     </div>
     <div class="row">
       <%= f.date_field :date %>

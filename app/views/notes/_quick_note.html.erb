@@ -1,0 +1,7 @@
+<%= form_for @note do |f| %>
+    <div class="row">
+        <%= f.text_field :content, placeholder: "Quick Note" %>
+
+        <%= f.submit '🏹', class: "emoji-button" %>
+    </div>
+<% end %>

@@ -1,0 +1,9 @@
+<%= form_for @goal do |f| %>
+    <%= f.hidden_field :priority, value: true %>
+
+    <div class="row">
+        <%= f.text_field :goal, placeholder: "Priority Goal" %>
+
+        <%= f.submit '🏹', class: "emoji-button" %>
+    </div>
+<% end %>

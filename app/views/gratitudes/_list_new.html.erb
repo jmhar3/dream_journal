@@ -1,0 +1,13 @@
+<% if @find_gratitude != nil %>
+    <div>
+        <%= link_to @find_gratitude.name, edit_gratitude_path(@find_gratitude) %>
+    </div>
+<% else %>
+    <%= form_for @new_gratitude do |f| %>
+        <div class="row light-mid">
+            <%= f.text_field :name, placeholder: "Gratitude" %>
+
+            <%= f.submit '🏹', class: "emoji-button" %>
+        </div>
+    <% end %>
+<% end %>

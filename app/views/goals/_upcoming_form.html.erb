@@ -1,0 +1,13 @@
+<div>
+    <%= form_for @goal do |f| %>
+        <%= f.hidden_field :priority, value: false %>
+    
+        <%= f.text_field :goal, placeholder: "Goal" %>
+
+        <div class="row">
+            <%= f.date_field :date %>
+
+            <%= f.submit 'Save', class: "submit button" %>
+        </div>
+    <% end %>
+</div>

@@ -1,6 +1,8 @@
 class MealsController < ApplicationController
     def new
         @meal = Meal.new(date: Date.today)
+        @meal.foods.build
+        @foods = Food.all
     end
 
     def create
@@ -16,7 +18,7 @@ class MealsController < ApplicationController
 
     def meal_params
         params.require(:meal)
-        .permit(:user_id, :type, :food, :date)
+        .permit(:user_id, :meal, :food, :date)
         .with_defaults(user_id: session[:user_id])
     end
 end

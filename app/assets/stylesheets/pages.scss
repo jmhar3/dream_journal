@@ -8,6 +8,15 @@
   -webkit-text-fill-color: transparent;
 }
 
+.emoji-button {
+    cursor: pointer;
+    background: none;
+}
+
+.emoji-button:hover {
+    background: none;
+}
+
 span.full-height {
     height: 100%;
 }

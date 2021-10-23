@@ -1,36 +1,49 @@
 <% menu_icon "+" %>
 <% tracker_title current_date %>
 
-<div class="row">
+<div class="row red">
     <div class="column">
-        <h2>Top Priorities</h2>
-        <h2>Todays Goals</h2>
-        <div class="container mid">
-            <% @goals.each do |goal| %>
-                <div>
-                    <%= link_to goal.name, edit_goal_path(goal) %>
-                </div>
-            <% end unless @goals.blank? %>
-            <%= link_to "Add Goal", new_goal_path, class: "button light" %>
+        <div class="container mid header-bubble">
+            <h2>Top Priorities</h2>
+        </div>
+        <div class="container light-mid">
+            <%= render "goals/list_goals", { goals: @goals} %> 
+            <%= render 'goals/priority_form' %>
+        </div>
+
+        <div class="container mid header-bubble">
+            <h2>Todays Goals</h2>
+        </div>
+        <div class="container light-mid">
+            <%= render "goals/list_goals", { goals: @goals} %> 
+            <%= render 'goals/goal_form' %>
         </div>
     </div>
+
     <div class="column">
-        <div class="container mid">
-            <h2>I'm Grateful For</h2>
-            <% if @gratitude != nil %>
-                <div>
-                    <%= link_to @gratitude.name, edit_gratitude_path(@gratitude) %>
-                </div>
-            <% else %>
-                <%= link_to "Add Gratitude", new_gratitude_path, class: "button light" %>
-            <% end %>
+        <div class="container light-mid">
+            <h2 class="mini-header">I'm Grateful For</h2>
+            <%= render 'gratitudes/list_new' %>
         </div>
+
         <h2>Drink Water</h2>
-        <h2>Notes</h2>
+        
+        <div class="container mid header-bubble">
+            <h2>Notes</h2>
+        </div>
+        <div class="container light-mid">
+            <%= render "notes/list_notes" %> 
+            <%= render 'notes/quick_note' %>
+        </div>
     </div>
+
     <div class="column">
-        <h2>Meals</h2>
-        <h2>Finances</h2>
-        <h2>Coming Up...</h2>
+        <h2 class="mini-header">Meals</h2>
+        <h2 class="mini-header">Finances</h2>
+        <div class="container light-mid">
+              <h2 class="mini-header">Coming Up...</h2>
+            <%= render "goals/list_goals", { goals: @goals} %> 
+            <%= render 'goals/upcoming_form' %>
+        </div>
     </div>
 </div>
