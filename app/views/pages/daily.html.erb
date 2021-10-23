@@ -1,12 +1,12 @@
 <% menu_icon "+" %>
 <% tracker_title current_date %>
 
-<div class="row red">
+<div class="row red columns">
     <div class="column">
         <div class="container mid header-bubble">
             <h2>Top Priorities</h2>
         </div>
-        <div class="container light-mid">
+        <div class="container column-container light-mid">
             <%= render "goals/list_goals", { goals: @goals} %> 
             <%= render 'goals/priority_form' %>
         </div>
@@ -14,14 +14,14 @@
         <div class="container mid header-bubble">
             <h2>Todays Goals</h2>
         </div>
-        <div class="container light-mid">
+        <div class="container column-container light-mid">
             <%= render "goals/list_goals", { goals: @goals} %> 
             <%= render 'goals/goal_form' %>
         </div>
     </div>
 
     <div class="column">
-        <div class="container light-mid">
+        <div class="container column-container light-mid">
             <h2 class="mini-header">I'm Grateful For</h2>
             <%= render 'gratitudes/list_new' %>
         </div>
@@ -31,7 +31,7 @@
         <div class="container mid header-bubble">
             <h2>Notes</h2>
         </div>
-        <div class="container light-mid">
+        <div class="container column-container light-mid">
             <%= render "notes/list_notes" %> 
             <%= render 'notes/quick_note' %>
         </div>
@@ -39,8 +39,24 @@
 
     <div class="column">
         <h2 class="mini-header">Meals</h2>
-        <h2 class="mini-header">Finances</h2>
-        <div class="container light-mid">
+        <div class="container light-mid column-container">
+            <div class="row space-between">
+                <h2 class="finance-header" ><%= link_to "Finances", new_finance_path%></h2>
+                <h2 class="finance-header dark">
+                $<%= @earnings - @expenses %>
+                </h2>
+            </div>
+            <hr id="finance-hr">
+            <div class="row space-between">
+                <h2 class="mini-header">Earnings</h2>
+                <h2 class="mini-header">$<%= @earnings %></h2>
+            </div>
+            <div class="row space-between">
+                <h2>Expenses</h2>
+                <h2>$<%= @expenses %></h2>
+            </div>
+        </div>
+        <div class="container column-container light-mid">
               <h2 class="mini-header">Coming Up...</h2>
             <%= render "goals/list_goals", { goals: @goals} %> 
             <%= render 'goals/upcoming_form' %>

@@ -1,7 +1,7 @@
 module FinancesHelper
     def options_for_status
         [
-            ['Incoming', 'outgoing'],
+            ['Incoming', 'incoming'],
             ['Outgoing', 'outgoing']
         ]
     end

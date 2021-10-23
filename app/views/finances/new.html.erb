@@ -11,18 +11,14 @@
 <% end %>
 
 <div class="container mid">
-    <h2>New Record</h2>
-    <hr class="rounded">
-    <%= form_for @finance do |f| %>
-    <div class="row">
-        <div>
-            <%= f.select :type, options_for_status, {}, prompt: 'Select One' %>
-        </div>
-        <div class="row red">
-            <h2>$</h2><%= f.text_field :amount, placeholder: "0", class: "amount"%>
-        </div>
-    </div>
-  <div>
+  <h2>New Record</h2>
+  <hr>
+  <%= form_for @finance do |f| %>
+  <div class="row fit-content">
+    <%= f.select :flow, options_for_status, {}, prompt: 'Select One' %>
+    <h2>$</h2><%= f.text_field :amount, placeholder: "0", class: "amount"%>
+  </div>
+  <div class="space-between row">
     <%= f.date_field :date %>
 
     <%= f.submit 'Save', class: "submit button light" %>

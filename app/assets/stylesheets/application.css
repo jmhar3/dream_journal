@@ -50,6 +50,10 @@ body {
     color: var(--main-colour);
 }
 
+.dark {
+    color: var(--dark-colour);
+}
+
 .light.button {
     background-color: var(--super-light-colour)
 }
@@ -73,6 +77,14 @@ body {
     align-items: center;
     gap: 12px;
     width: 100%;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.containter div.fit-content {
+    width: fit-content;
 }
 
 h1, h2, h3, h4, h5, p, li, a, button, div, .submit, ::placeholder, select, label {
@@ -123,7 +135,7 @@ input, .button, select, button, textarea {
     border-radius: 12px;
 }
 
-input, .button, select, button, textarea, .checkmark, .checkmark-container {
+input, .button, select, button, textarea, .checkmark, .checkmark-container, .finance-header {
     -webkit-transition: color .6s,background .6s, border-radius .6s;
     transition: color .6s,background .6s, border-radius .6s;
 }
@@ -276,7 +288,7 @@ select {
     position: relative;
 }
 
-.container {
+.container, .column-container {
     border-radius: 30px;
     width: fit-content;
     padding: 21px;
@@ -308,6 +320,14 @@ form h2 {
     flex-direction: column;
     align-items: center;
     gap: 15px;
+}
+
+div.columns {
+    align-items: flex-start;
+}
+
+div.column-container {
+    width: 87%;
 }
 
 .split-column {
