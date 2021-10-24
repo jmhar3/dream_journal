@@ -106,6 +106,15 @@ h1 {
     font-size: 21px;
 }
 
+h5 {
+    font-weight: bold;
+}
+
+h5, p {
+    font-size: 18px;
+    margin: 0;
+}
+
 li, .button, button, select, input, textarea, label, ::placeholder,
 input::-webkit-datetime-edit-day-field,
 input::-webkit-datetime-edit-month-field,
@@ -341,6 +350,20 @@ div.column-container {
 
 .mini-header {
     padding-bottom: 18px;
+}
+
+/* PROGRESS BAR */
+
+.progress-bar {
+    background-color: var(--super-light-colour);
+    border-radius: 30px;
+    margin-bottom: 12px;
+    width: 80%;
+}
+
+.progress {
+    background-color: var(--main-colour);
+    border-radius: 30px;
 }
 
 /* MOBILE RESPONSIVENESS */

@@ -13,10 +13,6 @@ class PagesController < ApplicationController
 
         @notes = Note.find_by(date: Date.current)
         @note = Note.new(date: Date.today)
-
-        @finances = Finance.where(user_id: session[:user_id])
-        @earnings = @finances.where(flow: 'incoming').sum(:amount)
-        @expenses = @finances.where(flow: 'outgoing').sum(:amount)
     end
 
     def monthly
