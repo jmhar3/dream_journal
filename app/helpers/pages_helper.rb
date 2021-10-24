@@ -29,4 +29,9 @@ module PagesHelper
         total = (expenses.to_f/earnings.to_f)*100.0
         total.to_i
     end
+
+    def self_care_progress goal, completed
+        percentage = (completed.to_f/goal.to_f)*100.0
+        percentage.to_i
+    end
 end

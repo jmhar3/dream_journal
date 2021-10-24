@@ -5,18 +5,27 @@ class PagesController < ApplicationController
     end
 
     def daily
-        @goals = Goal.find_by(date: Date.current)
+        @goals = Goal.find_by(date: Date.current, user_id: session[:user_id])
         @goal = Goal.new(date: Date.today)
 
-        @find_gratitude = Gratitude.find_by(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day)
+        @gratitudes = Gratitude.find_by(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day, user_id: session[:user_id])
         @new_gratitude = Gratitude.new
 
-        @notes = Note.find_by(date: Date.current)
+        @notes = Note.find_by(date: Date.current, user_id: session[:user_id])
         @note = Note.new(date: Date.today)
     end
 
     def monthly
-        @gratitudes = Gratitude.find_by(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day)
+        @goals = Goal.find_by(date: Date.current, user_id: session[:user_id])
+        @goal = Goal.new(date: Date.today)
+
+        @gratitudes = Gratitude.find_by(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day, user_id: session[:user_id])
+        @new_gratitude = Gratitude.new
+
+        @self_cares = SelfCare.find_by(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day, user_id: session[:user_id])
+
+        @notes = Note.find_by(date: Date.current, user_id: session[:user_id])
+        @note = Note.new(date: Date.today)
     end
 
     def account

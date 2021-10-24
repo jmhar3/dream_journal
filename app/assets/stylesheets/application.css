@@ -36,7 +36,6 @@
 
 html {
     background-color: var(--light-colour);
-    margin-top: 60px;
 }
 
 body {
@@ -77,6 +76,10 @@ body {
     align-items: center;
     gap: 12px;
     width: 100%;
+}
+
+.right {
+    float: right;
 }
 
 .space-between {

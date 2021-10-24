@@ -1,7 +1,9 @@
-<% if @find_gratitude != nil %>
-    <div>
-        <%= link_to @find_gratitude.name, edit_gratitude_path(@find_gratitude) %>
-    </div>
+<% if @gratitudes != nil %>
+    <ul>
+        <% @gratitudes.each do |gratitude| %>
+            <li><%= link_to @find_gratitude.name, edit_gratitude_path(@find_gratitude) %></li>
+        <% end %>
+    </ul>
 <% else %>
     <%= form_for @new_gratitude do |f| %>
         <div class="row light-mid">

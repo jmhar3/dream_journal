@@ -1,0 +1,19 @@
+<div class="container mid column-container column dark">
+    <div class="row space-between">
+        <h2><%= link_to "Finances", new_finance_path,  class: "red" %></h2>
+        <div class="row">
+            <h5>in</h5>
+            <h5>out</h5>
+        </div>
+    </div>
+    <div class="row space-between">
+        <h5>$<%= total %></h5>
+        <div class="row">
+            <p>$<%= earnings %></p>
+            <p>$<%= expenses %></p>
+        </div>
+    </div>
+    <div class="progress-bar">
+        <div class="progress" style="height: 12px;width: <%= finance_progress %>%"></div>
+    </div>
+</div>
