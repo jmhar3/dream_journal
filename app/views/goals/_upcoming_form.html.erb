@@ -1,5 +1,5 @@
 <div>
-    <%= form_for @goal do |f| %>
+    <%= form_with url: goals_path do |f| %>
         <%= f.hidden_field :priority, value: false %>
     
         <%= f.text_field :goal, placeholder: "Goal" %>

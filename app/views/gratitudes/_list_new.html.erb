@@ -1,7 +1,9 @@
-<% if @gratitudes.count >= 1 %>
+<% if gratitudes.count >= 1 %>
     <ul>
-        <% @gratitudes.each do |gratitude| %>
-            <li><%= link_to @find_gratitude.name, edit_gratitude_path(@find_gratitude) %></li>
+        <% gratitudes.each do |gratitude| %>
+            <li class="super-light task-bubble dark">
+                <%= link_to gratitude[:name], edit_gratitude_path(gratitude[:id]) %>
+            </li>
         <% end %>
     </ul>
 <% else %>
