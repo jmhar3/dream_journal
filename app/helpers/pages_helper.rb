@@ -62,4 +62,8 @@ module PagesHelper
     def snack
         Meal.by_user(session[:user_id]).today.meals("snack").to_a
     end
+
+    def notes
+        Note.by_user(session[:user_id]).today.to_a
+    end
 end

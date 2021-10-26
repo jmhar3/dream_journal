@@ -16,15 +16,10 @@ class PagesController < ApplicationController
     end
 
     def monthly
-        @goal = Goal.new(date: Date.today)
-
         @gratitudes = Gratitude.by_user(session[:user_id]).where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day).to_a
         @new_gratitude = Gratitude.new
 
         @self_cares = SelfCare.by_user(session[:user_id]).where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day).to_a
-
-        @notes = Note.by_user(session[:user_id]).where(date: Date.current).to_a
-        @note = Note.new(date: Date.today)
     end
 
     def account
