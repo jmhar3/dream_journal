@@ -2,7 +2,7 @@
     <ul>
         <% gratitudes.each do |gratitude| %>
             <li class="super-light task-bubble dark">
-                <%= link_to gratitude[:name], edit_gratitude_path(gratitude[:id]) %>
+                <%= link_to gratitude[:name], gratitude_path(gratitude) %>
             </li>
         <% end %>
     </ul>

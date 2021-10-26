@@ -1,5 +1,9 @@
 class GratitudesController < ApplicationController
     
+    def show
+        @gratitude = Gratitude.find(params[:id])
+    end
+
     def new
         @gratitude = Gratitude.new
     end
@@ -21,6 +25,12 @@ class GratitudesController < ApplicationController
         @gratitude = Gratitude.find(gratitude_params[:id])
         @gratitude.update(gratitude_params)
 
+        redirect_to daily_path
+    end
+
+    def destroy
+        @gratitude = Gratitude.find(params[:id])
+        @gratitude.destroy
         redirect_to daily_path
     end
 

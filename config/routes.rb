@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :finances
   resources :goals
-  resources :gratitudes, only: [:new, :create, :edit, :update]
+  resources :gratitudes
   resources :meals
   resources :notes
   resources :self_cares
