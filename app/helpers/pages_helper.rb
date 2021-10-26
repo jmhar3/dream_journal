@@ -75,6 +75,10 @@ module PagesHelper
         Note.by_user(session[:user_id]).today.to_a
     end
 
+    def monthly_notes
+        Note.by_user(session[:user_id]).monthly.to_a
+    end
+
     def gratitudes
         Gratitude.by_user(session[:user_id]).today.to_a
     end

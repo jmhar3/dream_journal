@@ -44,7 +44,7 @@
     <div class="column">
         <div class="container column-container mid">
             <h2 class="mini-header">Notes</h2>
-            <%= render "notes/list_notes" %> 
+            <%= render "notes/list_notes", {notes: monthly_notes} %> 
             <%= render 'notes/form' %>
         </div>
     </div>
