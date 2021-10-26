@@ -5,7 +5,7 @@
     <div class="column">
         <div class="container column-container mid">
             <h2 class="mini-header">Priorities</h2>
-            <%= render "goals/list_goals", { goals: @goals} %> 
+            <%= render "goals/list_goals", { goals: monthly_priorities } %> 
             <div>
                 <%= form_for :goal, url: goals_path do |f| %>
                     <%= f.hidden_field :priority, value: true %>
@@ -22,7 +22,7 @@
         </div>
         <div class="container column-container mid">
             <h2 class="mini-header">Goals</h2>
-            <%= render "goals/list_goals", { goals: @goals} %> 
+            <%= render "goals/list_goals", { goals: monthly_goals} %> 
             <%= render 'goals/upcoming_form' %>
         </div>
     </div>

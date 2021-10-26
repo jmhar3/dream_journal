@@ -21,6 +21,14 @@ module PagesHelper
         Goal.by_user(session[:user_id]).tomorrow.to_a
     end
 
+    def monthly_goals
+        Goal.by_user(session[:user_id]).monthly.priority.to_a
+    end
+
+    def monthly_priorities
+        Goal.by_user(session[:user_id]).monthly.not_priority.to_a
+    end
+
     def finances
         Finance.where(user_id: session[:user_id])
     end
