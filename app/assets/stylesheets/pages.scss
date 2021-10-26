@@ -25,3 +25,11 @@ span.full-height {
     margin-top: 9px;
     margin-bottom: 9px;
 }
+
+.self-care-progress, .self-care-progress li {
+    width: 100%;
+    gap: 9px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

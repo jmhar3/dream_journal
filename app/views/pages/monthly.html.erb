@@ -7,7 +7,7 @@
             <h2 class="mini-header">Priorities</h2>
             <%= render "goals/list_goals", { goals: @goals} %> 
             <div>
-                <%= form_for @goal do |f| %>
+                <%= form_for :goal, url: goals_path do |f| %>
                     <%= f.hidden_field :priority, value: true %>
                 
                     <%= f.text_field :goal, placeholder: "Priority" %>
@@ -36,8 +36,8 @@
         <div class="container mid header-bubble">
             <h2>Self Care</h2>
         </div>
-        <div class="container column-container mid">
-            <%= render 'self_cares/list_new' %>
+        <div class="container column-container mid column dark">
+            <%= render 'self_cares/progress_list' %>
         </div>
         <%= render 'finances/progress' %>
     </div>

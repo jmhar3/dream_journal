@@ -8,15 +8,5 @@
     </ul>
 <% else %>
     <h2>Self Care</h2>
-    <%= form_with url: self_cares_path do |f| %>
-        <%= f.hidden_field :frequency, value: "day" %>
-
-        <div class="row">
-            <%= f.text_field :label, placeholder: "Label" %>
-
-            <%= f.number_field :goal, in: 3.0..12.0, step: 1.0, placeholder: "8", class: "number-input" %>
-
-            <%= f.submit '🏹', class: "emoji-button" %>
-        </div>
-    <% end %>
+    <%= render 'self_cares/quick_form' %>
 <% end %>

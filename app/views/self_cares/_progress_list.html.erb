@@ -1,8 +1,14 @@
-<% @self_cares.each do |sc| %>
-    <div>
-        <p><%= self_care_progress sc.goal, sc.completed %></p>
-        <div class="progress-bar">
-            <div class="progress" style="height:12px;width:<%= finance_progress %>%"></div>
-        </div>
-    </div>
-<% end unless @self_cares == nil %>  
+ <% if self_cares %>
+    <ul class="self-care-progress">
+        <% self_cares.each do |sc| %>
+            <li class="self-care">
+                <h3><%= sc.label %></h3>
+                <div class="progress-bar">
+                    <div class="progress" style="height:12px;width:<%= self_care_progress sc.goal, sc.completed %>%"></div>
+                </div>
+            </li>
+        <% end %>
+    </ul>
+<% else %>
+    <%= render 'self_cares/quick_form' %>
+<% end %>
