@@ -1,15 +1,10 @@
 <% if self_cares %>
     <ul>
-        <%= self_cares.each do |sc| %>
-            <li>
-                <h3><%= sc.label %></h3>
-                <h3>
-                    <%= (sc.goal - sc.completed).times do |g| %>
-                        <%= link_to "💙", completed_self_cares_path(g) %>
-                    <% end %>
-                </h3>
-            </li>
-        <% end %>
+        <%= render "self_cares/tracker", {sc: self_cares[0]} %>
+        <% self_cares[1..-1].each do |sc| %>
+            <hr>
+            <%= render 'self_cares/tracker', {sc: sc} %>
+        <% end if self_cares.count > 1 %>
     </ul>
 <% else %>
     <h2>Self Care</h2>

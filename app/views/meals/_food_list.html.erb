@@ -1,6 +1,6 @@
 <% if meals.count >= 1 %>
     <ul>
-        <%= meals.each do |meal| %>
+        <% meals.each do |meal| %>
             <li class="row space-between super-light task-bubble dark">
                 <h5><%= meal[:meal] %></h5>
                 <%= link_to '💌', edit_meal_path(meal) %>
