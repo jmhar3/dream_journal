@@ -70,4 +70,8 @@ module PagesHelper
     def gratitudes
         Gratitude.by_user(session[:user_id]).today.to_a
     end
+
+    def self_cares
+        SelfCare.by_user(session[:user_id]).to_a
+    end
 end

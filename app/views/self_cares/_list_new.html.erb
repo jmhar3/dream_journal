@@ -1,8 +1,27 @@
-<% @self_cares.each do |sc| %>
-    <div>
-        <p><%= self_care_progress sc.goal, sc.completed %></p>
-        <div class="progress-bar">
-            <div class="progress" style="height:12px;width:<%= finance_progress %>%"></div>
+<% if self_cares %>
+    <ul>
+        <%= self_cares.each do |sc| %>
+            <li>
+                <h3><%= sc.label %></h3>
+                <h3>
+                    <%= (sc.goal - sc.completed).times do |g| %>
+                        <%= link_to "💙", completed_self_cares_path(g) %>
+                    <% end %>
+                </h3>
+            </li>
+        <% end %>
+    </ul>
+<% else %>
+    <h2>Self Care</h2>
+    <%= form_with url: self_cares_path do |f| %>
+        <%= f.hidden_field :frequency, value: "day" %>
+
+        <div class="row">
+            <%= f.text_field :label, placeholder: "Label" %>
+
+            <%= f.number_field :goal, in: 3.0..12.0, step: 1.0, placeholder: "8", class: "number-input" %>
+
+            <%= f.submit '🏹', class: "emoji-button" %>
         </div>
-    </div>
-<% end unless @self_cares == nil %>  
+    <% end %>
+<% end %>

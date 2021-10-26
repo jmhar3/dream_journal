@@ -1,0 +1,8 @@
+<% @self_cares.each do |sc| %>
+    <div>
+        <p><%= self_care_progress sc.goal, sc.completed %></p>
+        <div class="progress-bar">
+            <div class="progress" style="height:12px;width:<%= finance_progress %>%"></div>
+        </div>
+    </div>
+<% end unless @self_cares == nil %>  
