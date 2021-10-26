@@ -33,6 +33,6 @@ class GoalsController < ApplicationController
     def goal_params
         params.require(:goal)
         .permit(:goal, :priority, :user_id, :content, :date)
-        .with_defaults(user_id: session[:user_id], priority: false)
+        .with_defaults(user_id: session[:user_id], priority: false, date: Date.today)
     end
 end

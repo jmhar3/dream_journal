@@ -1,14 +1,17 @@
 <% if meals.count >= 1 %>
     <ul>
-        <% meals.each do |meal| %>
+        <% meals[0..-2].each do |meal| %>
             <li class="row space-between super-light task-bubble dark">
-                <h5><%= meal[:meal] %></h5>
-                <%= link_to '💌', edit_meal_path(meal) %>
+                <h5 class="left"><%= meal[:meal] %></h5>
             </li>
         <% end %>
+        <li class="row space-between super-light task-bubble dark">
+            <h5><%= meals[-1][:meal] %></h5>
+            <%= link_to '➕', new_meal_path(meals[-1]) %>
+        </li>
     </ul>
 <% else %>
-    <%= form_with url: meals_path do |f| %>
+    <%= form_for :meal, :url => meals_path do |f| %>
         <%= f.hidden_field :date, value: Date.current %>
         <%= f.hidden_field :meal, value: meal_type %>
 
