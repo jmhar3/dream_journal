@@ -2,17 +2,17 @@
     <div class="row">
         <h2>Breakfast</h2><hr>
     </div>
-    <%= render 'meals/food_list', {meals: breakfast} %>
+    <%= render 'meals/food_list', {meals: breakfast, meal_type: "breakfast"} %>
     <div class="row">
         <h2>Lunch</h2><hr>
     </div>
-    <%= render 'meals/food_list', {meals: lunch} %>
+    <%= render 'meals/food_list', {meals: lunch, meal_type: "lunch"} %>
     <div class="row">
         <h2>Dinner</h2><hr>
     </div>
-    <%= render 'meals/food_list', {meals: dinner} %>
+    <%= render 'meals/food_list', {meals: dinner, meal_type: "linner"} %>
     <div class="row">
         <h2>Snack</h2><hr>
     </div>
-    <%= render 'meals/food_list', {meals: snack} %>
+    <%= render 'meals/food_list', {meals: snack, meal_type: "snack"} %>
 </div>

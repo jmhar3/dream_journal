@@ -7,9 +7,10 @@
 <% else %>
     <%= form_with url: meals_path do |f| %>
         <%= f.hidden_field :date, value: Date.current %>
+        <%= f.hidden_field :meal, value: meal_type %>
 
         <div class="row">
-            <%= f.text_field :foods, placeholder: "Food" %>
+            <%= f.text_field :foods, placeholder: meal_type %>
 
             <%= f.submit '🏹', class: "emoji-button" %>
         </div>
