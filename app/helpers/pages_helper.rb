@@ -47,11 +47,19 @@ module PagesHelper
         percentage.to_i
     end
 
-    def meals
-        Meal.where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day, user_id: session[:user_id])
+    def breakfast
+        Meal.by_user(session[:user_id]).today.meals("breakfast").to_a
     end
 
-    def breakfast
-        meals.where()
+    def lunch
+        Meal.by_user(session[:user_id]).today.meals("lunch").to_a
+    end
+
+    def dinner
+        Meal.by_user(session[:user_id]).today.meals("dinner").to_a
+    end
+
+    def snack
+        Meal.by_user(session[:user_id]).today.meals("snack").to_a
     end
 end

@@ -1,0 +1,17 @@
+<% if meals.count >= 1 %>
+    <ul>
+        <%= meals.each do |meal| %>
+            <li>meal.foods.name</li>
+        <% end %>
+    </ul>
+<% else %>
+    <%= form_with url: meals_path do |f| %>
+        <%= f.hidden_field :date, value: Date.current %>
+
+        <div class="row">
+            <%= f.text_field :foods, placeholder: "Food" %>
+
+            <%= f.submit '🏹', class: "emoji-button" %>
+        </div>
+    <% end %>
+<% end %>

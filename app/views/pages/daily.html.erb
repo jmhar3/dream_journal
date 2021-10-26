@@ -37,7 +37,6 @@
     </div>
 
     <div class="column">
-        <h2 class="mini-header">Meals</h2>
         <div class="container light-mid column-container">
             <div class="row space-between">
                 <h2 class="finance-header" ><%= link_to "Finances", new_finance_path%></h2>
@@ -55,6 +54,7 @@
                 <h2>$<%= expenses %></h2>
             </div>
         </div>
+        <%= render "meals/meal_tracker" %>
         <div class="container column-container light-mid">
               <h2 class="mini-header">Coming Up...</h2>
             <%= render "goals/list_goals", { goals: tomorrows_goals} %> 
