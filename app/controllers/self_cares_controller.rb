@@ -1,4 +1,5 @@
 class SelfCaresController < ApplicationController
+
     def new
         @self_care = SelfCare.new
     end

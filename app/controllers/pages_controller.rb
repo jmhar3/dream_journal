@@ -2,36 +2,40 @@ class PagesController < ApplicationController
     skip_before_action :require_login, only: [:home]
 
     def home
+        render :layout => 'application'
     end
 
     def daily
-        @goals = Goal.find_by(date: Date.current, user_id: session[:user_id])
         @goal = Goal.new(date: Date.today)
 
-        @gratitudes = Gratitude.find_by(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day, user_id: session[:user_id])
+        @gratitudes = Gratitude.by_user(session[:user_id]).where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day).to_a
         @new_gratitude = Gratitude.new
 
-        @notes = Note.find_by(date: Date.current, user_id: session[:user_id])
+        @notes = Note.by_user(session[:user_id]).where(date: Date.current).to_a
         @note = Note.new(date: Date.today)
     end
 
     def monthly
-        @goals = Goal.find_by(date: Date.current, user_id: session[:user_id])
         @goal = Goal.new(date: Date.today)
 
-        @gratitudes = Gratitude.find_by(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day, user_id: session[:user_id])
+        @gratitudes = Gratitude.by_user(session[:user_id]).where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day).to_a
         @new_gratitude = Gratitude.new
 
-        @self_cares = SelfCare.find_by(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day, user_id: session[:user_id])
+        @self_cares = SelfCare.by_user(session[:user_id]).where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day).to_a
 
-        @notes = Note.find_by(date: Date.current, user_id: session[:user_id])
+        @notes = Note.by_user(session[:user_id]).where(date: Date.current).to_a
         @note = Note.new(date: Date.today)
     end
 
     def account
+        render :layout => 'application'
+        
         @user = User.find_by(id: session[:user_id])
         @friends = @user.friends
         @invites = @user.pending_invitations
+    end
+
+    def tracker_menu
     end
     
     private

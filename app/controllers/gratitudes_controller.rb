@@ -1,4 +1,5 @@
 class GratitudesController < ApplicationController
+    
     def new
         @gratitude = Gratitude.new
     end

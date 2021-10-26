@@ -1,4 +1,5 @@
 class MealsController < ApplicationController
+    
     def new
         @meal = Meal.new(date: Date.today)
         @meal.foods.build

@@ -18,7 +18,7 @@
     <%= f.select :flow, options_for_status, {}, prompt: 'Select One' %>
     <h2>$</h2><%= f.text_field :amount, placeholder: "0", class: "amount"%>
   </div>
-  <div class="space-between row">
+  <div class="row">
     <%= f.date_field :date %>
 
     <%= f.submit 'Save', class: "submit button light" %>

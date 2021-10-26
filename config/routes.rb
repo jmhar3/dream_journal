@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   resources :meals
   resources :notes
   resources :self_cares
-
+  
+  get 'tracker_menu', to: 'pages#tracker_menu'
   get "daily", to: "pages#daily"
   get "monthly", to: "pages#monthly"
   get "account", to: "pages#account"

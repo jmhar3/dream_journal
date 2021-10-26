@@ -23,6 +23,6 @@ class InvitationsController < ApplicationController
     private
 
     def invitation_params
-        params.require(:invitation).permit(:friend_id)
+        params.require(:user_id :invitation).permit(:friend_id)
     end
 end

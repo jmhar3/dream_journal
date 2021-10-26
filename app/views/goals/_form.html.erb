@@ -1,5 +1,5 @@
 <%= form_for @goal do |f| %>
-  <div>
+  <div class="row">
     <%= f.text_field :goal, placeholder: "Goal" %>
 
     
@@ -10,7 +10,7 @@
     <%= f.text_area :more_info, placeholder: "More Info" %>
   </div>
         
-  <div class="row">
+  <div class="row space-between">
     <label class="checkmark-container">High Priority
       <%= f.check_box :priority %>
       <span class="checkmark"></span>

@@ -9,6 +9,18 @@ module PagesHelper
         date.strftime("%B")
     end
 
+    def goals
+        Goal.by_user(session[:user_id]).today.not_priority.to_a
+    end
+
+    def priorities
+        Goal.by_user(session[:user_id]).today.priority.to_a
+    end
+
+    def tomorrows_goals
+        Goal.by_user(session[:user_id]).tomorrow.to_a
+    end
+
     def finances
         Finance.where(user_id: session[:user_id])
     end
@@ -33,5 +45,13 @@ module PagesHelper
     def self_care_progress goal, completed
         percentage = (completed.to_f/goal.to_f)*100.0
         percentage.to_i
+    end
+
+    def meals
+        Meal.where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day, user_id: session[:user_id])
+    end
+
+    def breakfast
+        meals.where()
     end
 end
