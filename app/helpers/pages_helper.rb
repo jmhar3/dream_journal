@@ -79,6 +79,10 @@ module PagesHelper
         Gratitude.by_user(session[:user_id]).today.to_a
     end
 
+    def monthly_gratitudes
+        Gratitude.by_user(session[:user_id]).datetime_monthly.to_a
+    end
+
     def self_cares
         SelfCare.by_user(session[:user_id]).to_a
     end

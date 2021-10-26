@@ -9,4 +9,7 @@ class ApplicationRecord < ActiveRecord::Base
 
   scope :monthly, -> { where(date: Date.current.change(day: 1)..Date.current.change(day: -1))
   }
+
+  scope :datetime_monthly, -> { where(created_at: DateTime.current.beginning_of_month..Date.current.at_end_of_month)
+  }
 end
