@@ -33,3 +33,11 @@ span.full-height {
     flex-direction: column;
     align-items: center;
 }
+
+.quarter-column {
+    width: 20%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
