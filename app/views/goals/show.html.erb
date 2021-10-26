@@ -9,9 +9,15 @@
         <%= link_to '❌', goal_path(@goal), method: :delete %>
     </div>
     <hr>
-    <p><%= @goal.more_info %></p>
-    <div class="row">
-        <p><%= @goal.date %></p>
-        <p><%= "High Priority" if @goal.priority == true %></p>
+    <div class="super-light task-bubble">
+        <h5><%= @goal.more_info %></h5>
+    </div>
+    <div class="row space-between">
+        <div class="super-light task-bubble">
+            <h5><%= @goal.date %></h5>
+        </div>
+        <div class="super-light task-bubble">
+            <h5><%= @goal.priority ? "High Priority" : "Low Priority" %></h5>
+        </div>
     </div>
 </div>

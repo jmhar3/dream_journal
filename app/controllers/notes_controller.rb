@@ -28,6 +28,12 @@ class NotesController < ApplicationController
         redirect_to daily_path
     end
 
+    def destroy
+        @note = Note.find(params[:id])
+        @note.destroy
+        redirect_to daily_path
+    end
+
     private
 
     def note_params

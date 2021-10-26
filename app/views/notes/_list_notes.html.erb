@@ -3,7 +3,7 @@
         <% notes.each do |note| %>
             <li class="row space-between super-light task-bubble dark">
                 <h5><%= note[:content] %></h5>
-                <%= link_to '💌', edit_note_path(note) %>
+                <%= link_to '💌', note_path(note) %>
             </li>
         <% end %>
     </ul>

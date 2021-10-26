@@ -28,6 +28,12 @@ class GoalsController < ApplicationController
         redirect_to daily_path
     end
 
+    def destroy
+        @goal = Goal.find(params[:id])
+        @goal.destroy
+        redirect_to daily_path
+    end
+
     private
 
     def goal_params
