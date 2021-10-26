@@ -18,11 +18,11 @@ class GoalsController < ApplicationController
     end
 
     def edit
-        @goal = Goal.find(goal_params[:id])
+        @goal = Goal.find(params[:id])
     end
 
     def update
-        @goal = Goal.find(goal_params[:id])
+        @goal = Goal.find(params[:id])
         @goal.update(goal_params)
         
         redirect_to daily_path

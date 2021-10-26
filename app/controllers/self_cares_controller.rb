@@ -14,11 +14,11 @@ class SelfCaresController < ApplicationController
     end
 
     def edit
-        @self_care = SelfCare.find(self_care_params[:id])
+        @self_care = SelfCare.find(params[:id])
     end
 
     def update
-        @self_care = SelfCare.find(self_care_params[:id])
+        @self_care = SelfCare.find(params[:id])
         @self_care.update(self_care_params)
         
         redirect_to daily_path

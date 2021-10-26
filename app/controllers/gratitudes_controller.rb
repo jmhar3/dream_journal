@@ -18,11 +18,11 @@ class GratitudesController < ApplicationController
     end
 
     def edit
-        @gratitude = Gratitude.find(gratitude_params[:id])
+        @gratitude = Gratitude.find(params[:id])
     end
 
     def update
-        @gratitude = Gratitude.find(gratitude_params[:id])
+        @gratitude = Gratitude.find(params[:id])
         @gratitude.update(gratitude_params)
 
         redirect_to daily_path
