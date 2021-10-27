@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :meals
   resources :notes
   resources :self_cares
+  resources :users
   
   get 'completed_self_cares', to: 'self_cares#completed'
   get 'tracker_menu', to: 'pages#tracker_menu'
@@ -16,10 +17,8 @@ Rails.application.routes.draw do
   get "account", to: "pages#account"
   get "add_friend", to: "invitations#new"
   post "add_friend", to: "invitations#create"
-  get 'sign_up', to: 'users#new'
-  post 'sign_up', to: 'users#create'
-  get 'sign_in', to: 'sessions#new'
-  post 'sign_in', to: 'sessions#create', as: 'log_in'
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
   delete 'sign_out', to: 'sessions#destroy'
   get 'password', to: 'passwords#edit', as: 'edit_password'
   patch 'password', to: 'passwords#update'

@@ -1,8 +1,5 @@
 class UsersController < ApplicationController
-  def new
-    render :layout => 'application'
-    @user = User.new
-  end
+  skip_before_action :require_login, only: [:create]
 
   def create
     @user = User.new(user_params)
@@ -10,7 +7,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_path
     else
-      render :new
+      render "sessions/new"
     end
   end
 

@@ -23,20 +23,6 @@ class SelfCaresController < ApplicationController
         
         redirect_to daily_path
     end
-
-    def completed num
-        @self_care = SelfCare.find(self_care_params[:id])
-
-        completed_progress = @self_care.completed + num
-
-        attributes = self_care_params.clone
-
-        attributes[:completed] = completed_progress
-        
-        @self_care.update_attributes(attributes)
-        
-        redirect_to daily_path
-    end
     
     def model_params
       params.require(:model).permit(:x, :y, :z)
@@ -46,7 +32,7 @@ class SelfCaresController < ApplicationController
 
     def self_care_params
         params.require(:self_care)
-        .permit(:user_id, :label, :goal, :frequency, :completed)
+        .permit(:user_id, :label, :goal, :frequency)
         .with_defaults(user_id: session[:user_id], completed: 0)
     end
 end

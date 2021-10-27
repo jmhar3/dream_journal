@@ -2,7 +2,11 @@ class SessionsController < ApplicationController
   skip_before_action :require_login, only: [:new, :create]
 
   def new
-    render :layout => 'application'
+    if session[:user_id]
+      redirect_to daily_path
+    else
+      render :layout => 'application'
+    end
   end
 
   def create

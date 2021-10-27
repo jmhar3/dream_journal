@@ -1,7 +1,7 @@
 <li>
     <h3><%= sc.label %></h3>
     <h3>
-        <% (sc.goal - sc.completed).times do |g| %>
+        <% (sc.goal).times do |g| %>
             <%= link_to "💙", completed_self_cares_path(g) %>
         <% end %>
     </h3>

@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_23_124828) do
+ActiveRecord::Schema.define(version: 2021_10_26_235801) do
+
+  create_table "completed_cares", force: :cascade do |t|
+    t.string "tally"
+    t.integer "self_cares_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["self_cares_id"], name: "index_completed_cares_on_self_cares_id"
+  end
 
   create_table "finances", force: :cascade do |t|
     t.integer "amount"
@@ -76,7 +84,6 @@ ActiveRecord::Schema.define(version: 2021_10_23_124828) do
     t.string "label"
     t.integer "goal"
     t.string "frequency"
-    t.integer "completed"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
@@ -90,5 +97,6 @@ ActiveRecord::Schema.define(version: 2021_10_23_124828) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "completed_cares", "self_cares", column: "self_cares_id"
   add_foreign_key "invitations", "users"
 end
