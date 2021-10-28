@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   resources :notes
   resources :self_cares
   resources :users
-  
-  get 'completed_self_cares', to: 'self_cares#completed'
+  resources :completed_cares
+
   get 'tracker_menu', to: 'pages#tracker_menu'
   get "daily", to: "pages#daily"
   get "monthly", to: "pages#monthly"

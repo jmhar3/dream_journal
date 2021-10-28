@@ -1,8 +1,13 @@
 <li>
     <h3><%= sc.label %></h3>
     <h3>
-        <% (sc.goal).times do |g| %>
-            <%= link_to "💙", completed_self_cares_path(g) %>
+        <% if completed_cares(sc.id) %>
+            <% completed_cares(sc.id).tally.times do |g| %>
+                <%= link_to "💘", completed_self_cares_path(g) %>
+            <% end  %>
+            <%= render "self_cares/hearts", {goal: (sc.goal - completed_cares(sc.id).tally), sc: sc} %>
+        <% else %>
+            <%= render "self_cares/hearts", {goal: sc.goal, sc: sc} %>
         <% end %>
     </h3>
 </li>

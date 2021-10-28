@@ -55,6 +55,14 @@ module PagesHelper
         percentage.to_i
     end
 
+    def self_cares
+        SelfCare.by_user(session[:user_id]).to_a
+    end
+
+    def completed_cares self_care_id
+        CompletedCare.where("self_cares_id = ?", self_care_id).to_a.last
+    end
+
     def breakfast
         Meal.by_user(session[:user_id]).today.meals("breakfast").to_a
     end
@@ -85,9 +93,5 @@ module PagesHelper
 
     def monthly_gratitudes
         Gratitude.by_user(session[:user_id]).datetime_monthly.to_a
-    end
-
-    def self_cares
-        SelfCare.by_user(session[:user_id]).to_a
     end
 end
