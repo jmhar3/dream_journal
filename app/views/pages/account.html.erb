@@ -1,5 +1,11 @@
-<% menu_icon "Dream Journal" %>
-<%= link_to "Sign Out", sign_out_path, method: :delete, class: 'corner-button' %>
+<label class="switch">
+    <% if cookies[:dark] %>
+        <%= button_to 'Light Mode', light_path, method: :get%>
+    <% else %>
+        <%= button_to 'Dark Mode', dark_path, method: :get%>
+    <% end %>
+    <span class="slider"></span>
+</label>
 
 <div class="row account-row">
     <div class="container account-column mid">

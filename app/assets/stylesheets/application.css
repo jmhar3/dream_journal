@@ -22,20 +22,9 @@
 }
 
 :root {
-    --main-colour: rgb(221, 0, 18);
-    --mid-colour: rgb(255, 194, 207);
-    --light-mid-colour: rgb(255, 203, 214);
-    --light-colour: rgb(255, 227, 234);
-    --super-light-mid: rgb(255, 240, 244);
-    --super-light-colour: rgb(255, 247, 249);
-    --dark-colour: rgb(20, 0, 0);
     text-align: center;
     padding: none;
     margin: none;
-}
-
-html {
-    background-color: var(--light-colour);
 }
 
 body {
@@ -43,6 +32,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: var(--light-colour);
 }
 
 input, .button, select, button, textarea, .checkmark, .checkmark-container, .finance-header, .task-bubble {
@@ -101,6 +91,7 @@ input, .button, select, button, textarea, .checkmark, .checkmark-container, .fin
 
 h1, h2, h3, h4, h5, p, li, a, button, div, .submit, ::placeholder, select, label {
     font-family: 'SourceCodeBold', Geneva, Verdana, sans-serif;
+    color: var(--dark-colour);
 }
 
 a {
