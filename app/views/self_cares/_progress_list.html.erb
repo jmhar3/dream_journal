@@ -4,7 +4,7 @@
             <li class="self-care">
                 <h3><%= sc.label %></h3>
                 <div class="progress-bar">
-                    <div class="progress" style="height:12px;width:<%= self_care_progress sc.goal, sc.completed %>%"></div>
+                    <div class="progress" style="height:12px;width:<%= self_care_progress sc.goal, 0 %>%"></div>
                 </div>
             </li>
         <% end %>

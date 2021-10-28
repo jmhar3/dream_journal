@@ -1,17 +1,19 @@
 <% menu_icon "Dream Journal" %>
 
-<h1>Edit Password</h1>
+<div class="container mid">
+    <h1>Edit Password</h1>
 
-<%= form_with model: Current.user, url: edit_password_path do |f| %>
-    <div>
-        <%= f.password_field :password, placeholder: "Password" %>
-    </div>
-    
-    <div>
-        <%= f.password_field :password_confirmation, placeholder: "Password Confirmation" %>
-    </div>
-    
-    <div>
-        <%= f.submit 'Update', class: "button" %>
-    </div>
-<% end %>
+    <%= form_with model: Current.user, url: edit_password_path do |f| %>
+        <div>
+            <%= f.password_field :password, placeholder: "Password" %>
+        </div>
+        
+        <div>
+            <%= f.password_field :password_confirmation, placeholder: "Password Confirmation" %>
+        </div>
+        
+        <div>
+            <%= f.submit 'Update', class: "button submit light" %>
+        </div>
+    <% end %>
+</div>

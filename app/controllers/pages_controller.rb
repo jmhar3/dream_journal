@@ -13,11 +13,10 @@ class PagesController < ApplicationController
     end
 
     def account
-        render :layout => 'application'
-        
         @user = User.find_by(id: session[:user_id])
         @friends = @user.friends
         @invites = @user.pending_invitations
+        render :layout => 'application'
     end
 
     def tracker_menu

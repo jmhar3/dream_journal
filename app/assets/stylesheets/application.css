@@ -154,6 +154,15 @@ hr {
     width: 100%;
 }
 
+hr.hr-column {
+    width: 0;
+    height: 357px;
+    margin: 0;
+    margin-left: 6vw;
+    margin-right: 6vw;
+    padding: 0;
+}
+
 input, .button, select, button, textarea {
     border-radius: 12px;
 }
@@ -364,6 +373,15 @@ div.column-container {
     display: flex;
     flex-direction: column;
     gap: 9px;
+}
+
+div.account-row {
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.account-column {
+    width: 35%;
 }
 
 .header-bubble {

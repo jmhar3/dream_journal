@@ -1,27 +1,36 @@
 <% menu_icon "Dream Journal" %>
-<%= link_to "Sign Out", sign_out_path, class: 'corner-button' %>
+<%= link_to "Sign Out", sign_out_path, method: :delete, class: 'corner-button' %>
 
-<div class="split-column">
-    <h2>Account Info</h2>
-    <h4>Username: <%= @user.username %></h4>
-    <h4>Email: <%= @user.email %></h4>
-    <%= link_to "Change Password", edit_password_path, class: "button" %>
-</div>
-<div class="split-column">
-    <h2>Friends</h2>
-    <ul>
-        <% if @invites.length > 0 %>
-            <%= @invites.each do |invite| %>
-                <li><%= invite.name %></li>
+<div class="row account-row">
+    <div class="container account-column mid">
+        <h2>Account Info</h2>
+        <h5>Username: <%= @user.username %></h5>
+        <h5>Email: <%= @user.email %></h5>
+        <div class="light">
+            <%= link_to "Change Password", edit_password_path, class: "button light" %>
+        </div>
+    </div>
+
+    <hr class="hr-column">
+
+    <div class="container account-column mid">
+        <h2>Friends</h2>
+        <ul>
+            <% if @invites.length > 0 %>
+                <%= @invites.each do |invite| %>
+                    <li><%= invite.name %></li>
+                <% end %>
             <% end %>
-        <% end %>
-        <% if @friends.length > 0 %>
-            <%= @friends.each do |friend| %>
-                <li><%= friend.name %></li>
+            <% if @friends.length > 0 %>
+                <%= @friends.each do |friend| %>
+                    <li><%= friend.name %></li>
+                <% end %>
+            <% else %>
+                <li>You have no friends.</li>
             <% end %>
-        <% else %>
-            <li>You have no friends.</li>
-        <% end %>
-    </ul>
-    <%= link_to "Add Friend", add_friend_path, class: "button" %>
+        </ul>
+        <div>
+            <%= link_to "Add Friend", add_friend_path, class: "button light" %>
+        </div>
+    </div>
 </div>

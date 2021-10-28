@@ -5,9 +5,9 @@
             <% completed_cares(sc.id).tally.times do |g| %>
                 <%= link_to "💘", completed_self_cares_path(g) %>
             <% end  %>
-            <%= render "self_cares/hearts", {goal: (sc.goal - completed_cares(sc.id).tally), sc: sc} %>
+            <%= render "self_cares/hearts", {goal: (sc.goal - completed_cares(sc.id).tally), sc: sc.id} %>
         <% else %>
-            <%= render "self_cares/hearts", {goal: sc.goal, sc: sc} %>
+            <%= render "self_cares/hearts", {goal: sc.goal, sc: sc.id} %>
         <% end %>
     </h3>
 </li>

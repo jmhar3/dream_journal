@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_26_235801) do
+ActiveRecord::Schema.define(version: 2021_10_28_031010) do
 
   create_table "completed_cares", force: :cascade do |t|
     t.string "tally"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2021_10_26_235801) do
 
   create_table "goals", force: :cascade do |t|
     t.string "goal"
-    t.string "more_info"
+    t.text "more_info"
     t.boolean "priority"
     t.date "date"
     t.datetime "created_at", precision: 6, null: false
@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(version: 2021_10_26_235801) do
   end
 
   create_table "notes", force: :cascade do |t|
-    t.string "content"
+    t.text "content"
     t.date "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
