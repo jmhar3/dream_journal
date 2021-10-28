@@ -7,39 +7,21 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', :defer => "defer" %>
   </head>
 
   <body>
-    <header class="nav-expand">
-        <div id="menu-icons">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="true" aria-label="Toggle navigation"><span class="navbar-toggler-icon">☰</span></button>
+    <header>
+      <div id="menu-icons">
+        <button onclick="document.getElementById('nav-dropdown').classList.toggle('hide')">☰</button>
             <%= link_to "+", tracker_menu_path %>
         </div>
     </header>
-    <nav class="navbar-collapse collapse show" id="navbarColor01" style="">
-      <span>
-        <button class="navbar-toggler close-menu" type="button">x</button>
-      </span>
-      <ul>
-        <li>
-          <h2><%= link_to "Dream Journal", root_path %></h2>
-        </li>
-        <hr class="rounded">
-        <% if Current.user %>
-          <li><%= link_to "Daily", daily_path %></li>
-          <li><%= link_to "Monthly", monthly_path %></li>
-          <li><%= link_to "Account", account_path %></li>
-          <li>
-            <%= button_to 'Sign Out', sign_out_path, method: :delete, class: 'button' %>
-          </li>
-        <% else %>
-          <li><%= link_to 'Sign In', login_path, class: 'button' %></li>
-        <% end %>
-      </ul>
-    </nav>
+    <%= render 'layouts/menu' %>
     <h4 class="notice"><%= notice %></h4>
     <h4 class="alert"><%= alert %></h4>
     <%= yield %>
   </body>
 </html>
+
+<%= javascript_pack_tag "toggleMenu" %>
