@@ -1,11 +1,11 @@
 <header>
     <div id="menu-icons">
         <button onclick="document.getElementById('nav-dropdown').classList.toggle('hide')">☰</button>
-        <%= link_to "+", tracker_menu_path if Current.user %>
+        <%= link_to "➕", tracker_menu_path if Current.user %>
         <%= link_to "🏠", root_path %>
         <% if Current.user %>
-            <%= link_to "📆", daily_path %>
-            <%= link_to "📅", monthly_path %>
+            <%= link_to "📆", reset_daily_path %>
+            <%= link_to "📅", reset_monthly_path %>
             <%= link_to "👤", account_path %>
         <% end %>
     </div>
@@ -19,8 +19,8 @@
         </li>
         <hr class="rounded">
         <% if Current.user %>
-          <li><%= link_to "Daily", daily_path %></li>
-          <li><%= link_to "Monthly", monthly_path %></li>
+          <li><%= link_to "Daily", reset_daily_path %></li>
+          <li><%= link_to "Monthly", reset_monthly_path %></li>
           <li><%= link_to "Account", account_path %></li>
           <li class="row">
             <%= button_to 'Sign Out', sign_out_path, method: :delete, class: 'button mid' %>

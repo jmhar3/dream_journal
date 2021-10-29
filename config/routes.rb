@@ -11,6 +11,13 @@ Rails.application.routes.draw do
   resources :users
   resources :completed_cares
 
+
+  get 'up_daily', to: 'sessions#up_daily'
+  get 'down_daily', to: 'sessions#down_daily'
+  get 'reset_daily', to: 'sessions#reset_daily'
+  get 'up_monthly', to: 'sessions#up_monthly'
+  get 'down_monthly', to: 'sessions#down_monthly'
+  get 'reset_monthly', to: 'sessions#reset_monthly'
   get 'dark', to: 'application#dark'
   get 'light', to: 'application#light'
   get 'tracker_menu', to: 'pages#tracker_menu'

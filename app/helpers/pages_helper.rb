@@ -1,32 +1,30 @@
 module PagesHelper
     def current_date
-        date = DateTime.now
-        date.strftime("%A, #{date.day.ordinalize} of %B")
+        daily_date.strftime("%A, #{daily_date.day.ordinalize} of %B")
     end
 
     def current_month
-        date = DateTime.now
-        date.strftime("%B")
+        monthly_date.strftime("%B")
     end
 
     def goals
-        Goal.by_user(session[:user_id]).today.not_priority.to_a
+        Goal.by_user(session[:user_id]).today(daily_date).not_priority.to_a
     end
 
     def priorities
-        Goal.by_user(session[:user_id]).today.priority.to_a
+        Goal.by_user(session[:user_id]).today(daily_date).priority.to_a
     end
 
     def tomorrows_goals
-        Goal.by_user(session[:user_id]).tomorrow.to_a
+        Goal.by_user(session[:user_id]).tomorrow(daily_date).to_a
     end
 
     def monthly_goals
-        Goal.by_user(session[:user_id]).monthly.priority.to_a
+        Goal.by_user(session[:user_id]).monthly(monthly_date).priority.to_a
     end
 
     def monthly_priorities
-        Goal.by_user(session[:user_id]).monthly.not_priority.to_a
+        Goal.by_user(session[:user_id]).monthly(monthly_date).not_priority.to_a
     end
 
     def finances
@@ -64,27 +62,27 @@ module PagesHelper
     end
 
     def breakfast
-        Meal.by_user(session[:user_id]).today.meals("breakfast").to_a
+        Meal.by_user(session[:user_id]).today(daily_date).meals("breakfast").to_a
     end
 
     def lunch
-        Meal.by_user(session[:user_id]).today.meals("lunch").to_a
+        Meal.by_user(session[:user_id]).today(daily_date).meals("lunch").to_a
     end
 
     def dinner
-        Meal.by_user(session[:user_id]).today.meals("dinner").to_a
+        Meal.by_user(session[:user_id]).today(daily_date).meals("dinner").to_a
     end
 
     def snack
-        Meal.by_user(session[:user_id]).today.meals("snack").to_a
+        Meal.by_user(session[:user_id]).today(daily_date).meals("snack").to_a
     end
 
     def notes
-        Note.by_user(session[:user_id]).today.to_a
+        Note.by_user(session[:user_id]).today(daily_date).to_a
     end
 
     def monthly_notes
-        Note.by_user(session[:user_id]).monthly.to_a
+        Note.by_user(session[:user_id]).monthly(monthly_date).to_a
     end
 
     def gratitudes

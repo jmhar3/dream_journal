@@ -1,9 +1,9 @@
 module ApplicationHelper
-    def menu_icon display
-        content_for :menu_icon, display
+    def daily_date
+        Date.current + (session[:daily_counter].days)
     end
 
-    def tracker_title title
-        content_for :tracker_title, title
+    def monthly_date
+        Date.current + (session[:monthly_counter].months)
     end
 end
