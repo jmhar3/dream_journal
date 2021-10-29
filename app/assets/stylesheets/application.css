@@ -202,7 +202,7 @@ header {
 #menu-icons {
     position: fixed;
     top: 12px;
-    left: 12px;
+    left: 8px;
     display: flex;
     flex-direction: column;
     gap: 6.9px;
