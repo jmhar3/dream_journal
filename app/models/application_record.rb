@@ -12,4 +12,8 @@ class ApplicationRecord < ActiveRecord::Base
 
   scope :datetime_monthly, -> { where(created_at: DateTime.current.beginning_of_month..Date.current.at_end_of_month)
   }
+
+  scope :unique_dates, -> { pluck("distinct date(date)")}
+
+  scope :unique_datetimes, -> { pluck("distinct date(created_at)")}
 end
