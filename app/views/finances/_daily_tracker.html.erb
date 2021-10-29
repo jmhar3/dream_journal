@@ -1,0 +1,15 @@
+<div class="container light-mid column-container">
+    <div class="row space-between">
+        <h2 class="finance-header" ><%= link_to "Finances", new_finance_path%></h2>
+        <h2 class="finance-header dark">$<%= total %></h2>
+    </div>
+    <hr id="finance-hr">
+    <div class="row space-between">
+        <h2 class="mini-header">Earnings</h2>
+        <h2 class="mini-header">$<%= earnings %></h2>
+    </div>
+    <div class="row space-between">
+        <h2>Expenses</h2>
+        <h2>$<%= expenses %></h2>
+    </div>
+</div>
