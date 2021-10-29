@@ -1,8 +1,8 @@
 <%= form_for :goal, url: goals_path do |f| %>
-    <%= f.hidden_field :priority, value: false %>
+    <%= f.hidden_field :priority, value: priority %>
 
     <div class="row emoji-form">
-        <%= f.text_field :goal, placeholder: "Goal" %>
+        <%= f.text_field :goal, placeholder: "#{priority ? "Priority" : "Goal"}" %>
 
         <%= f.submit '🏹' %>
     </div>

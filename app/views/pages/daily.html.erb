@@ -7,7 +7,7 @@
         </div>
         <div class="container column-container light-mid">
             <%= render "goals/list_goals", { goals: priorities} %> 
-            <%= render 'goals/priority_form' %>
+            <%= render 'goals/goal_form', {priority: true} %>
         </div>
 
         <div class="container mid header-bubble">
@@ -15,7 +15,7 @@
         </div>
         <div class="container column-container light-mid">
             <%= render "goals/list_goals", { goals: goals} %> 
-            <%= render 'goals/goal_form' %>
+            <%= render 'goals/goal_form', {priority: false} %>
         </div>
 
         <div class="container column-container light-mid">

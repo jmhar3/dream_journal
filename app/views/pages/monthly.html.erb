@@ -5,24 +5,12 @@
         <div class="container column-container mid">
             <h2 class="mini-header">Priorities</h2>
             <%= render "goals/list_goals", { goals: monthly_priorities } %> 
-            <div>
-                <%= form_for :goal, url: goals_path do |f| %>
-                    <%= f.hidden_field :priority, value: true %>
-                
-                    <%= f.text_field :goal, placeholder: "Priority" %>
-
-                    <div class="row space-between">
-                        <%= f.date_field :date %>
-
-                        <%= f.submit 'Save', class: "button" %>
-                    </div>
-                <% end %>
-            </div>
+            <%= render "goals/monthly_form", {priority: true} %>
         </div>
         <div class="container column-container mid">
             <h2 class="mini-header">Goals</h2>
             <%= render "goals/list_goals", { goals: monthly_goals} %> 
-            <%= render 'goals/upcoming_form' %>
+            <%= render "goals/monthly_form", {priority: false} %>
         </div>
     </div>
     <div class="column">
