@@ -1,11 +1,8 @@
-<label class="switch">
-    <% if cookies[:dark] %>
-        <%= button_to 'Light Mode', light_path, method: :get%>
-    <% else %>
-        <%= button_to 'Dark Mode', dark_path, method: :get%>
-    <% end %>
-    <span class="slider"></span>
-</label>
+<% if cookies[:dark] %>
+    <%= button_to 'Light Mode', light_path, method: :get, class: "rotate-header colour-mode" %>
+<% else %>
+    <%= button_to 'Dark Mode', dark_path, method: :get, class: "rotate-header colour-mode" %>
+<% end %>
 
 <div class="row account-row">
     <div class="container account-column mid">

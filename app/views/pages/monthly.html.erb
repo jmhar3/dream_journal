@@ -1,5 +1,4 @@
-<% menu_icon "+" %>
-<% tracker_title current_month %>
+<h4 class="rotate-header">< <%= current_month %> ></h4>
 
 <div class="row red columns">
     <div class="column">
@@ -15,7 +14,7 @@
                     <div class="row space-between">
                         <%= f.date_field :date %>
 
-                        <%= f.submit 'Save', class: "submit button light" %>
+                        <%= f.submit 'Save', class: "button" %>
                     </div>
                 <% end %>
             </div>

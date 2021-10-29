@@ -23,10 +23,10 @@
           <li><%= link_to "Monthly", monthly_path %></li>
           <li><%= link_to "Account", account_path %></li>
           <li class="row">
-            <%= button_to 'Sign Out', sign_out_path, method: :delete, class: 'button submit' %>
+            <%= button_to 'Sign Out', sign_out_path, method: :delete, class: 'button mid' %>
           </li>
         <% else %>
-          <li><%= link_to 'Sign In', login_path, class: 'button submit' %></li>
+          <li><%= link_to 'Sign In', login_path, class: 'button mid' %></li>
         <% end %>
       </ul>
     </nav>

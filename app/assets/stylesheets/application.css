@@ -30,14 +30,21 @@
 body {
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    align-items: flex-start;
     background-color: var(--light-colour);
+    margin-left: 69px;
 }
 
+/* TRANSITION */
+
 input, .button, select, button, textarea, .checkmark, .checkmark-container, .finance-header, .task-bubble {
-    -webkit-transition: color .6s,background .6s, border-radius .6s;
-    transition: color .6s,background .6s, border-radius .6s;
+    -webkit-transition: color .6s,background .6s, border-radius .6s, border .6s;
+    transition: color .6s,background .6s, border-radius .6s, border .6s;
+}
+
+header {
+    -webkit-transition: width .6s;
+    transition: width .6s;
 }
 
 .red {
@@ -46,14 +53,6 @@ input, .button, select, button, textarea, .checkmark, .checkmark-container, .fin
 
 .dark {
     color: var(--dark-colour);
-}
-
-.light.button {
-    background-color: var(--super-light-colour)
-}
-
-.light.button:hover {
-    background-color: var(--super-light-mid)
 }
 
 .light-mid {
@@ -65,7 +64,7 @@ input, .button, select, button, textarea, .checkmark, .checkmark-container, .fin
 }
 
 .mid {
-    background-color: var(--mid-colour)
+    background-color: var(--mid-colour);
 }
 
 .row {
@@ -89,7 +88,7 @@ input, .button, select, button, textarea, .checkmark, .checkmark-container, .fin
     width: fit-content;
 }
 
-h1, h2, h3, h4, h5, p, li, a, button, div, .submit, ::placeholder, select, label {
+h1, h2, h3, h4, h5, p, li, a, button, div, .button, ::placeholder, select, label, input {
     font-family: 'SourceCodeBold', Geneva, Verdana, sans-serif;
     color: var(--dark-colour);
 }
@@ -163,15 +162,24 @@ input, .button, select, button, textarea {
     padding-bottom: 9px;
     padding-left: 12px;
     padding-right: 12px;
-    background-color: var(--light-mid-colour);
+    background-color: var(--super-light-colour);
+    border: 3px solid var(--super-light-mid);
     border-radius: 12px;
     color: var(--main-colour);
     width: fit-content;
 }
 
-.button:hover {
-    border-radius: 50px;
+.mid.button {
+    background-color: var(--light-mid-colour);
+    border: none;
+}
+
+.mid.button:hover {
     background-color: var(--mid-colour);
+}
+
+.button:hover {
+    border-radius: 50px;background-color: var(--super-light-mid);
     color: var(--dark-colour);
 }
 
@@ -181,8 +189,8 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    height: 54px;
-    width: 100%;
+    height: 100%;
+    width: 54px;
     background-color: var(--super-light-colour);
 }
 
@@ -191,6 +199,7 @@ header {
     top: 12px;
     left: 12px;
     display: flex;
+    flex-direction: column;
     gap: 6.9px;
     align-items: center;
     font-size: 21px;
@@ -340,15 +349,6 @@ form h2 {
 }
 
 /* COLUMN STRUCTURE */
-
-.column {
-    float: left;
-    width: 33.33%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
 
 div.columns {
     align-items: flex-start;
