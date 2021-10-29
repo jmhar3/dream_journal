@@ -7,9 +7,11 @@
         <%= link_to '❌', goal_path(@goal), method: :delete %>
     </div>
     <hr>
-    <div class="super-light task-bubble">
-        <h5><%= @goal.more_info %></h5>
-    </div>
+    <% if @goal.more_info %>
+        <div class="super-light task-bubble">
+            <h5><%= @goal.more_info %></h5>
+        </div>
+    <% end %>
     <div class="row space-between">
         <div class="super-light task-bubble">
             <h5><%= @goal.date %></h5>
