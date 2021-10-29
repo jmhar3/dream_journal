@@ -1,6 +1,6 @@
 <header>
     <div id="menu-icons">
-        <button onclick="document.getElementById('nav-dropdown').classList.toggle('hide')">☰</button>
+        <button onclick="document.getElementById('nav-dropdown').classList.toggle('hide')">📁</button>
         <%= link_to "➕", tracker_menu_path if Current.user %>
         <%= link_to "🏠", root_path %>
         <% if Current.user %>
@@ -11,7 +11,7 @@
     </div>
     <nav class="hide" id="nav-dropdown">
       <span>
-        <button class="close-menu" onclick="document.getElementById('nav-dropdown').classList.toggle('hide')">x</button>
+        <button class="close-menu" onclick="document.getElementById('nav-dropdown').classList.toggle('hide')">❌</button>
       </span>
       <ul>
         <li>
