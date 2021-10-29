@@ -33,6 +33,6 @@ class SelfCaresController < ApplicationController
     def self_care_params
         params.require(:self_care)
         .permit(:user_id, :label, :goal, :frequency)
-        .with_defaults(user_id: session[:user_id], completed: 0)
+        .with_defaults(user_id: session[:user_id])
     end
 end

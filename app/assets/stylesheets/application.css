@@ -32,14 +32,15 @@ body {
     justify-content: center;
     align-items: flex-start;
     background-color: var(--light-colour);
-    margin-left: 69px;
+    margin: 0;
+    margin-left: 55px;
 }
 
 /* TRANSITION */
 
 input, .button, select, button, textarea, .checkmark, .checkmark-container, .finance-header, .task-bubble {
-    -webkit-transition: color .6s,background .6s, border-radius .6s, border .6s;
-    transition: color .6s,background .6s, border-radius .6s, border .6s;
+    -webkit-transition: color .6s,background .6s, border-radius .6s;
+    transition: color .6s,background .6s, border-radius .6s;
 }
 
 header {
@@ -84,8 +85,12 @@ header {
     justify-content: space-between;
 }
 
-.containter div.fit-content {
-    width: fit-content;
+.full-height {
+    height: 100vh;
+}
+
+.full-width {
+    width: 100vw;
 }
 
 h1, h2, h3, h4, h5, p, li, a, button, div, .button, ::placeholder, select, label, input {
@@ -349,10 +354,6 @@ form h2 {
 }
 
 /* COLUMN STRUCTURE */
-
-div.columns {
-    align-items: flex-start;
-}
 
 div.column-container {
     width: 87%;

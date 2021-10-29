@@ -8,10 +8,10 @@
     </ul>
 <% else %>
     <%= form_for :gratitude, url: gratitudes_path do |f| %>
-        <div class="row light-mid">
+        <div class="row light-mid emoji-form">
             <%= f.text_field :name, placeholder: "Gratitude" %>
 
-            <%= f.submit '🏹', class: "emoji-button" %>
+            <%= f.submit '🏹' %>
         </div>
     <% end %>
 <% end %>

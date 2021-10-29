@@ -27,11 +27,9 @@
     <div class="container account-column mid">
         <h2>Friends</h2>
         <ul>
-            <% if @invites.length > 0 %>
-                <%= @invites.each do |invite| %>
-                    <li><%= invite.name %></li>
-                <% end %>
-            <% end %>
+            <%= @invites.each do |invite| %>
+                <li><%= invite.name %></li>
+            <% end if @invites.length > 0 %>
             <% if @friends.length > 0 %>
                 <%= @friends.each do |friend| %>
                     <li><%= friend.name %></li>

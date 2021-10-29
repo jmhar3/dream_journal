@@ -44,8 +44,10 @@ module PagesHelper
     end
 
     def finance_progress
-        total = (expenses.to_f/earnings.to_f)*100.0
-        total.to_i
+        if earnings != 0 && expenses != 0
+            total = (expenses.to_f/earnings.to_f)*100.0
+            total.to_i
+        end
     end
 
     def self_care_progress goal, completed

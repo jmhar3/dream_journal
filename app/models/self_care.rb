@@ -3,5 +3,5 @@ class SelfCare < ApplicationRecord
     has_many :completed_cares
 
     validates :label, presence: true, length: { maximum: 20}
-    validates :goal, presence: true, :inclusion => 1..10
+    validates :goal, presence: true, :inclusion => 1..8
 end

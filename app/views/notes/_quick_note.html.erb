@@ -1,7 +1,7 @@
 <%= form_for :note, url: notes_path do |f| %>
-    <div class="row">
+    <div class="row emoji-form">
         <%= f.text_field :content, placeholder: "Quick Note" %>
 
-        <%= f.submit '🏹', class: "emoji-button" %>
+        <%= f.submit '🏹' %>
     </div>
 <% end %>

@@ -15,10 +15,10 @@
         <%= f.hidden_field :date, value: Date.current %>
         <%= f.hidden_field :meal, value: meal_type %>
 
-        <div class="row">
+        <div class="row emoji-form">
             <%= f.text_field :foods, placeholder: meal_type %>
 
-            <%= f.submit '🏹', class: "emoji-button" %>
+            <%= f.submit '🏹' %>
         </div>
     <% end %>
 <% end %>
