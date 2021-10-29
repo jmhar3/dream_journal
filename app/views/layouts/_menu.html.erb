@@ -1,3 +1,14 @@
+<header>
+    <div id="menu-icons">
+        <button onclick="document.getElementById('nav-dropdown').classList.toggle('hide')">☰</button>
+        <%= link_to "+", tracker_menu_path if Current.user %>
+        <%= link_to "🏠", root_path %>
+        <% if Current.user %>
+            <%= link_to "📆", daily_path %>
+            <%= link_to "📅", monthly_path %>
+            <%= link_to "👤", account_path %>
+        <% end %>
+    </div>
     <nav class="hide" id="nav-dropdown">
       <span>
         <button class="close-menu" onclick="document.getElementById('nav-dropdown').classList.toggle('hide')">x</button>
@@ -19,3 +30,4 @@
         <% end %>
       </ul>
     </nav>
+</header>

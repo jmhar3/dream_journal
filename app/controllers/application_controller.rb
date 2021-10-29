@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-    layout "tracker"
     
     before_action :set_current_user
     before_action :require_login

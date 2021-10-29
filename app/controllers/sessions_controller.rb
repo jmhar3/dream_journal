@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     if session[:user_id]
       redirect_to daily_path
     else
-      render :layout => 'application'
+      render :new
     end
   end
 
