@@ -1,7 +1,7 @@
 <header>
     <div id="menu-icons">
         <button onclick="document.getElementById('nav-dropdown').classList.toggle('hide')">📁</button>
-        <%= link_to "🏠", root_path %>
+        <%= link_to "🏠", root_path if !Current.user %>
         <% if Current.user %>
             <%= link_to "📆", reset_daily_path %>
             <%= link_to "📅", reset_monthly_path %>
