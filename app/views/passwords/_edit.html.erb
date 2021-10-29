@@ -1,6 +1,4 @@
-<% menu_icon "Dream Journal" %>
-
-<div class="container mid">
+<div class="container account-column mid">
     <h1>Edit Password</h1>
 
     <%= form_with model: Current.user, url: edit_password_path do |f| %>
@@ -13,7 +11,7 @@
         </div>
         
         <div>
-            <%= f.submit 'Update', class: "button submit light" %>
+            <%= f.submit 'Update', data: { confirm: 'Your confirm message' }, class: "button submit light" %>
         </div>
     <% end %>
 </div>

@@ -20,7 +20,13 @@ class UsersController < ApplicationController
     @user.update(user_params)
     
     redirect_to account_path
-end
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to daily_path
+  end
 
   private
 
