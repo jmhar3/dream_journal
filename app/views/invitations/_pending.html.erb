@@ -1,0 +1,10 @@
+<% invites.each do |invite| %>
+    <li class="row space-between super-light task-bubble dark">
+        <%= invite.username %>
+        <% if type == 'incoming' %>
+            <%= link_to '👌', confirm_invite_path(invite) %>
+        <% else %>
+            <p>⌛</p>
+        <% end %>
+    </li>
+<% end if invites.length > 0 %>

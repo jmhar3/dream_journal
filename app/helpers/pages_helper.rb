@@ -106,4 +106,14 @@ module PagesHelper
     def monthly_gratitudes
         Gratitude.by_user(session[:user_id]).datetime_monthly.to_a
     end
+
+    # ACCOUNT
+
+    def incoming_invites
+        User.joins(:invitations).where(invitations: {confirmed: false, friend_id: session[:id]}).to_a
+    end
+
+    def outgoing_invites
+        User.joins(:invitations).where(invitations: {confirmed: false}).to_a
+    end
 end

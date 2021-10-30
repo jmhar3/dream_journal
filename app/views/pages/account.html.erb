@@ -27,12 +27,11 @@
     <div class="container account-column mid">
         <h2>Friends</h2>
         <ul>
-            <%= @invites.each do |invite| %>
-                <li><%= invite.name %></li>
-            <% end if @invites.length > 0 %>
+            <%= render 'invitations/pending', {invites: incoming_invites, type: 'incoming'} %>
+            <%= render 'invitations/pending', {invites: outgoing_invites, type: 'outgoing'} %>
             <% if @friends.length > 0 %>
                 <%= @friends.each do |friend| %>
-                    <li><%= friend.name %></li>
+                    <li><%= friend.username %></li>
                 <% end %>
             <% else %>
                 <li>You have no friends.</li>

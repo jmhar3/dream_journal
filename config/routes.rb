@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     patch :complete
   end
 
+  get 'confirm_invite', to: 'invitations#confirm'
   get 'up_daily', to: 'sessions#up_daily'
   get 'down_daily', to: 'sessions#down_daily'
   get 'reset_daily', to: 'sessions#reset_daily'
