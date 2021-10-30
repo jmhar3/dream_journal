@@ -3,14 +3,15 @@ Rails.application.routes.draw do
   root "pages#home"
 
   resources :finances
-  resources :goals
   resources :gratitudes
   resources :meals
   resources :notes
   resources :self_cares
   resources :users
   resources :completed_cares
-
+  resources :goals do
+    patch :complete
+  end
 
   get 'up_daily', to: 'sessions#up_daily'
   get 'down_daily', to: 'sessions#down_daily'

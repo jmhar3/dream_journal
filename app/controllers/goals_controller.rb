@@ -1,7 +1,7 @@
 class GoalsController < ApplicationController
+    before_action :set_goal, except: [:new, :create, :complete]
     
     def show
-        @goal = Goal.find(params[:id])
     end
 
     def new
@@ -18,27 +18,34 @@ class GoalsController < ApplicationController
     end
 
     def edit
-        @goal = Goal.find(params[:id])
     end
 
     def update
-        @goal = Goal.find(params[:id])
         @goal.update(goal_params)
         
         redirect_to daily_path
     end
 
     def destroy
-        @goal = Goal.find(params[:id])
         @goal.destroy
+        redirect_to daily_path
+    end
+
+    def complete
+        @goal = Goal.find(params[:goal_id])
+        @goal.update_attribute(:completed, !@goal[:completed])
         redirect_to daily_path
     end
 
     private
 
+    def set_goal
+        @goal = Goal.find(params[:id])
+    end
+
     def goal_params
         params.require(:goal)
-        .permit(:goal, :priority, :user_id, :more_info, :date)
-        .with_defaults(user_id: session[:user_id], priority: false, date: Date.today)
+        .permit(:goal, :priority, :user_id, :more_info, :date, :completed)
+        .with_defaults(user_id: session[:user_id], priority: false, date: Date.today, completed: false)
     end
 end

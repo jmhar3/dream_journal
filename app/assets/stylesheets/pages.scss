@@ -113,3 +113,8 @@ div.columns {
     flex-direction: column;
     gap: 9px;
 }
+
+.strike {
+    opacity: 0.9;
+    text-decoration: line-through var(--main-colour) solid;
+}

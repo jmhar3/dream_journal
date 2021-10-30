@@ -20,11 +20,11 @@ module PagesHelper
     end
 
     def monthly_goals
-        Goal.by_user(session[:user_id]).monthly(monthly_date).priority.to_a
+        Goal.by_user(session[:user_id]).monthly(monthly_date).not_priority.to_a
     end
 
     def monthly_priorities
-        Goal.by_user(session[:user_id]).monthly(monthly_date).not_priority.to_a
+        Goal.by_user(session[:user_id]).monthly(monthly_date).priority.to_a
     end
 
     def finances

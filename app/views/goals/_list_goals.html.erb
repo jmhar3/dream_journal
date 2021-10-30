@@ -2,7 +2,7 @@
     <ul>
         <% goals.each do |goal| %>
             <li class="row space-between super-light task-bubble dark">
-                <h5><%= goal[:goal] %></h5>
+                <%= render 'goals/completed', {goal: goal} %>
                 <%= link_to '💌', goal_path(goal) %>
             </li>
         <% end %>
