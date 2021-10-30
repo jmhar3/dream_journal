@@ -1,9 +1,9 @@
 <% if !@note.errors.empty? %>
-  <div>
-    <ul>
-      <% @note.errors.full_messages.each do |error| %>
-        <li> <%= error %>
-      <% end %>
-    </ul>
-  </div>
+  <ul class="errors">
+    <% @note.errors.full_messages.each do |error| %>
+      <li class="row space-between task-bubble red">
+        <%= error %>
+      </li>
+    <% end %>
+  </ul>
 <% end %>

@@ -1,13 +1,15 @@
-<div class="container mid">
-    <h1 class="red">Add a Friend</h1>
+<div class="full-height vertically-center">
+    <div class="container mid">
+        <h1 class="red">Add a Friend</h1>
 
-    <%= form_with model: @invitation, url: add_friend_path do |f| %>
-        <div>
-            <%= f.text_field :username, placeholder: "Username" %>
-        </div>
-        
-        <div>
-            <%= f.submit 'Add Friend', class: "button" %>
-        </div>
-    <% end %>
+        <%= form_with model: @invitation, url: add_friend_path do |f| %>
+            <div>
+                <%= f.text_field :username, placeholder: "Username" %>
+            </div>
+            
+            <div>
+                <%= f.submit 'Add Friend', class: "button" %>
+            </div>
+        <% end %>
+    </div>
 </div>

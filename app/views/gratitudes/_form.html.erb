@@ -1,11 +1,11 @@
 <% if !@gratitude.errors.empty? %>
-  <div>
-    <ul>
-      <% @gratitude.errors.full_messages.each do |error| %>
-        <li> <%= error %>
-      <% end %>
-    </ul>
-  </div>
+  <ul class="errors">
+    <% @gratitude.errors.full_messages.each do |error| %>
+      <li class="row space-between task-bubble red">
+        <%= error %>
+      </li>
+    <% end %>
+  </ul>
 <% end %>
 
 <div class="container mid">

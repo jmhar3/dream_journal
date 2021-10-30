@@ -93,6 +93,24 @@ header {
     width: 100vw;
 }
 
+.vertically-center {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.errors {
+    position: fixed;
+    top: 0;
+}
+
+.errors li {
+    background-color: var(--super-light-colour);
+    font-weight: bold;
+    padding-left: 9px;
+}
+
 h1, h2, h3, h4, h5, p, li, a, button, div, .button, ::placeholder, select, label, input {
     font-family: 'SourceCodeBold', Geneva, Verdana, sans-serif;
     color: var(--dark-colour);
@@ -332,6 +350,7 @@ select {
 
 .container, .column-container {
     border-radius: 30px;
+    height: fit-content;
     width: fit-content;
     padding: 21px;
 }
@@ -365,11 +384,6 @@ div.column-container {
     display: flex;
     flex-direction: column;
     gap: 9px;
-}
-
-div.account-row {
-    align-items: flex-start;
-    justify-content: center;
 }
 
 .account-column {
