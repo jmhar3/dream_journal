@@ -31,22 +31,34 @@ module PagesHelper
         Finance.where(user_id: session[:user_id])
     end
 
-    def earnings
-        finances.where(flow: 'incoming').sum(:amount)
+    def daily_earnings
+        finances.monthly(daily_date).where(flow: 'incoming').sum(:amount)
     end
 
-    def expenses
-        finances.where(flow: 'outgoing').sum(:amount)
+    def daily_expenses
+        finances.monthly(daily_date).where(flow: 'outgoing').sum(:amount)
     end
 
-    def total
-        earnings - expenses
+    def daily_total
+        daily_earnings - daily_expenses
+    end
+
+    def monthly_earnings
+        finances.monthly(monthly_date).where(flow: 'incoming').sum(:amount)
+    end
+
+    def monthly_expenses
+        finances.monthly(monthly_date).where(flow: 'outgoing').sum(:amount)
+    end
+
+    def monthly_total
+        monthly_earnings - monthly_expenses
     end
 
     def finance_progress
-        if earnings != 0 && expenses != 0
-            total = (expenses.to_f/earnings.to_f)*100.0
-            total.to_i
+        if monthly_earnings != 0 && monthly_expenses != 0
+            percentage = (monthly_expenses.to_f/monthly_earnings.to_f)*100.0
+            percentage.to_i
         end
     end
 

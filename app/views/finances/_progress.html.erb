@@ -2,15 +2,15 @@
     <div class="row">
         <div class="split-column">
             <h2><%= link_to "Finances", new_finance_path,  class: "red" %></h2>
-            <h5>$<%= total %></h5>
+            <h5>$<%= monthly_total %></h5>
         </div>
         <div class="quarter-column">
             <h5>in</h5>
-            <p>$<%= earnings %></p>
+            <p>$<%= monthly_earnings %></p>
         </div>
         <div class="quarter-column">
             <h5>out</h5>
-            <p>$<%= expenses %></p>
+            <p>$<%= monthly_expenses %></p>
         </div>
     </div>
     <% if finance_progress %>
