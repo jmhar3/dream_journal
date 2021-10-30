@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.image = params[:image]
     if @user.save
       session[:user_id] = @user.id
       self.self_cares.build(label: "Drink Water", goal: 8, frequency: day, user_id: session[:user_id])
@@ -32,6 +33,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation)
+    params.require(:user).permit(:username, :email, :password, :password_confirmation, :image, :image_cache)
   end
 end

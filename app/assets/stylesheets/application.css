@@ -27,6 +27,10 @@
     margin: none;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -35,6 +39,24 @@ body {
     margin: 0;
     margin-left: 55px;
 }
+
+/* SCROLL BAR */
+
+::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--super-light-colour);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--light-colour);
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--super-light-mid);
+  }
 
 /* TRANSITION */
 
@@ -147,6 +169,7 @@ input::-webkit-datetime-edit-day-field,
 input::-webkit-datetime-edit-month-field,
 input::-webkit-datetime-edit-year-field{
     font-size: 21px;
+    list-style-type: none;
 }
 
 a, .button, button {
@@ -439,4 +462,18 @@ div.column-container {
     .column, .split-column {
       width: 100%;
     }
+}
+
+/* USER */
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 3px solid var(--light-colour);
+    margin-bottom: 9px;
+}
+
+.avatar, .icon {
+    border-radius: 100%;
 }

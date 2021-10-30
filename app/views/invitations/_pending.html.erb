@@ -1,6 +1,6 @@
 <% invites.each do |invite| %>
     <li class="row space-between super-light task-bubble dark">
-        <%= invite.username %>
+        <%= image_tag(@user.image_url, :class => "icon") if @user.image? %><%= invite.username %>
         <% if type == 'incoming' %>
             <%= link_to '👌', confirm_invite_path(invite) %>
         <% else %>

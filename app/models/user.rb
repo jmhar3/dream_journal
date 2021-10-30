@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+    mount_uploader :image, ImageUploader
+
     has_secure_password
     validates :username, presence: true, uniqueness: { case_sensitive: false }, length: { minimum: 5}
     validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: /\A[^@\s]+@[^@\s]+\z/, message: 'Invalid email' }

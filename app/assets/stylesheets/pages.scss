@@ -39,6 +39,44 @@
   -webkit-text-fill-color: transparent;
 }
 
+.big-column img {
+    width: 462px;
+    padding: 30px;
+    padding-top: 18px;
+}
+
+#home-2 a {
+    margin-right: 30px;
+}
+
+#home-2 h3 {
+    padding: 18px;
+    margin-top: 39px;
+    font-size: 21px;
+}
+
+.little-column img {
+    width: 192px;
+    padding-left: 18px;
+}
+
+.big-column, .little-column {
+    float: left;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.big-column {
+    width: 60%;
+    align-items: flex-end;
+}
+
+.little-column {
+    width: 40%;
+    text-align: left;
+}
+
 .rotate-header {
     position: fixed;
     bottom: -27px;
@@ -117,4 +155,22 @@ div.columns {
 .strike {
     opacity: 0.9;
     text-decoration: line-through var(--main-colour) solid;
+}
+
+// USER ACCOUNT
+
+#user_image {
+    width: 82%;
+}
+
+li h3#username {
+    margin: none;
+}
+
+.icon {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border: 3px solid var(--super-light-colour);
+    margin-left: 6px;
 }

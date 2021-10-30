@@ -6,9 +6,10 @@
 
 <div class="full-height vertically-center">
     <div class="container account-column mid">
-        <h2>Account Info</h2>
-        <h5>Username: <%= @user.username %></h5>
-        <h5>Email: <%= @user.email %></h5>
+        <%= render 'users/avatar' %>
+        <li class="super-light task-bubble">
+            <h3 id="username"><%= @user.username %></h3>
+        </li>
         <div class="row">
             <%= link_to "Update Account",
             edit_user_path(@user),

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_30_004729) do
+ActiveRecord::Schema.define(version: 2021_10_30_105816) do
 
   create_table "completed_cares", force: :cascade do |t|
     t.string "tally"
@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(version: 2021_10_30_004729) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image"
   end
 
   add_foreign_key "completed_cares", "self_cares", column: "self_cares_id"
