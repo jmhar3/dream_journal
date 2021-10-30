@@ -1,5 +1,5 @@
 <li>
-    <h3><%= sc.label %></h3>
+    <h3><%= link_to sc.label, edit_self_care_path(sc) %></h3>
     <h3>
         <% if completed_cares(sc.id) %>
             <% completed_cares(sc.id).tally.times do |g| %>

@@ -23,9 +23,11 @@ class SelfCaresController < ApplicationController
         
         redirect_to daily_path
     end
-    
-    def model_params
-      params.require(:model).permit(:x, :y, :z)
+
+    def destroy
+        @self_care = SelfCare.find(params[:id])
+        @self_care.destroy
+        redirect_to daily_path
     end
 
     private
