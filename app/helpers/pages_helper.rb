@@ -104,7 +104,7 @@ module PagesHelper
     end
 
     def monthly_gratitudes
-        Gratitude.by_user(session[:user_id]).datetime_monthly.to_a
+        Gratitude.by_user(session[:user_id]).to_a
     end
 
     # ACCOUNT

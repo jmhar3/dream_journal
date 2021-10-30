@@ -6,4 +6,8 @@ module ApplicationHelper
     def monthly_date
         Date.current + (session[:monthly_counter].months)
     end
+
+    # def monthly_datetime
+    #     DateTime.current.change(month: (session[:monthly_counter]))
+    # end
 end

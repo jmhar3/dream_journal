@@ -10,7 +10,7 @@ class ApplicationRecord < ActiveRecord::Base
   scope :monthly, -> (monthly_date) { where(date: monthly_date.change(day: 1)..monthly_date.change(day: -1))
   }
 
-  scope :datetime_monthly, -> { where(created_at: DateTime.current.beginning_of_month..Date.current.at_end_of_month)
+  scope :datetime_monthly, -> (monthly_datetime) { where(created_at: monthly_datetime.beginning_of_month..monthly_datetime.at_end_of_month)
   }
 
   scope :unique_dates, -> { pluck("distinct date(date)")}

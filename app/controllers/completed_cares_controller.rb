@@ -1,11 +1,11 @@
 class CompletedCaresController < ApplicationController
     def update
-        @completed_care = CompletedCare.find_or_create_by( self_cares_id: params[:self_cares_id])
+        params[:self_cares_id] = params[:id]
+        completed_care = CompletedCare.find_or_create_by( self_cares_id: params[:id])
 
-        params[:tally] = params[:id].to_i + 1
-        raise completed_cares_params.inspect
+        params[:tally] = params[:tally].to_i + 1
 
-        @completed_care.update(completed_cares_params)
+        completed_care.update(completed_cares_params)
         
         redirect_to daily_path
     end
