@@ -1,0 +1,17 @@
+<%= form_for :goal, url: goals_path do |f| %>
+    <%= f.hidden_field :priority, value: priority %>
+    
+    <% if show_date %>
+        <%= f.text_field :goal, placeholder: "#{priority ? "Priority" : "Goal"}" %>
+        <div class="row space-between">
+            <%= f.date_field :date, value: date %>
+            <%= f.submit 'Save', class: "button" %>
+        </div>
+    <% else %>
+        <%= f.hidden_field :date, value: date %>
+        <div class="row emoji-form">
+            <%= f.text_field :goal, placeholder: "#{priority ? "Priority" : "Goal"}" %>
+            <%= f.submit '🏹' %>
+        </div>
+    <% end %>
+<% end %>

@@ -5,12 +5,12 @@
         <div class="container column-container mid">
             <h2 class="mini-header">Priorities</h2>
             <%= render "goals/list_goals", { goals: monthly_priorities } %> 
-            <%= render "goals/monthly_form", {priority: true} %>
+            <%= render "goals/quick_form", {priority: true, show_date: true, date: monthly_date} %>
         </div>
         <div class="container column-container mid">
             <h2 class="mini-header">Goals</h2>
             <%= render "goals/list_goals", { goals: monthly_goals} %> 
-            <%= render "goals/monthly_form", {priority: false} %>
+            <%= render "goals/quick_form", {priority: false, show_date: true, date: monthly_date} %>
         </div>
     </div>
     <div class="column">

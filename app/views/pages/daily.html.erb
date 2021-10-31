@@ -7,7 +7,7 @@
         </div>
         <div class="container column-container light-mid">
             <%= render "goals/list_goals", { goals: priorities} %> 
-            <%= render 'goals/goal_form', {priority: true} %>
+            <%= render 'goals/quick_form', {priority: true, show_date: false, date: daily_date} %>
         </div>
 
         <div class="container mid header-bubble">
@@ -15,13 +15,13 @@
         </div>
         <div class="container column-container light-mid">
             <%= render "goals/list_goals", { goals: goals} %> 
-            <%= render 'goals/goal_form', {priority: false} %>
+            <%= render 'goals/quick_form', {priority: false, show_date: false, date: daily_date} %>
         </div>
 
         <div class="container column-container light-mid">
             <h2 class="mini-header">Coming Up...</h2>
             <%= render "goals/list_goals", { goals: tomorrows_goals} %> 
-            <%= render 'goals/upcoming_form' %>
+            <%= render 'goals/quick_form', {priority: false, show_date: true, date: tomorrows_date} %>
         </div>
     </div>
 
