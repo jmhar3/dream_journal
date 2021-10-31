@@ -118,6 +118,15 @@ div.columns {
     gap: 9px;
 }
 
+#tracker-columns {
+    display: flex;
+    gap: 12px;
+}
+
+#tracker-columns a {
+    width: 120px;
+}
+
 .emoji-form input[type=text] {
     width: 100%;
 }

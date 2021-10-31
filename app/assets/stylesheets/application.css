@@ -47,11 +47,11 @@ body {
   }
   
   ::-webkit-scrollbar-track {
-    background: var(--super-light-colour);
+    background: var(--light-colour);
   }
   
   ::-webkit-scrollbar-thumb {
-    background: var(--light-colour);
+    background: var(--super-light-colour);
   }
   
   ::-webkit-scrollbar-thumb:hover {
