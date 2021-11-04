@@ -1,0 +1,33 @@
+<%= link_to 'New Record', new_finance_path, class: 'button' %>
+
+<div class="container mid">
+    <h2>
+        🤑$<%= monthly_earnings %>
+    </h2>
+    <br>earnings
+</div>
+
+<div class="container mid">
+    <h2>
+        💸$<%= monthly_expenses %>
+    </h2>
+    <br>expenses
+</div>
+
+<div class="container mid">
+    <h2>
+        💰$<%= monthly_total %>
+    </h2>
+    <br>total
+</div>
+
+<ul>
+    <% monthly_finances.each do |f| %>
+        <li>
+            <%= f.flow == 'incoming' ? '🤑' : '💸' %>
+            <%= f.date.strftime("%B #{f.date.day.ordinalize}, %Y") %> 
+            $<%= f.amount %> 
+            <%= f.flow %>
+        </li>
+    <% end if finances %>
+</ul>

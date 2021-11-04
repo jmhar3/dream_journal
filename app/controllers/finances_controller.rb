@@ -1,5 +1,8 @@
 class FinancesController < ApplicationController
 
+    def index
+    end
+
     def new
         @finance = Finance.new(date: Date.today)
     end

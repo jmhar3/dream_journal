@@ -1,10 +1,11 @@
 <% invites.each do |invite| %>
+    <% friend = find_friend(invite.friend_id) %>
     <li class="row space-between super-light task-bubble dark">
-        <%= image_tag(@user.image_url, :class => "icon") if @user.image? %><%= invite.username %>
+        <%= image_tag(@user.image_url, :class => "icon") if @user.image? %><%= friend.username %>
         <% if type == 'incoming' %>
             <%= link_to '👌', confirm_invite_path(invite) %>
         <% else %>
             <p>⌛</p>
         <% end %>
     </li>
-<% end if invites.length > 0 %>
+<% end if invites %>

@@ -1,4 +1,10 @@
+document.getElementById("menu").addEventListener('click', toggleDropdown)
+
 function toggleDropdown(e) {
-    e.preventDefault();
-    document.getElementById("nav-dropdown").classList.toggle("show");
+    console.log('bye')
+    if (e.target.classList.contains('toggle_menu')) {
+        document.getElementById("nav-dropdown").classList.toggle("hide");
+    }
 }
+
+console.log('hi')

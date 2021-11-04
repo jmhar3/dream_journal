@@ -13,18 +13,10 @@ class User < ApplicationRecord
     has_many :self_cares
     has_many :foods, through: :meals
     has_many :invitations
+    has_many :friends, through: :invitations, source: :user
 
-    def friends
-        sent_invitation = Invitation.where(user_id: id, confirmed: true).pluck(:friend_id)
-
-        got_invitation = Invitation.where(friend_id: id, confirmed: true).pluck(:user_id)
-
-        ids = sent_invitation + got_invitation
-
-        User.where(id: ids)
-    end
-
-    def friend_with?(user)
-        Invitation.confirmed_record?(id, user.id)
-    end
+    # confirm friend before sending shared goal
+    # def friend_with?(user)
+    #     Invitation.confirmed_record?(id, user.id)
+    # end
 end

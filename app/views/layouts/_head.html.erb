@@ -1,0 +1,14 @@
+  <head>
+    <title>DreamJournal</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <% if cookies[:dark] %>
+      <%= stylesheet_link_tag 'dark', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <% else %>
+      <%= stylesheet_link_tag 'light', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <% end %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', :defer => "defer" %>
+  </head>

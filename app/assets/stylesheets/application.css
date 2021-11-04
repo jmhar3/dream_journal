@@ -264,6 +264,7 @@ header h1 {
 }
 
 nav {
+    z-index: 999;
     background: var(--super-light-colour);
     position: fixed;
     top: 0;
