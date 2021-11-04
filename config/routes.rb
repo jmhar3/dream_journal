@@ -18,7 +18,6 @@ Rails.application.routes.draw do
     patch :complete
   end
 
-  get 'confirm_invite', to: 'invitations#confirm'
   get 'up_daily', to: 'sessions#up_daily'
   get 'down_daily', to: 'sessions#down_daily'
   get 'reset_daily', to: 'sessions#reset_daily'
@@ -31,6 +30,7 @@ Rails.application.routes.draw do
   get "daily", to: "pages#daily"
   get "monthly", to: "pages#monthly"
   get "account", to: "pages#account"
+  patch 'confirm_invite', to: 'invitations#update'
   get "add_friend", to: "invitations#new"
   post "add_friend", to: "invitations#create"
   get 'login', to: 'sessions#new'

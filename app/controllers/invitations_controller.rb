@@ -22,7 +22,7 @@ class InvitationsController < ApplicationController
         end
     end
 
-    def confirm
+    def update
         @invitation = Invitation.find(params[:id])
         @invitation.update(invitation_params)
         
@@ -32,6 +32,6 @@ class InvitationsController < ApplicationController
     private
 
     def invitation_params
-        params.permit(:user_id, :friend_id)
+        params.permit(:user_id, :friend_id, :confirmed)
     end
 end

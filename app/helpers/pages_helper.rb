@@ -89,7 +89,11 @@ module PagesHelper
         Invitation.outgoing_invitations(session[:user_id]).pending_requests
     end
 
-    def find_friend id
-        User.find(id)
+    def incoming_confirmed
+        Invitation.incoming_invitations(session[:user_id]).confirmed_requests
+    end
+
+    def outgoing_confirmed
+        Invitation.outgoing_invitations(session[:user_id]).confirmed_requests
     end
 end

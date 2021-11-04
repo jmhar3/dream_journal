@@ -6,7 +6,6 @@ class UsersController < ApplicationController
     @user.image = params[:image]
     if @user.save
       session[:user_id] = @user.id
-      self.self_cares.build(label: "Drink Water", goal: 8, frequency: day, user_id: session[:user_id])
       redirect_to root_path
     else
       render "sessions/new"

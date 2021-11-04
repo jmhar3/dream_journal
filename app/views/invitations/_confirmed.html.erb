@@ -1,0 +1,7 @@
+<% if invites %>
+    <% invites.each do |invite| %>
+        <li><%= invite.friend.username %></li>
+    <% end %>
+<% else %>
+    <li>You have no friends.</li>
+<% end %>

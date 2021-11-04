@@ -12,8 +12,8 @@ class PagesController < ApplicationController
     end
 
     def account
-        @user = User.find_by(id: session[:user_id])
-        @friends = @user.friends
+        @user = User.find(session[:user_id])
+        @friends = @user.friends_added
     end
 
     def tracker_menu

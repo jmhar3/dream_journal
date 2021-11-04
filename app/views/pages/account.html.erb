@@ -30,16 +30,9 @@
         <ul>
             <%= render 'invitations/pending', {invites: incoming_invites, type: 'incoming'} %>
             <%= render 'invitations/pending', {invites: outgoing_invites, type: 'outgoing'} %>
-            <% if @friends.length > 0 %>
-                <% @friends.each do |friend| %>
-                    <li><%= friend.username %></li>
-                <% end %>
-            <% else %>
-                <li>You have no friends.</li>
-            <% end %>
+            <%= render 'invitations/confirmed', {invites: incoming_confirmed} %>
+            <%= render 'invitations/confirmed', {invites: outgoing_confirmed} %>
         </ul>
-        <div>
-            <%= link_to "Add Friend", add_friend_path, class: "button light" %>
-        </div>
+        <%= link_to "Add Friend", add_friend_path, class: "button light" %>
     </div>
 </div>

@@ -13,10 +13,11 @@ class User < ApplicationRecord
     has_many :self_cares
     has_many :foods, through: :meals
     has_many :invitations
-    has_many :friends, through: :invitations, source: :user
+    has_many :accepted_invitations, -> { where(confirmed: true) }, class_name: "Invitation"
+    has_many :friends_added, through: :accepted_invitations, source: :friend 
+    has_many :added_friends, through: :accepted_invitations, source: :user 
 
-    # confirm friend before sending shared goal
-    # def friend_with?(user)
-    #     Invitation.confirmed_record?(id, user.id)
-    # end
+    def friends
+
+    end
 end
