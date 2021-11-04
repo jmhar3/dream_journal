@@ -18,7 +18,7 @@
             <div class="progress" style="height: 12px;width: <%= finance_progress %>%"></div>
         </div>
     <% else %>
-        <%= form_for :finance, url: finances_path do |f| %>
+        <%= form_for :finance, url: finances_path, method: 'POST' do |f| %>
             <div class="row fit-content emoji-form">
                 <%= f.select :flow, options_for_status, {}, prompt: 'Select One' %>
 
