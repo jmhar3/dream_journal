@@ -1,7 +1,7 @@
 class CompletedCaresController < ApplicationController
     def update
         params[:self_cares_id] = params[:id]
-        completed_care = CompletedCare.find_or_create_by( self_cares_id: params[:id])
+        completed_care = current_user.completed_cares.find_or_create_by( self_cares_id: params[:id])
 
         params[:tally] = params[:tally].to_i + 1
 

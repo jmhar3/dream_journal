@@ -5,11 +5,11 @@ class GoalsController < ApplicationController
     end
 
     def new
-        @goal = Goal.new(date: Date.today)
+        @goal = current_user.goals.new(date: Date.today)
     end
 
     def create
-        @goal = Goal.new(goal_params)
+        @goal = current_user.goals.new(goal_params)
         if @goal.save
             redirect_to daily_path
         else
@@ -32,7 +32,7 @@ class GoalsController < ApplicationController
     end
 
     def complete
-        @goal = Goal.find(params[:goal_id])
+        @goal = current_user.goals.find(params[:goal_id])
         @goal.update_attribute(:completed, !@goal[:completed])
         redirect_to daily_path
     end
@@ -40,7 +40,7 @@ class GoalsController < ApplicationController
     private
 
     def set_goal
-        @goal = Goal.find(params[:id])
+        @goal = current_user.goals.find(params[:id])
     end
 
     def goal_params

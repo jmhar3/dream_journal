@@ -4,11 +4,11 @@ class FinancesController < ApplicationController
     end
 
     def new
-        @finance = Finance.new(date: Date.today)
+        @finance = current_user.finances.new(date: Date.today)
     end
 
     def create
-        @finance = Finance.new(finance_params)
+        @finance = current_user.finances.new(finance_params)
         if @finance.save
             redirect_to daily_path
         else
@@ -20,7 +20,6 @@ class FinancesController < ApplicationController
 
     def finance_params
         params.require(:finance)
-        .permit(:user_id, :flow, :amount, :date)
-        .with_defaults(user_id: session[:user_id], date: Date.today)
+        .permit(:flow, :amount, :date)
     end
 end

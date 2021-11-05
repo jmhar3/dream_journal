@@ -1,10 +1,21 @@
 module ApplicationHelper
+
+    def current_user
+        Current.user = User.find(session[:user_id]) if session[:user_id]
+    end
+
+    # DATES
+
     def daily_date
         Date.current + (session[:daily_counter].days)
     end
 
     def monthly_date
-        Date.current + (session[:monthly_counter].months)
+        if session[:monthly_counter] == nil
+            Date.current
+        else
+            Date.current + (session[:monthly_counter].months)
+        end
     end
 
     def tomorrows_date
@@ -12,15 +23,17 @@ module ApplicationHelper
     end
 
     def monthly_datetime
-        if session[:monthly_counter] == 0
+        if session[:monthly_counter] == 0 || session[:monthly_counter] == nil
             DateTime.current
         else
             DateTime.current.change(month: session[:monthly_counter])
         end
     end
 
+    # FINANCES
+
     def finances
-        Finance.where(user_id: session[:user_id])
+        current_user.finances
     end
 
     def daily_earnings

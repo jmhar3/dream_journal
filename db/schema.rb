@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_26_235124) do
+ActiveRecord::Schema.define(version: 2021_11_05_052937) do
 
   create_table "completed_cares", force: :cascade do |t|
     t.string "tally"
