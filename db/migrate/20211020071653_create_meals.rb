@@ -3,6 +3,7 @@ class CreateMeals < ActiveRecord::Migration[6.1]
     create_table :meals do |t|
       t.string :type
       t.date :date
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end

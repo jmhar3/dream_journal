@@ -1,6 +1,6 @@
 <div class="container column-container mid">
     <div class="row">
-        <h2>Breakfast</h2><hr>
+        <h2><%= link_to 'Breakfast', meals_path %></h2><hr>
     </div>
     <%= render 'meals/food_list', {meals: breakfast, meal_type: "breakfast"} %>
     <div class="row">

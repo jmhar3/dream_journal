@@ -1,0 +1,3 @@
+<%= @meals.each do |meal| %>
+    <h1><%= meal.meal %><%= meal.food.name if meal.food %></h1>
+<% end %>

@@ -11,12 +11,14 @@
         </li>
     </ul>
 <% else %>
-    <%= form_for :meal, :url => meals_path do |f| %>
+    <%= form_for :meal, url: meals_path do |f| %>
         <%= f.hidden_field :date, value: Date.current %>
         <%= f.hidden_field :meal, value: meal_type %>
 
         <div class="row emoji-form">
-            <%= f.text_field :foods, placeholder: meal_type %>
+            <%= f.fields_for :food do |ff| %>
+                <%= ff.text_field :name, placeholder: meal_type %>
+            <% end %>
 
             <%= f.submit '🏹' %>
         </div>

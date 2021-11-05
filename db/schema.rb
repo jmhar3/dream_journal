@@ -10,31 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_30_105816) do
+ActiveRecord::Schema.define(version: 2021_10_26_235124) do
 
   create_table "completed_cares", force: :cascade do |t|
     t.string "tally"
     t.integer "self_cares_id", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["self_cares_id"], name: "index_completed_cares_on_self_cares_id"
+    t.index ["user_id"], name: "index_completed_cares_on_user_id"
   end
 
   create_table "finances", force: :cascade do |t|
     t.integer "amount"
     t.string "flow"
     t.date "date"
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
+    t.index ["user_id"], name: "index_finances_on_user_id"
   end
 
   create_table "foods", force: :cascade do |t|
     t.string "name"
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
-    t.integer "meal_id"
+    t.index ["user_id"], name: "index_foods_on_user_id"
   end
 
   create_table "goals", force: :cascade do |t|
@@ -42,17 +45,19 @@ ActiveRecord::Schema.define(version: 2021_10_30_105816) do
     t.text "more_info"
     t.boolean "priority"
     t.date "date"
+    t.boolean "completed"
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
-    t.boolean "completed"
+    t.index ["user_id"], name: "index_goals_on_user_id"
   end
 
   create_table "gratitudes", force: :cascade do |t|
     t.string "name"
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
+    t.index ["user_id"], name: "index_gratitudes_on_user_id"
   end
 
   create_table "invitations", force: :cascade do |t|
@@ -65,40 +70,50 @@ ActiveRecord::Schema.define(version: 2021_10_30_105816) do
   end
 
   create_table "meals", force: :cascade do |t|
-    t.string "meal"
+    t.string "type"
     t.date "date"
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
-    t.integer "foods"
+    t.index ["user_id"], name: "index_meals_on_user_id"
   end
 
   create_table "notes", force: :cascade do |t|
     t.text "content"
     t.date "date"
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
+    t.index ["user_id"], name: "index_notes_on_user_id"
   end
 
   create_table "self_cares", force: :cascade do |t|
     t.string "label"
     t.integer "goal"
     t.string "frequency"
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
+    t.index ["user_id"], name: "index_self_cares_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "username"
     t.string "password_digest"
+    t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "image"
   end
 
   add_foreign_key "completed_cares", "self_cares", column: "self_cares_id"
+  add_foreign_key "completed_cares", "users"
+  add_foreign_key "finances", "users"
+  add_foreign_key "foods", "users"
+  add_foreign_key "goals", "users"
+  add_foreign_key "gratitudes", "users"
   add_foreign_key "invitations", "users"
+  add_foreign_key "meals", "users"
+  add_foreign_key "notes", "users"
+  add_foreign_key "self_cares", "users"
 end

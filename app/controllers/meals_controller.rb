@@ -1,4 +1,8 @@
 class MealsController < ApplicationController
+
+    def index
+        @meals = Meal.where(user_id: session[:user_id])
+    end
     
     def show
         @meal = Meal.find(params[:id])
@@ -6,8 +10,7 @@ class MealsController < ApplicationController
 
     def new
         @meal = Meal.new(date: Date.today)
-        @meal.foods.build
-        @foods = Food.all
+        @meal.build_food(user_id: session[:user_id])
     end
 
     def create
@@ -23,7 +26,11 @@ class MealsController < ApplicationController
 
     def meal_params
         params.require(:meal)
-        .permit(:user_id, :meal, :food, :date)
+        .permit(
+            :user_id, :meal, :date, food_attributes: [
+                :name, :user_id
+            ]
+        )
         .with_defaults(user_id: session[:user_id])
     end
 end
