@@ -7,7 +7,7 @@ class SelfCaresController < ApplicationController
     def create
         @self_care = current_user.self_cares.new(self_care_params)
         if @self_care.save
-            redirect_to daily_path
+            redirect_to session[:return]
         else
             render :new
         end
@@ -21,13 +21,13 @@ class SelfCaresController < ApplicationController
         @self_care = current_user.self_cares.find(params[:id])
         @self_care.update(self_care_params)
         
-        redirect_to daily_path
+        redirect_to session[:return]
     end
 
     def destroy
         @self_care = current_user.self_cares.find(params[:id])
         @self_care.destroy
-        redirect_to daily_path
+        redirect_to session[:return]
     end
 
     private

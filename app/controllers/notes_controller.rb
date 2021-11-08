@@ -11,7 +11,7 @@ class NotesController < ApplicationController
     def create
         @note = current_user.notes.new(note_params)
         if @note.save
-            redirect_to daily_path
+            redirect_to session[:return]
         else
             render :new
         end
@@ -25,13 +25,13 @@ class NotesController < ApplicationController
         @note = current_user.notes.find(params[:id])
         @note.update(note_params)
         
-        redirect_to daily_path
+        redirect_to session[:return]
     end
 
     def destroy
         @note = current_user.notes.find(params[:id])
         @note.destroy
-        redirect_to daily_path
+        redirect_to session[:return]
     end
 
     private

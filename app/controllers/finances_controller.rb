@@ -10,7 +10,7 @@ class FinancesController < ApplicationController
     def create
         @finance = current_user.finances.new(finance_params)
         if @finance.save
-            redirect_to daily_path
+            redirect_to session[:return]
         else
             render :new
         end

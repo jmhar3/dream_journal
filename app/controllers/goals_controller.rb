@@ -11,7 +11,7 @@ class GoalsController < ApplicationController
     def create
         @goal = current_user.goals.new(goal_params)
         if @goal.save
-            redirect_to daily_path
+            redirect_to session[:return]
         else
             render :new
         end
@@ -23,12 +23,12 @@ class GoalsController < ApplicationController
     def update
         @goal.update(goal_params)
         
-        redirect_to daily_path
+        redirect_to session[:return]
     end
 
     def destroy
         @goal.destroy
-        redirect_to daily_path
+        redirect_to session[:return]
     end
 
     def complete

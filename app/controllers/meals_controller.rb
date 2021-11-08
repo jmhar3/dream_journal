@@ -18,7 +18,7 @@ class MealsController < ApplicationController
         puts "MEAL"
         p @meal
         if @meal.save
-            redirect_to daily_path
+            redirect_to session[:return]
         else
             render :new
         end

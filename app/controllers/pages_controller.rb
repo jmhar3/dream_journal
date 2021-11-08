@@ -6,9 +6,11 @@ class PagesController < ApplicationController
     end
 
     def daily
+        session[:return] = daily_path
     end
 
     def monthly
+        session[:return] = monthly_path
         @self_cares = current_user.self_cares.where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day).to_a
     end
 

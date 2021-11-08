@@ -7,7 +7,7 @@ class CompletedCaresController < ApplicationController
 
         completed_care.update(completed_cares_params)
         
-        redirect_to daily_path
+        redirect_to session[:return]
     end
 
     private

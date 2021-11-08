@@ -11,7 +11,7 @@ class GratitudesController < ApplicationController
     def create
         @gratitude = current_user.gratitudes.new(gratitude_params)
         if @gratitude.save
-            redirect_to daily_path
+            redirect_to session[:return]
         else
             render :new
         end
@@ -25,13 +25,13 @@ class GratitudesController < ApplicationController
         @gratitude = current_user.gratitudes.find(params[:id])
         @gratitude.update(gratitude_params)
 
-        redirect_to daily_path
+        redirect_to session[:return]
     end
 
     def destroy
         @gratitude = current_user.gratitudes.find(params[:id])
         @gratitude.destroy
-        redirect_to daily_path
+        redirect_to session[:return]
     end
 
     private
