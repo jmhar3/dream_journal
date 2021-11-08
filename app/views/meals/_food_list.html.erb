@@ -2,21 +2,22 @@
     <ul>
         <% meals[0..-2].each do |meal| %>
             <li class="row space-between super-light task-bubble dark">
-                <h5 class="left"><%=  meal[:type] %></h5>
+                <h5 class="left"><%=  meal.food.name %></h5>
             </li>
         <% end %>
         <li class="row space-between super-light task-bubble dark">
-            <h5><%= meals[-1][:type] %></h5>
+            <h5><%= meals[-1].food.name %></h5>
             <%= link_to '➕', new_meal_path(meals[-1]) %>
         </li>
     </ul>
 <% else %>
     <%= form_for :meal, url: meals_path do |f| %>
         <%= f.hidden_field :date, value: Date.today %>
-        <%= f.hidden_field :type, value: meal_type %>
+        <%= f.hidden_field :meal_type, value: meal_type %>
 
         <div class="row emoji-form">
-            <%= f.fields_for :food do |ff| %>
+            <%= f.fields_for :food_attributes do |ff| %>
+                <%= ff.hidden_field :user_id, value: current_user.id %>
                 <%= ff.text_field :name, placeholder: meal_type %>
             <% end %>
 

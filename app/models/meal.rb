@@ -1,11 +1,10 @@
 class Meal < ApplicationRecord
     belongs_to :user
-    has_one :food
+    belongs_to :food
 
-    scope :meals, -> (type) { where(type: type) }
+    scope :meals, -> (type) { where(meal_type: type) }
     
     def food_attributes=(food)
-        self.food = Food.find_or_create_by(name: food[:name])
-        self.food.update(food)
+        self.food = Food.find_by(name: food[:name]) || Food.create(food)
     end
 end

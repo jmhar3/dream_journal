@@ -10,11 +10,13 @@ class MealsController < ApplicationController
 
     def new
         @meal = current_user.meals.new(date: Date.today)
-        @meal.build_food
+        @meal.food = @meal.build_food
     end
 
     def create
         @meal = current_user.meals.new(meal_params)
+        puts "MEAL"
+        p @meal
         if @meal.save
             redirect_to daily_path
         else
@@ -27,9 +29,9 @@ class MealsController < ApplicationController
     def meal_params
         params.require(:meal)
         .permit(
-            :meal, :date, food_attributes: [
-                :name
+            :date, :meal_type, food_attributes: [
+                :name, :user_id
             ]
-        )
+        ).with_defaults(user_id: session[:user_id])
     end
 end
