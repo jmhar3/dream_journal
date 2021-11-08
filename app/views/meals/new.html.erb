@@ -14,10 +14,11 @@
     <hr class="rounded">
     <%= form_for @meal do |f| %>
       <div class="row">
-        <%= f.fields_for :food do |ff| %>
+        <%= f.fields_for :food_attributes do |ff| %>
+          <%= ff.hidden_field :user_id, value: current_user.id %>
           <%= ff.text_field :name, placeholder: "Food", class: "food-list" %>
         <% end %>
-        <%= f.select :meal, meal_type_options, {}, prompt: 'Select One' %>
+        <%= f.select :meal_type, meal_type_options, {}, prompt: 'Select One' %>
       </div>
       <div class="row">
         <%= f.date_field :date %>
