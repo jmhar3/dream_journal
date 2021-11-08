@@ -1,6 +1,9 @@
 <% if invites %>
     <% invites.each do |invite| %>
-        <li><%= invite.friend.username %></li>
+        <li class="row space-between super-light task-bubble dark">
+            <%= render 'users/avatar', { user: invite.friend, size: 'icon' } %>
+            <%= invite.friend.username %>
+        </li>
     <% end %>
 <% else %>
     <li>You have no friends.</li>

@@ -1,6 +1,6 @@
 <% invites.each do |invite| %>
     <li class="row space-between super-light task-bubble dark">
-        <%= image_tag(@user.image_url, :class => "icon") if @user.image? %>
+        <%= render 'users/avatar', { user: invite.friend, size: 'icon' } %>
         <%= invite.friend.username %>
         <% if type == 'incoming' %>
             <%= link_to '✅', confirm_invite_path(:id => invite.id, :confirmed => true), :method=> :patch %>

@@ -1,5 +1,5 @@
-<% if @user.image? %>
+<% if user.image? %>
     <div>
-        <%= image_tag(@user.image_url, :class => "avatar") %>
+        <%= image_tag(user.image_url, :class => size) %>
     </div>
 <% end %>

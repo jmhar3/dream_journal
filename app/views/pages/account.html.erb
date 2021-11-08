@@ -6,7 +6,7 @@
 
 <div class="full-height vertically-center">
     <div class="container account-column mid">
-        <%= render 'users/avatar' %>
+        <%= render 'users/avatar', { user: @user, size: 'avatar' } %>
         <li class="super-light task-bubble">
             <h3 id="username"><%= @user.username %></h3>
         </li>
