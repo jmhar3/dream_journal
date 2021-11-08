@@ -30,8 +30,12 @@
         <ul>
             <%= render 'invitations/pending', {invites: incoming_invites, type: 'incoming'} %>
             <%= render 'invitations/pending', {invites: outgoing_invites, type: 'outgoing'} %>
-            <%= render 'invitations/confirmed', {invites: incoming_confirmed} %>
-            <%= render 'invitations/confirmed', {invites: outgoing_confirmed} %>
+            <% if incoming_confirmed.count != 0 ||  outgoing_confirmed.count != 0 %>
+                <%= render 'invitations/confirmed', {invites: incoming_confirmed} %>
+                <%= render 'invitations/confirmed', {invites: outgoing_confirmed} %>
+            <% else %>
+                <li>You have no friends.</li>
+            <% end %>
         </ul>
         <%= link_to "Add Friend", add_friend_path, class: "button light" %>
     </div>
