@@ -24,10 +24,6 @@ class PagesController < ApplicationController
     
     private
 
-    def new_note
-        @note = current_user.notes.new(date: Date.today)
-    end
-
     def goal_params
         params.require(:goal)
         .permit(:goal, :priority, :user_id, :date)
