@@ -12,7 +12,7 @@
     </ul>
 <% else %>
     <%= form_for :meal, url: meals_path do |f| %>
-        <%= f.hidden_field :date, value: Date.current %>
+        <%= f.hidden_field :date, value: Date.today %>
         <%= f.hidden_field :type, value: meal_type %>
 
         <div class="row emoji-form">

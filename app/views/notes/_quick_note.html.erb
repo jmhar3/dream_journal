@@ -1,4 +1,6 @@
 <%= form_for :note, url: notes_path do |f| %>
+    <%= f.hidden_field :date, value: Date.today %>
+
     <div class="row emoji-form">
         <%= f.text_field :content, placeholder: "Note" %>
 
