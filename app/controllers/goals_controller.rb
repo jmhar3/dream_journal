@@ -34,7 +34,7 @@ class GoalsController < ApplicationController
     def complete
         @goal = current_user.goals.find(params[:goal_id])
         @goal.update_attribute(:completed, !@goal[:completed])
-        redirect_to daily_path
+        redirect_to session[:return]
     end
 
     private
