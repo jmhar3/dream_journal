@@ -1,15 +1,15 @@
 class GratitudesController < ApplicationController
     
     def show
-        @gratitude = Gratitude.find(params[:id])
+        @gratitude = current_user.gratitudes.find(params[:id])
     end
 
     def new
-        @gratitude = Gratitude.new
+        @gratitude = current_user.gratitudes.new
     end
 
     def create
-        @gratitude = Gratitude.new(gratitude_params)
+        @gratitude = current_user.gratitudes.new(gratitude_params)
         if @gratitude.save
             redirect_to daily_path
         else
@@ -18,18 +18,18 @@ class GratitudesController < ApplicationController
     end
 
     def edit
-        @gratitude = Gratitude.find(params[:id])
+        @gratitude = current_user.gratitudes.find(params[:id])
     end
 
     def update
-        @gratitude = Gratitude.find(params[:id])
+        @gratitude = current_user.gratitudes.find(params[:id])
         @gratitude.update(gratitude_params)
 
         redirect_to daily_path
     end
 
     def destroy
-        @gratitude = Gratitude.find(params[:id])
+        @gratitude = current_user.gratitudes.find(params[:id])
         @gratitude.destroy
         redirect_to daily_path
     end

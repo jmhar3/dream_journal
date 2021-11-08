@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
     skip_before_action :require_login, only: [:home]
+    before_action :daily, :monthly
 
     def home
     end
@@ -8,7 +9,7 @@ class PagesController < ApplicationController
     end
 
     def monthly
-        @self_cares = SelfCare.by_user(session[:user_id]).where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day).to_a
+        @self_cares = current_user.self_cares.where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day).to_a
     end
 
     def account
@@ -20,6 +21,10 @@ class PagesController < ApplicationController
     end
     
     private
+
+    def new_note
+        @note = current_user.notes.new(date: Date.today)
+    end
 
     def goal_params
         params.require(:goal)

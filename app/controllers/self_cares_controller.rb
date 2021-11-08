@@ -1,11 +1,11 @@
 class SelfCaresController < ApplicationController
 
     def new
-        @self_care = SelfCare.new
+        @self_care = current_user.self_cares.new
     end
 
     def create
-        @self_care = SelfCare.new(self_care_params)
+        @self_care = current_user.self_cares.new(self_care_params)
         if @self_care.save
             redirect_to daily_path
         else
@@ -14,18 +14,18 @@ class SelfCaresController < ApplicationController
     end
 
     def edit
-        @self_care = SelfCare.find(params[:id])
+        @self_care = current_user.self_cares.find(params[:id])
     end
 
     def update
-        @self_care = SelfCare.find(params[:id])
+        @self_care = current_user.self_cares.find(params[:id])
         @self_care.update(self_care_params)
         
         redirect_to daily_path
     end
 
     def destroy
-        @self_care = SelfCare.find(params[:id])
+        @self_care = current_user.self_cares.find(params[:id])
         @self_care.destroy
         redirect_to daily_path
     end
