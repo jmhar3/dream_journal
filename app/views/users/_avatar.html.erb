@@ -1,5 +1,1 @@
-<% if user.image? %>
-    <div>
-        <%= image_tag(user.image_url, :class => size) %>
-    </div>
-<% end %>
+<%= image_tag(user.image_url, :class => size) if user.image? %>

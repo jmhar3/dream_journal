@@ -1,7 +1,6 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-
 #home {
     display: flex;
     flex-direction: column;
@@ -34,9 +33,9 @@
 }
 
 .fade {
-  background: -webkit-linear-gradient(var(--dark-colour), var(--super-light-colour));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    background: -webkit-linear-gradient(var(--dark-colour), var(--super-light-colour));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .big-column img {
@@ -60,11 +59,11 @@
     padding-left: 18px;
 }
 
-.big-column, .little-column {
+.big-column,
+.little-column {
     float: left;
     display: flex;
     flex-direction: column;
-
 }
 
 .big-column {
@@ -145,7 +144,8 @@ div.columns {
     margin-bottom: 9px;
 }
 
-.self-care-progress, .self-care-progress li {
+.self-care-progress,
+.self-care-progress li {
     width: 100%;
     gap: 9px;
     display: flex;
@@ -167,13 +167,8 @@ div.columns {
 }
 
 // USER ACCOUNT
-
 #user_image {
     width: 82%;
-}
-
-li h3#username {
-    margin: none;
 }
 
 .icon {
@@ -182,4 +177,16 @@ li h3#username {
     object-fit: cover;
     border: 3px solid var(--super-light-colour);
     margin-left: 6px;
+}
+
+.friends-list p {
+    padding-right: 6px;
+}
+
+.friends-list ul {
+    margin-bottom: 21px;
+}
+
+.friends-list div.pending-friend {
+    justify-content: flex-start;
 }
