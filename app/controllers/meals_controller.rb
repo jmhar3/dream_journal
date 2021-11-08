@@ -15,8 +15,6 @@ class MealsController < ApplicationController
 
     def create
         @meal = current_user.meals.new(meal_params)
-        puts "MEAL"
-        p @meal
         if @meal.save
             redirect_to session[:return]
         else

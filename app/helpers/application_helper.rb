@@ -22,6 +22,14 @@ module ApplicationHelper
         daily_date + 1.day
     end
 
+    def daily_datetime
+        if session[:daily_counter] == 0 || session[:daily_counter] == nil
+            DateTime.current
+        else
+            DateTime.current.change(month: session[:daily_counter])
+        end
+    end
+
     def monthly_datetime
         if session[:monthly_counter] == 0 || session[:monthly_counter] == nil
             DateTime.current

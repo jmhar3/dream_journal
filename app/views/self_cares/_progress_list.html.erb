@@ -1,6 +1,6 @@
- <% if self_cares %>
+ <% if monthly_self_cares %>
     <ul class="self-care-progress">
-        <% self_cares.each do |sc| %>
+        <% monthly_self_cares.each do |sc| %>
             <li class="self-care">
                 <h3><%= sc.label %></h3>
                 <div class="progress-bar">

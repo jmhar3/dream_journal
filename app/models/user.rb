@@ -22,4 +22,8 @@ class User < ApplicationRecord
     def friends
 
     end
+
+    def create_new_user_seeds
+        NewUserSeedsJob.perform_now self
+    end
 end
