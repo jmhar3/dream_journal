@@ -50,7 +50,7 @@ module PagesHelper
     # MEALS
 
     def breakfast
-        current_user.meals.today(daily_date).meals("breakfast").to_a
+        breakfast = current_user.meals.today(daily_date).meals("breakfast").to_a
     end
 
     def lunch

@@ -17,6 +17,21 @@ Rails.application.routes.draw do
   resources :goals do
     patch :complete
   end
+  
+  resources :pages do
+    resources :finances
+    resources :gratitudes
+    resources :meals
+    resources :notes
+    resources :self_cares
+    resources :completed_cares
+    resources :goals do
+      patch :complete
+    end
+  end
+
+  get "daily", to: "pages#daily"
+  get "monthly", to: "pages#monthly"
 
   get 'up_daily', to: 'sessions#up_daily'
   get 'down_daily', to: 'sessions#down_daily'
@@ -27,8 +42,6 @@ Rails.application.routes.draw do
   get 'dark', to: 'application#dark'
   get 'light', to: 'application#light'
   get 'tracker_menu', to: 'pages#tracker_menu'
-  get "daily", to: "pages#daily"
-  get "monthly", to: "pages#monthly"
   get "account", to: "pages#account"
   patch 'confirm_invite', to: 'invitations#update'
   get "add_friend", to: "invitations#new"
