@@ -1,10 +1,10 @@
-<% if daily_self_cares %>
+<% if self_cares %>
     <ul>
-        <%= render "self_cares/tracker", {sc: daily_self_cares[0]} %>
-        <% daily_self_cares[1..-1].each do |sc| %>
+        <%= render "self_cares/tracker", {sc: self_cares[0]} %>
+        <% self_cares[1..-1].each do |sc| %>
             <hr>
             <%= render 'self_cares/tracker', {sc: sc} %>
-        <% end if daily_self_cares.count > 1 %>
+        <% end if self_cares.count > 1 %>
     </ul>
 <% else %>
     <h2>Self Care</h2>

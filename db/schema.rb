@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_08_045513) do
+ActiveRecord::Schema.define(version: 2021_11_08_105148) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "completed_cares", force: :cascade do |t|
-    t.string "tally"
     t.bigint "self_cares_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "tally", default: 0
     t.index ["self_cares_id"], name: "index_completed_cares_on_self_cares_id"
     t.index ["user_id"], name: "index_completed_cares_on_user_id"
   end

@@ -39,12 +39,8 @@ module PagesHelper
         percentage.to_i
     end
 
-    def daily_self_cares
-        current_user.self_cares.where(created_at: daily_datetime.beginning_of_day..daily_datetime.end_of_day).to_a
-    end
-
-    def monthly_self_cares
-        current_user.self_cares.where(created_at: monthly_datetime.beginning_of_day..monthly_datetime.end_of_day).to_a
+    def self_cares
+        current_user.self_cares.to_a
     end
 
     def completed_cares self_care_id

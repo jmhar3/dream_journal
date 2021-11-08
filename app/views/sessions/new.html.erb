@@ -2,6 +2,8 @@
     <div class="container account-column mid">
         <h1 class="red">Sign In</h1>
 
+        <%= button_to "Login via Facebook", "/auth/facebook", method: :post, class: "facebook"%>
+
         <%= form_with url: login_path do |f| %>
             <div>
                 <%= f.text_field :username, id: 'username', placeholder: "Username" %>

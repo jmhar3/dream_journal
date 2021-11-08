@@ -1,9 +1,11 @@
 class CompletedCaresController < ApplicationController
     def update
         params[:self_cares_id] = params[:id]
-        completed_care = current_user.completed_cares.find_or_create_by( self_cares_id: params[:id])
+        completed_care = current_user.completed_cares.find_by( self_cares_id: params[:id])
 
-        params[:tally] = params[:tally].to_i + 1
+        raise completed_care.inspect
+
+        params[:tally] = params[:tally] + completed_care[:tally]
 
         completed_care.update(completed_cares_params)
         
@@ -13,6 +15,6 @@ class CompletedCaresController < ApplicationController
     private
 
     def completed_cares_params
-        params.permit(:self_cares_id, :tally).with_defaults(tally: 0)
+        params.permit(:self_cares_id, :tally)
     end
 end

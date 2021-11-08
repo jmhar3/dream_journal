@@ -32,7 +32,6 @@ Rails.application.routes.draw do
 
   get "daily", to: "pages#daily"
   get "monthly", to: "pages#monthly"
-
   get 'up_daily', to: 'sessions#up_daily'
   get 'down_daily', to: 'sessions#down_daily'
   get 'reset_daily', to: 'sessions#reset_daily'
@@ -49,6 +48,8 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'sign_out', to: 'sessions#destroy'
+  get '/auth/facebook/callback' => 'sessions#create'
+  match 'auth/failure', to: redirect('/login'), via: [:get, :post]
   get 'password', to: 'passwords#edit', as: 'edit_password'
   patch 'password', to: 'passwords#update'
   get 'password/reset', to: 'password_resets#new'

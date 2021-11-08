@@ -185,3 +185,14 @@ div.columns {
 .friends-list div.pending-friend {
     justify-content: flex-start;
 }
+
+.facebook {
+    background-color: var(--dark-colour);
+    color: var(--light-colour);
+    margin-bottom: 9px;
+}
+
+.facebook:hover {
+    background-color: var(--main-colour);
+    cursor: pointer;
+}

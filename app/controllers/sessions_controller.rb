@@ -11,15 +11,17 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(username: params[:username])
-    if user.present? && user.authenticate(session_params[:password])
-      session[:user_id] = user.id
-      session[:daily_counter] = 0
-      session[:monthly_counter] = 0
-      redirect_to daily_path
+    if auth = request.env["omniauth.auth"]
+      user = User.find_or_create_by_omniauth(auth)
+      on_complete user
     else
-      flash.now[:alert] = 'Invalid username or password'
-      render :new
+      user = User.find_by(username: params[:username])
+      if user && user.authenticate(session_params[:password])
+        on_complete user
+      else
+        flash.now[:alert] = 'Invalid username or password'
+        render :new
+      end
     end
   end
 
@@ -59,6 +61,13 @@ class SessionsController < ApplicationController
   end
 
   private
+
+  def on_complete user
+    session[:user_id] = user.id
+    session[:daily_counter] = 0
+    session[:monthly_counter] = 0
+    redirect_to daily_path
+  end
 
   def session_params
     params.permit(:username, :password)
