@@ -5,7 +5,11 @@ class SelfCare < ApplicationRecord
     validates :label, presence: true, length: { maximum: 20}
     validates :goal, presence: true, :inclusion => 1..8
 
-    # after_create do
-    #     CreateCompletedCareJob.perform_now(self.id)
-    # end
+    scope :daily, -> { where(frequency: 'day') }
+    scope :weekly, -> { where(frequency: 'week') }
+    scope :monthly, -> { where(frequency: 'month') }
+
+    after_create do
+        CreateCompletedCareJob.perform_now(self)
+    end
 end

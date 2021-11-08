@@ -1,8 +1,7 @@
 class CreateCompletedCareJob < ApplicationJob
   queue_as :default
 
-  def perform(id)
-    # cc = CompletedCare.new(self_care_id: id, tally: 0)
-    # cc.save
+  def perform(sc)
+    CompletedCare.create(self_cares_id: sc.id, tally: 0, user_id: sc.user_id)
   end
 end
