@@ -1,0 +1,27 @@
+<div class="full-height vertically-center">
+  <% if !@finance.errors.empty? %>
+    <ul class="errors">
+      <% @finance.errors.full_messages.each do |error| %>
+        <li class="row space-between task-bubble red">
+          <%= error %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div class="container mid">
+    <h2>New Record</h2>
+    <hr>
+    <%= form_for @finance do |f| %>
+      <div class="row fit-content">
+        <%= f.select :flow, options_for_status, {}, prompt: 'Select One' %>
+        <h2>$</h2><%= f.text_field :amount, placeholder: "0", class: "amount"%>
+      </div>
+      <div class="row">
+        <%= f.date_field :date %>
+
+        <%= f.submit 'Save', class: "button" %>
+      </div>
+    <% end %>
+  </div>
+</div>

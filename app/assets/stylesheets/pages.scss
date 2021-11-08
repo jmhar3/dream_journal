@@ -1,0 +1,192 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+#home {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--super-light-colour);
+    margin-left: -63px;
+}
+
+#home a {
+    background-color: var(--light-colour);
+}
+
+.home-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.home-1 h1 {
+    font-size: 39px;
+    color: var(--main-colour);
+}
+
+.home-1 a {
+    margin-bottom: 30px;
+}
+
+.home-1 .fade {
+    padding-bottom: 21px;
+}
+
+.fade {
+    background: -webkit-linear-gradient(var(--dark-colour), var(--super-light-colour));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.big-column img {
+    width: 462px;
+    padding: 30px;
+    padding-top: 18px;
+}
+
+#home-2 a {
+    margin-right: 30px;
+}
+
+#home-2 h3 {
+    padding: 18px;
+    margin-top: 39px;
+    font-size: 21px;
+}
+
+.little-column img {
+    width: 192px;
+    padding-left: 18px;
+}
+
+.big-column,
+.little-column {
+    float: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.big-column {
+    width: 60%;
+    align-items: flex-end;
+}
+
+.little-column {
+    width: 40%;
+    text-align: left;
+}
+
+.rotate-header {
+    position: fixed;
+    bottom: -27px;
+    left: 14.8px;
+    transform: rotate(270deg);
+    transform-origin: top left;
+    color: var(--main-colour)
+}
+
+input.colour-mode {
+    padding: 6.9px;
+    padding-left: 9px;
+    padding-right: 9px;
+    bottom: -33px;
+    left: 4.5px;
+    background-color: var(--light-colour);
+    cursor: pointer;
+    border: 3px solid var(--super-light-mid);
+}
+
+input.colour-mode:hover {
+    color: var(--dark-colour);
+}
+
+div.columns {
+    align-items: flex-start;
+    margin: 7px;
+    margin-left: 3px;
+    margin-right: 3px;
+    gap: 0;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+}
+
+#tracker-columns {
+    display: flex;
+    gap: 12px;
+}
+
+#tracker-columns a {
+    width: 120px;
+}
+
+.emoji-form input[type=text] {
+    width: 100%;
+}
+
+.emoji-form input[type=submit] {
+    cursor: pointer;
+    background: none;
+}
+
+.emoji-button:hover {
+    background: none;
+}
+
+.self-care h3 {
+    margin-top: 9px;
+    margin-bottom: 9px;
+}
+
+.self-care-progress,
+.self-care-progress li {
+    width: 100%;
+    gap: 9px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quarter-column {
+    width: 20%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.strike {
+    opacity: 0.9;
+    text-decoration: line-through var(--main-colour) solid;
+}
+
+// USER ACCOUNT
+#user_image {
+    width: 82%;
+}
+
+.icon {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border: 3px solid var(--super-light-colour);
+    margin-left: 6px;
+}
+
+.friends-list p {
+    padding-right: 6px;
+}
+
+.friends-list ul {
+    margin-bottom: 21px;
+}
+
+.friends-list div.pending-friend {
+    justify-content: flex-start;
+}

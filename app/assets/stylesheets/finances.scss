@@ -1,0 +1,24 @@
+// Place all the styles related to the Finances controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.amount {
+    text-align: right;
+    width: 24%;
+    float: right;
+}
+
+.finance-header {
+    background-color: var(--super-light-colour);
+    border-radius: 12px 12px 0px 0px;
+    padding: 9px;
+    opacity: 81%;
+}
+
+.finance-header:first-of-type:hover {
+    background-color: var(--super-light-mid);
+    border-radius: 24px 24px 0px 0px;
+}
+
+#finance-hr {
+    margin-top: 0;
+}

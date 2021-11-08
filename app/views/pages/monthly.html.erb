@@ -1,0 +1,38 @@
+<h3 class="rotate-header"><%= link_to '↤', down_monthly_path %> <%= current_month %> <%= link_to '↦', up_monthly_path %></h3>
+
+<div class="row red columns">
+    <div class="column">
+        <div class="container column-container mid">
+            <h2 class="mini-header">Priorities</h2>
+            <%= render "goals/list_goals", { goals: monthly_priorities } %> 
+            <%= render "goals/quick_form", {priority: true, show_date: true, date: monthly_date} %>
+        </div>
+        <div class="container column-container mid">
+            <h2 class="mini-header">Goals</h2>
+            <%= render "goals/list_goals", { goals: monthly_goals} %> 
+            <%= render "goals/quick_form", {priority: false, show_date: true, date: monthly_date} %>
+        </div>
+    </div>
+    <div class="column">
+        <div class="container mid header-bubble">
+            <h2>I'm Grateful For</h2>
+        </div>
+        <div class="container column-container light-mid">
+            <%= render 'gratitudes/list_new', {gratitudes: monthly_gratitudes} %>
+        </div>
+        <div class="container mid header-bubble">
+            <h2 class="red">Self Care</h2>
+        </div>
+        <div class="container column-container mid column dark">
+            <%= render 'self_cares/progress_list' %>
+        </div>
+        <%= render 'finances/progress' %>
+    </div>
+    <div class="column">
+        <div class="container column-container mid">
+            <h2 class="mini-header">Notes</h2>
+            <%= render "notes/list_notes", {notes: monthly_notes} %> 
+            <%= render 'notes/form' %>
+        </div>
+    </div>
+</div>

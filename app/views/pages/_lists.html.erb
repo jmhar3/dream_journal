@@ -1,0 +1,10 @@
+<div class="container mid">
+    <% if list.blank? %>
+        <% list.each do |goal| %>
+            <div>
+                <%= link_to goal.name, edit_goal_path(goal) %>
+            </div>
+        <% end %>
+    <% end %>
+    <%= link_to "Add Goal", new_goal_path, class: "button light" %>
+</div>

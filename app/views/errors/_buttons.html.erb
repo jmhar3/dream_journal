@@ -1,0 +1,5 @@
+<% if Current.user %>
+    <%= link_to 'Return to Journal', daily_path, class: 'button' %>
+<% else %>
+    <%= link_to 'Return to Home Page', root_path, class: 'button' %>
+<% end %>

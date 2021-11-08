@@ -1,0 +1,541 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@font-face {
+    font-family: 'SourceCodeBold';
+    src: font-url('SourceCodePro-Bold.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    text-align: center;
+    padding: none;
+    margin: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: var(--light-colour);
+    margin: 0;
+    margin-left: 55px;
+}
+
+
+/* SCROLL BAR */
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+ ::-webkit-scrollbar-track {
+    background: var(--light-colour);
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: var(--super-light-colour);
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: var(--super-light-mid);
+}
+
+
+/* TRANSITION */
+
+input,
+.button,
+select,
+button,
+textarea,
+.checkmark,
+.checkmark-container,
+.finance-header,
+.task-bubble {
+    -webkit-transition: color .6s, background .6s, border-radius .6s;
+    transition: color .6s, background .6s, border-radius .6s;
+}
+
+header {
+    -webkit-transition: width .6s;
+    transition: width .6s;
+}
+
+.red {
+    color: var(--main-colour);
+}
+
+.dark {
+    color: var(--dark-colour);
+}
+
+.light-mid {
+    background-color: var(--light-mid-colour);
+}
+
+.super-light {
+    background-color: var(--super-light-colour);
+}
+
+.mid {
+    background-color: var(--mid-colour);
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.right {
+    float: right;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.full-height {
+    height: 100vh;
+}
+
+.full-width {
+    width: 100vw;
+}
+
+.vertically-center {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.errors {
+    position: fixed;
+    top: 0;
+}
+
+.errors li {
+    background-color: var(--super-light-colour);
+    font-weight: bold;
+    padding-left: 9px;
+}
+
+.field_with_errors input,
+.field_with_errors textarea {
+    border: 3px solid var(--main-colour);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+li,
+a,
+button,
+div,
+.button,
+ ::placeholder,
+select,
+label,
+input {
+    font-family: 'SourceCodeBold', Geneva, Verdana, sans-serif;
+    color: var(--dark-colour);
+}
+
+a {
+    font-weight: 550;
+    text-decoration: none;
+    color: var(--dark-colour)
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    margin-top: 9px;
+    list-style-type: none;
+}
+
+h1 {
+    font-size: 21px;
+}
+
+h5 {
+    font-weight: bold;
+}
+
+h5,
+p {
+    font-size: 18px;
+    margin: 0;
+}
+
+li,
+.button,
+button,
+select,
+input,
+textarea,
+label,
+ ::placeholder,
+input::-webkit-datetime-edit-day-field,
+input::-webkit-datetime-edit-month-field,
+input::-webkit-datetime-edit-year-field {
+    font-size: 21px;
+    list-style-type: none;
+}
+
+a,
+.button,
+button {
+    cursor: pointer;
+}
+
+button {
+    background: none;
+    border: none;
+    font-weight: 600;
+    color: var(--dark-colour);
+}
+
+hr {
+    border: 2.1px solid var(--main-colour);
+    background-color: var(--main-colour);
+    border-radius: 6px;
+    width: 100%;
+}
+
+hr.hr-column {
+    width: 0;
+    height: 357px;
+    margin: 0;
+    margin-left: 6vw;
+    margin-right: 6vw;
+    padding: 0;
+}
+
+input,
+.button,
+select,
+button,
+textarea {
+    border-radius: 12px;
+}
+
+.button {
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-left: 12px;
+    padding-right: 12px;
+    background-color: var(--super-light-colour);
+    border: 3px solid var(--super-light-mid);
+    border-radius: 12px;
+    color: var(--main-colour);
+    width: fit-content;
+}
+
+.mid.button {
+    background-color: var(--light-mid-colour);
+    border: none;
+}
+
+.mid.button:hover {
+    background-color: var(--mid-colour);
+}
+
+.button:hover {
+    border-radius: 50px;
+    background-color: var(--super-light-mid);
+    color: var(--dark-colour);
+}
+
+
+/* HEADER */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 54px;
+    background-color: var(--super-light-colour);
+}
+
+#menu-icons {
+    position: fixed;
+    top: 12px;
+    left: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 6.9px;
+    align-items: center;
+    font-size: 21px;
+}
+
+#menu-icons a,
+#menu-icons button {
+    cursor: pointer;
+}
+
+header h1 {
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 12px;
+}
+
+nav {
+    z-index: 999;
+    background: var(--super-light-colour);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 30%;
+    padding-left: 21px;
+    padding-right: 21px;
+}
+
+nav ul {
+    clear: both;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    justify-content: center;
+}
+
+nav h2 {
+    margin: 0;
+}
+
+nav span {
+    width: 100%;
+}
+
+.close-menu {
+    float: left;
+    padding-top: 18px;
+    padding-bottom: 9px;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.corner-button {
+    font-size: 18px;
+    position: fixed;
+    top: 12px;
+    right: 15px;
+    background-color: none;
+}
+
+
+/* FORMS */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+input,
+select,
+textarea {
+    background: var(--super-light-colour);
+    font-weight: 550;
+    border: none;
+    padding: 9px;
+    border-radius: 9px;
+    color: var(--main-colour);
+    text-align: center;
+}
+
+::placeholder {
+    color: var(--mid-colour);
+    text-align: center;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    color: var(--main-colour);
+    outline: none;
+    border-radius: 50px;
+    background-color: var(--super-light-mid);
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+    border-radius: 50px;
+    background-color: var(--super-light-mid);
+}
+
+textarea {
+    width: 96%;
+    height: 120px;
+}
+
+textarea:focus,
+textarea:hover {
+    border-radius: 18px;
+}
+
+input::-webkit-datetime-edit-day-field:focus,
+input::-webkit-datetime-edit-month-field:focus,
+input::-webkit-datetime-edit-year-field:focus {
+    background-color: var(--dark-colour);
+    border-radius: 9px;
+    color: var(--super-light-colour);
+    outline: none;
+}
+
+select {
+    margin-right: 18px;
+    cursor: pointer;
+}
+
+.select-container {
+    width: 60%;
+    position: relative;
+}
+
+.container,
+.column-container {
+    border-radius: 30px;
+    height: fit-content;
+    width: fit-content;
+    padding: 21px;
+}
+
+.container h2 {
+    margin: 0;
+}
+
+.container hr {
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+
+form h2 {
+    color: var(--main-colour);
+}
+
+.right {
+    float: right;
+}
+
+
+/* COLUMN STRUCTURE */
+
+div.column-container {
+    width: 87%;
+}
+
+.split-column {
+    float: left;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.account-column {
+    width: 35%;
+}
+
+.header-bubble {
+    width: 69%;
+    padding: 12px;
+}
+
+.task-bubble {
+    padding-top: 9px;
+    padding-bottom: 9px;
+    border-radius: 9px;
+    background-color: var(--light-colour);
+    margin-bottom: 9px;
+}
+
+.task-bubble h5 {
+    padding-left: 12px;
+}
+
+.task-bubble a {
+    padding-right: 12px;
+}
+
+.task-bubble:hover {
+    border-radius: 50px;
+}
+
+.mini-header {
+    padding-bottom: 18px;
+}
+
+
+/* PROGRESS BAR */
+
+.progress-bar {
+    background-color: var(--super-light-colour);
+    border-radius: 30px;
+    margin-bottom: 12px;
+    width: 80%;
+}
+
+.progress {
+    background-color: var(--main-colour);
+    border-radius: 30px;
+}
+
+
+/* MOBILE RESPONSIVENESS */
+
+@media screen and (max-width: 600px) {
+    .column,
+    .split-column {
+        width: 100%;
+    }
+}
+
+
+/* USER */
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 3px solid var(--light-colour);
+    margin-bottom: 9px;
+}
+
+.avatar,
+.icon {
+    border-radius: 100%;
+}

@@ -1,0 +1,53 @@
+<h3 class="rotate-header"><%= link_to '↤', down_daily_path %> <%= current_date %> <%= link_to '↦', up_daily_path %></h3>
+
+<div class="row red columns">
+    <div class="column">
+        <div class="container mid header-bubble">
+            <h2>Top Priorities</h2>
+        </div>
+        <div class="container column-container light-mid">
+            <%= render "goals/list_goals", { goals: priorities} %> 
+            <%= render 'goals/quick_form', {priority: true, show_date: false, date: daily_date} %>
+        </div>
+
+        <div class="container mid header-bubble">
+            <h2>Todays Goals</h2>
+        </div>
+        <div class="container column-container light-mid">
+            <%= render "goals/list_goals", { goals: goals} %> 
+            <%= render 'goals/quick_form', {priority: false, show_date: false, date: daily_date} %>
+        </div>
+
+        <div class="container column-container light-mid">
+            <h2 class="mini-header">Coming Up...</h2>
+            <%= render "goals/list_goals", { goals: tomorrows_goals} %> 
+            <%= render 'goals/quick_form', {priority: false, show_date: true, date: tomorrows_date} %>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="container column-container light-mid">
+            <h2 class="mini-header">I'm Grateful For</h2>
+            <%= render 'gratitudes/list_new' %>
+        </div>
+
+        <div class="container column-container light-mid self-care">
+            <%= render 'self_cares/list_new' %>
+        </div>
+        
+        <div class="container mid header-bubble">
+            <h2>Notes</h2>
+        </div>
+        <div class="container column-container light-mid">
+            <%= render "notes/list_notes" %> 
+            <%= render 'notes/quick_note' %>
+        </div>
+    </div>
+
+    <div class="column">
+        <%= render "finances/daily_tracker" %>
+        <%= render "meals/meal_tracker" %>
+    </div>
+</div>
+
+<%= javascript_pack_tag "toggleMenu" %>

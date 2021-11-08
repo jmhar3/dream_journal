@@ -1,0 +1,20 @@
+<div class="full-height vertically-center">
+    <div class="container mid">
+        <h2>Track your...</h2>
+        <hr>
+        <div id="tracker-columns">
+            <div class="column">
+                <%= link_to 'Self Care', new_self_care_path, class: 'button' %>
+                <%= link_to 'Goals', new_goal_path, class: 'button' %>
+            </div>
+            <div class="column">
+                <%= link_to 'Finances', new_finance_path, class: 'button' %>
+                <%= link_to 'Notes', new_note_path, class: 'button' %>
+            </div>
+            <div class="column">
+                <%= link_to 'Gratitude', new_gratitude_path, class: 'button' %>
+                <%= link_to 'Meals', new_meal_path, class: 'button' %>
+            </div>
+        </div>
+    </div>
+</div>

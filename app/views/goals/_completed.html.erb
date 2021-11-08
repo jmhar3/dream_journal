@@ -1,0 +1,5 @@
+<% if goal.completed %>
+    <h5 class="strike"><%= link_to goal[:goal], goal_complete_path(goal), method: :patch %></h5>
+<% else %>
+    <h5><%= link_to goal[:goal], goal_complete_path(goal), method: :patch %></h5>
+<% end %>

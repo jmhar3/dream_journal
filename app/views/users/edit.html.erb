@@ -1,0 +1,28 @@
+<div class="full-height vertically-center">
+    <div class="container account-column mid">
+        <%= form_for :user, url: user_path, method: :put  do |f| %>
+
+            <div>
+                <%= render 'users/avatar', { user: @user, size: 'avatar' } %>
+                <%= f.text_field :username %>
+            </div>
+
+            <div>
+                <%= f.text_field :email %>
+            </div>
+
+            <div>
+                <%= f.file_field :image %>
+                <%= f.hidden_field :image_cache %>
+            </div>
+
+            <div>
+                <%= f.submit 'Save', class: "button" %>
+            </div>
+        <% end %>
+    </div>
+
+    <hr class="hr-column">
+
+    <%= render 'passwords/edit' %>
+</div>

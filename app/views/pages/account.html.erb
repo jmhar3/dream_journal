@@ -1,0 +1,38 @@
+<% if cookies[:dark] %>
+    <%= button_to 'Light Mode', light_path, method: :get, class: "rotate-header colour-mode" %>
+<% else %>
+    <%= button_to 'Dark Mode', dark_path, method: :get, class: "rotate-header colour-mode" %>
+<% end %>
+
+<div class="full-height vertically-center">
+    <div class="container account-column mid">
+        <%= render 'users/avatar', { user: @user, size: 'avatar' } %>
+        <li class="super-light task-bubble">
+            <%= @user.username %>
+        </li>
+        <div class="row">
+            <%= link_to "Update Account",
+            edit_user_path(@user),
+            class: "button light" %>
+
+            <%= link_to "Delete Account",
+            user_path(@user),
+            method: :delete,
+            data: { confirm: 'Are you sure you want to delete this account permanently?' },
+            class: "button light" %>
+        </div>
+    </div>
+
+    <hr class="hr-column">
+
+    <div class="container account-column mid friends-list">
+        <h2>Friends</h2>
+        <ul>
+            <%= render 'invitations/pending', {invites: incoming_invites, type: 'incoming'} %>
+            <%= render 'invitations/pending', {invites: outgoing_invites, type: 'outgoing'} %>
+            <%= render 'invitations/confirmed', {invites: incoming_confirmed} %>
+            <%= render 'invitations/confirmed', {invites: outgoing_confirmed} %>
+        </ul>
+        <%= link_to "Add Friend", add_friend_path, class: "button light" %>
+    </div>
+</div>

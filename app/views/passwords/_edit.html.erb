@@ -1,0 +1,17 @@
+<div class="container account-column mid">
+    <h1>Edit Password</h1>
+
+    <%= form_with model: Current.user, url: edit_password_path do |f| %>
+        <div>
+            <%= f.password_field :password, placeholder: "Password" %>
+        </div>
+        
+        <div>
+            <%= f.password_field :password_confirmation, placeholder: "Password Confirmation" %>
+        </div>
+        
+        <div>
+            <%= f.submit 'Update', data: { confirm: 'Are you sure you want to update your password?' }, class: "button" %>
+        </div>
+    <% end %>
+</div>

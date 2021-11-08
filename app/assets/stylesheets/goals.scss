@@ -1,0 +1,70 @@
+.checkmark-container {
+    padding-left: 39px;
+    padding-right: 45px;
+    position: relative;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 24px;
+    color: var(--main-colour);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .checkmark-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30px;
+    width: 30px;
+    border-radius: 6px;
+    background-color: var(--super-light-colour);
+  }
+
+  .checkmark-container:hover {
+    color: var(--dark-colour)
+  }
+
+  .checkmark-container:hover input ~ .checkmark {
+    background-color: var(--super-light-mid);
+    border-radius: 50px;
+  }
+  
+  .checkmark-container input:checked ~ .checkmark {
+    background-color: var(--main-colour);
+    border-radius: 50px;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .checkmark-container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .checkmark-container .checkmark:after {
+    left: 11px;
+    top: 7px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--super-light-colour);
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }

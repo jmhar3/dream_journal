@@ -1,0 +1,18 @@
+<div class="container column-container mid">
+    <div class="row">
+        <h2><%= link_to 'Breakfast', meals_path %></h2><hr>
+    </div>
+    <%= render 'meals/food_list', {meals: breakfast, meal_type: "breakfast"} %>
+    <div class="row">
+        <h2>Lunch</h2><hr>
+    </div>
+    <%= render 'meals/food_list', {meals: lunch, meal_type: "lunch"} %>
+    <div class="row">
+        <h2>Dinner</h2><hr>
+    </div>
+    <%= render 'meals/food_list', {meals: dinner, meal_type: "dinner"} %>
+    <div class="row">
+        <h2>Snack</h2><hr>
+    </div>
+    <%= render 'meals/food_list', {meals: snack, meal_type: "snack"} %>
+</div>

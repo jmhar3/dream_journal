@@ -1,0 +1,19 @@
+<div id="home">
+    <div class="full-height full-width home-1">
+        <h1>Get your sh*t together</h1>
+        <%= link_to "Sign up now", login_path, class: 'button' %>
+
+        <h4>Keep track of everything you want<br>and nothing you dont...</h4>
+        <h4 class="fade">goals<br>meals<br>water<br>finances<br>gratitude<br>etc.</h4>
+    </div>
+    <div class="full-height full-width" id="home-2">
+        <div class="big-column">
+            <%= image_tag("monthly_window.png", :alt => "Monthly Tracker Window") %>
+            <%= link_to "Get started today", login_path, class: 'button' %>
+        </div>
+        <div class="little-column">
+            <h3 class="red">Your new best<br>friend to help<br>you get your<br>sh*t together...</h3>
+            <%= image_tag("mobile_tracker_window.jpg", :alt => "Mobile Tracker") %>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="full-height vertically-center">
+    <div class="container mid">
+        <div class="row">
+            <h2>Meal</h2>
+            <%= link_to '✏️', edit_meal_path %>
+            <%= link_to '❌', meal_path(@meal), method: :delete %>
+        </div>
+        <hr>
+        <div class="super-light task-bubble">
+            <h5><%= @meal.name %></h5>
+        </div>
+    </div>
+</div>

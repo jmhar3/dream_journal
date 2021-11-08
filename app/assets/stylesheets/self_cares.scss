@@ -1,0 +1,21 @@
+// Place all the styles related to the SelfCares controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.number-input {
+    width: 39px;
+}
+
+.self-care-label {
+    width: 180px;
+}

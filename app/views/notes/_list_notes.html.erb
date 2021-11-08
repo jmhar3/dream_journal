@@ -1,0 +1,9 @@
+<% if notes %>
+    <ul>
+        <% notes.each do |note| %>
+            <li class="row space-between super-light task-bubble dark">
+                <h5><%= link_to note[:content], note_path(note) %></h5>
+            </li>
+        <% end %>
+    </ul>
+<% end %>

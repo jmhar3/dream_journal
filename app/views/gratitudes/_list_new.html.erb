@@ -1,0 +1,17 @@
+<% if gratitudes.count >= 1 %>
+    <ul>
+        <% gratitudes.each do |gratitude| %>
+            <li class="super-light task-bubble dark">
+                <%= link_to gratitude[:name], edit_gratitude_path(gratitude) %>
+            </li>
+        <% end %>
+    </ul>
+<% else %>
+    <%= form_for :gratitude, url: gratitudes_path do |f| %>
+        <div class="row light-mid emoji-form field_with_errors">
+            <%= f.text_field :name, placeholder: "Gratitude" %>
+
+            <%= f.submit '🏹' %>
+        </div>
+    <% end %>
+<% end %>

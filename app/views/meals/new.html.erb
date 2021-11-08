@@ -1,0 +1,29 @@
+<div class="full-height vertically-center">
+  <% if !@meal.errors.empty? %>
+    <ul class="errors">
+      <% @meal.errors.full_messages.each do |error| %>
+        <li class="row space-between task-bubble red">
+          <%= error %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div class="container mid">
+    <h2>New Meal</h2>
+    <hr class="rounded">
+    <%= form_for @meal do |f| %>
+      <div class="row">
+        <%= f.fields_for :food do |ff| %>
+          <%= ff.text_field :name, placeholder: "Food", class: "food-list" %>
+        <% end %>
+        <%= f.select :meal, meal_type_options, {}, prompt: 'Select One' %>
+      </div>
+      <div class="row">
+        <%= f.date_field :date %>
+
+        <%= f.submit 'Save', class: "button" %>
+      </div>
+    <% end %>
+  </div>
+</div>
