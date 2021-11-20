@@ -23,8 +23,6 @@ Rails.application.routes.draw do
     resources :gratitudes
     resources :meals
     resources :notes
-    resources :self_cares
-    resources :completed_cares
     resources :goals do
       patch :complete
     end

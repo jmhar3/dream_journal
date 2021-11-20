@@ -11,8 +11,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if auth = request.env["omniauth.auth"]
-      user = User.find_or_create_by_omniauth(auth)
+    if auth
+      user = User.find_or_create_by(email: auth['info']['email']) do |u|
+        u.username = auth['info']['name']
+        u.image = auth['info']['image']
+      end
+      user.save
+      raise user.inspect
       on_complete user
     else
       user = User.find_by(username: params[:username])
@@ -61,6 +66,10 @@ class SessionsController < ApplicationController
   end
 
   private
+
+  def auth
+    request.env["omniauth.auth"]
+  end
 
   def on_complete user
     session[:user_id] = user.id

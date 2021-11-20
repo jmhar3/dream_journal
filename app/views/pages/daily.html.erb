@@ -31,9 +31,12 @@
             <%= render 'gratitudes/list_new' %>
         </div>
 
-        <div class="container column-container light-mid self-care">
-            <%= render 'self_cares/list_new' %>
-        </div>
+
+        <%= render "meals/meal_tracker" %>
+    </div>
+
+    <div class="column">
+        <%= render "finances/daily_tracker" %>
         
         <div class="container mid header-bubble">
             <h2>Notes</h2>
@@ -42,11 +45,6 @@
             <%= render "notes/list_notes" %> 
             <%= render 'notes/quick_note' %>
         </div>
-    </div>
-
-    <div class="column">
-        <%= render "finances/daily_tracker" %>
-        <%= render "meals/meal_tracker" %>
     </div>
 </div>
 

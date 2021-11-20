@@ -1,9 +1,0 @@
-<% if !@self_care.errors.empty? %>
-  <ul class="errors">
-    <% @self_care.errors.full_messages.each do |error| %>
-      <li class="row space-between task-bubble red">
-        <%= error %>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
