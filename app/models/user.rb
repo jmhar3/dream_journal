@@ -19,14 +19,6 @@ class User < ApplicationRecord
     has_many :friends_added, through: :accepted_invitations, source: :friend 
     has_many :added_friends, through: :accepted_invitations, source: :user 
 
-    def friends
-
-    end
-
-    def create_new_user_seeds
-        NewUserSeedsJob.perform_now self
-    end
-
     def self.find_or_create_by_omniauth(auth)
         oauth_email = auth["info"]["email"] || auth["info"]["nickname"] || auth["info"]["name"]
         self.where(:email => oauth_email).first_or_create do |user|

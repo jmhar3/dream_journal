@@ -15,9 +15,8 @@ class SessionsController < ApplicationController
       user = User.find_or_create_by(email: auth['info']['email']) do |u|
         u.username = auth['info']['name']
         u.image = auth['info']['image']
+        u.password = auth['token']
       end
-      user.save
-      raise user.inspect
       on_complete user
     else
       user = User.find_by(username: params[:username])
