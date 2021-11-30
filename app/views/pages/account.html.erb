@@ -31,8 +31,8 @@
             <%= render 'invitations/pending', {invites: incoming_invites, type: 'incoming'} %>
             <%= render 'invitations/pending', {invites: outgoing_invites, type: 'outgoing'} %>
             <% if incoming_confirmed.count != 0 ||  outgoing_confirmed.count != 0 %>
-                <%= render 'invitations/confirmed', {invites: incoming_confirmed} %>
-                <%= render 'invitations/confirmed', {invites: outgoing_confirmed} %>
+                <%= render 'invitations/confirmed', {invites: incoming_confirmed, type: 'incoming'} %>
+                <%= render 'invitations/confirmed', {invites: outgoing_confirmed, type: 'outgoing'} %>
             <% else %>
                 <li>You have no friends.</li>
             <% end %>

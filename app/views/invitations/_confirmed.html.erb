@@ -1,6 +1,7 @@
 <% invites.each do |invite| %>
+    <% friend = type != 'incoming' ? invite.friend : invite.user %>
     <li class="row space-between super-light task-bubble dark">
-        <%= render 'users/avatar', { user: invite.friend, size: 'icon' } %>
-        <%= invite.friend.username %>
+        <%= render 'users/avatar', { user: friend, size: 'icon' } %>
+        <%= friend.username %>
     </li>
 <% end %>

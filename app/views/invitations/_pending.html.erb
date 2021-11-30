@@ -1,8 +1,9 @@
 <% invites.each do |invite| %>
+    <% friend = type != 'incoming' ? invite.friend : invite.user %>
     <li class="row space-between super-light task-bubble dark">
         <div class="row pending-friend">
-            <%= render 'users/avatar', { user: invite.friend, size: 'icon' } %>
-            <%= invite.friend.username %>
+            <%= render 'users/avatar', { user: friend, size: 'icon' } %>
+            <%= friend.username %>
         </div>
         <% if type == 'incoming' %>
             <%= link_to '✅', confirm_invite_path(:id => invite.id, :confirmed => true), :method=> :patch %>
